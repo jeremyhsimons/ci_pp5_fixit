@@ -1,10 +1,12 @@
 import React from 'react'
 import { Navbar, Button, Nav, NavDropdown, Form, FormControl, Container  } from 'react-bootstrap'
 
+import styles from '../styles/NavigationBar.module.css'
+
 const NavigationBar = () => {
   return (
     <div>
-        <Navbar bg="light" expand="md" fixed="top">
+        <Navbar className={styles.NavigationBar} expand="md" fixed="top">
             <Container>
                 <Navbar.Brand href="#home">Fixit</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
