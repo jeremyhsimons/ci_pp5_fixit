@@ -1,9 +1,9 @@
-import { Button } from 'react-bootstrap';
+import styles from './App.module.css';
 import NavigationBar from './components/NavigationBar';
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <header className="App-header">
         <NavigationBar />
       </header>
