@@ -1,3 +1,11 @@
 .NavigationBar {
     background-color: aqua;
 }
+
+.NavLink {
+    padding: 10px;
+}
+
+.Active {
+    color: black;
+}

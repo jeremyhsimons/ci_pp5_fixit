@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar, Button, Nav, NavDropdown, Form, FormControl, Container  } from 'react-bootstrap'
-
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
 import styles from '../styles/NavigationBar.module.css'
 
 const NavigationBar = () => {
@@ -8,13 +8,21 @@ const NavigationBar = () => {
     <div>
         <Navbar className={styles.NavigationBar} expand="md" fixed="top">
             <Container>
-                <Navbar.Brand href="#home">Fixit</Navbar.Brand>
+                <NavLink to="/">
+                  <Navbar.Brand href="#home">Fixit</Navbar.Brand>
+                </NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link>Home</Nav.Link>
-                        <Nav.Link>Sign Up</Nav.Link>
-                        <Nav.Link>Sign In</Nav.Link>
+                        <NavLink exact className={styles.NavLink} activeClassName={styles.Active} to="/">
+                            Home
+                        </NavLink>
+                        <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signup">
+                            Sign Up
+                        </NavLink>
+                        <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
+                            Sign In
+                        </NavLink>
 
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
