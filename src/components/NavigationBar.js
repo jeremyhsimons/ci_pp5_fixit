@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Navbar, Button, Nav, NavDropdown, Form, FormControl, Container  } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
 import styles from '../styles/NavigationBar.module.css'
+import { CurrentUserContext } from '../App'
 
 const NavigationBar = () => {
+
+  const currentUser = useContext(CurrentUserContext)
+
+  const loggedInIcons = <><h1>{currentUser?.username}</h1></>
+  const loggedOutIcons = <><h1>Please Log in</h1></>
+
+
   return (
     <div>
         <Navbar className={styles.NavigationBar} expand="md" fixed="top">
@@ -23,6 +31,7 @@ const NavigationBar = () => {
                         <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
                             Sign In
                         </NavLink>
+                        {currentUser ? loggedInIcons: loggedOutIcons}
 
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
