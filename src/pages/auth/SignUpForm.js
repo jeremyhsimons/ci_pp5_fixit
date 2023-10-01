@@ -1,5 +1,7 @@
 import { React, useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Alert } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import axios from 'axios';
 
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({
@@ -10,17 +12,34 @@ const SignUpForm = () => {
 
   const { username, password1, password2 } = signUpData;
 
+  const [errors, setErrors] = useState({
+
+  });
+
+  const history = useHistory();
+
   const handleChange = (event) => {
     setSignUpData({
         ...signUpData,
         [event.target.name]: event.target.value
     });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+        await axios.post('/dj-rest-auth/registration/', signUpData)
+        history.push('/signin');
+    } catch(err) {
+        setErrors(err.response?.data);
+
+    }
   }
 
   return (
     <div>
         <h1>Sign up to Fixit.</h1>
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
                 <Form.Label>Username</Form.Label>
                 <Form.Control 
@@ -31,6 +50,9 @@ const SignUpForm = () => {
                     onChange={handleChange}
                 />
             </Form.Group>
+            {errors.username?.map((message, idx) =>
+              <Alert variant="warning" key={idx}>{message}</Alert>
+            )}
             <Form.Group controlId="password1">
                 <Form.Label>Password</Form.Label>
                 <Form.Control 
@@ -41,6 +63,9 @@ const SignUpForm = () => {
                     onChange={handleChange}
                 />
             </Form.Group>
+            {errors.password1?.map((message, idx) =>
+              <Alert variant="warning" key={idx}>{message}</Alert>
+            )}
             <Form.Group controlId="password2">
                 <Form.Label>Re-enter your Password</Form.Label>
                 <Form.Control 
@@ -51,6 +76,9 @@ const SignUpForm = () => {
                     onChange={handleChange}
                 />
             </Form.Group>
+            {errors.password2?.map((message, idx) =>
+              <Alert variant="warning" key={idx}>{message}</Alert>
+            )}
             <Button variant="primary" type="submit">
                 Submit
             </Button>
