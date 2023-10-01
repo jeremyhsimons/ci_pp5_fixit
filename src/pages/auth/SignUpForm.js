@@ -82,6 +82,9 @@ const SignUpForm = () => {
             <Button variant="primary" type="submit">
                 Submit
             </Button>
+            {errors.non_field_errors?.map((message, idx) =>
+              <Alert variant="warning" key={idx}>{message}</Alert>
+            )}
         </Form>
     </div>
   )
