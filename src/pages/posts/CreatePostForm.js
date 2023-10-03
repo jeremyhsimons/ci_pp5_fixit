@@ -19,6 +19,17 @@ const CreatePostForm = () => {
       [event.target.name]: event.target.value
     })
   };
+
+  const handleChangeImage = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image);
+      setPostData({
+        ...postData,
+        image: URL.createObjectURL(event.target.files[0])
+      });
+    }
+  };
+  
   return (
     <Form>
       <Container>
