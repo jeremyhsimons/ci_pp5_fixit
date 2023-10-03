@@ -33,6 +33,13 @@ const NavigationBar = () => {
         >
           Sign out
       </NavLink>
+      <NavLink 
+        className={styles.NavLink} 
+        activeClassName={styles.Active}
+        to="/posts/create" 
+        >
+          Create a post
+      </NavLink>
     </>
   )
   const loggedOutIcons = <><h1>Please Log in</h1></>
