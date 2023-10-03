@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Button, Container, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { axiosReq } from '../../api/axiosDefaults';
 
 const CreatePostForm = () => {
   const [errors, setErrors] = useState();
   const history = useHistory();
+  const inputImage = useRef(null);
   const [postData, setPostData] = useState({
     title: "",
     content: "",
     image: "",
   });
   const {title, content, image} = postData;
-
 
   const handleChange = (event) => {
     setPostData({
@@ -29,7 +30,26 @@ const CreatePostForm = () => {
       });
     }
   };
-  
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append('title', title)
+    formData.append('content', content)
+    formData.append('image', inputImage.current.files[0])
+
+    try {
+      const {data} = await axiosReq.post('/posts/', formData);
+      history.push(`/posts/${data.id}`)
+    } catch (err) {
+      console.log(err)
+      if (err.response?.status !== 401){
+        setErrors(err.response?.data)
+      }
+    }
+  }
+
   return (
     <Form>
       <Container>
@@ -42,8 +62,9 @@ const CreatePostForm = () => {
           <Form.Control as="textarea" name="content"  value={content} onChange={handleChange}/>
         </Form.Group>
         <Form.Group>
+          
           <Form.Label>Upload an image</Form.Label>
-          <Form.File id="image-upload" accept="image/*"  ref={inputImage}></Form.File>
+          <Form.File id="image-upload" accept="image/*" ref={inputImage} onChange={handleChangeImage}></Form.File>
         </Form.Group>
         <Button type="submit">Save</Button>
         <Button onClick={() => history.goBack()}>Cancel</Button>
