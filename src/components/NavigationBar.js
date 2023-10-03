@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Navbar, Button, Nav, NavDropdown, Form, FormControl, Container  } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
 import styles from '../styles/NavigationBar.module.css'
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext'
 import axios from 'axios'
+import useClickOutsideToggle from '../hooks/useClickOutsideToggle'
 
 const NavigationBar = () => {
 
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
+
+  const {expanded, setExpanded, ref} = useClickOutsideToggle();
 
   const handleSignOut = async () => {
     try{
@@ -37,12 +40,12 @@ const NavigationBar = () => {
 
   return (
     <div>
-        <Navbar className={styles.NavigationBar} expand="md" fixed="top">
+        <Navbar expanded={expanded} className={styles.NavigationBar} expand="md" fixed="top">
             <Container>
                 <NavLink to="/">
                   <Navbar.Brand href="#home">Fixit</Navbar.Brand>
                 </NavLink>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle ref={ref} onClick={() => setExpanded(!expanded)} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <NavLink exact className={styles.NavLink} activeClassName={styles.Active} to="/">
