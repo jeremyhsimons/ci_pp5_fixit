@@ -5,6 +5,15 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 const CreatePostForm = () => {
   const [errors, setErrors] = useState();
   const history = useHistory();
+  const [postData, setPostData] = useState({
+    title: "",
+    content: "",
+    image: "",
+  });
+  const {title, content, image} = postData;
+
+
+
   return (
     <Form>
       <Container>
