@@ -1,23 +1,27 @@
 import React, { useState } from 'react'
-import { Container, Form } from 'react-bootstrap';
+import { Button, Container, Form } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const CreatePostForm = () => {
   const [errors, setErrors] = useState();
+  const history = useHistory();
   return (
     <Form>
       <Container>
         <Form.Group controlId="title">
           <Form.Label>Title</Form.Label>
-          <Form.Control type="text" name="title" className={styles.Input} value={title} onChange={handleChange}/>
+          <Form.Control type="text" name="title"  value={title} onChange={handleChange}/>
         </Form.Group>
         <Form.Group controlId="title">
           <Form.Label>Content</Form.Label>
-          <Form.Control as="textarea" name="content" className={styles.Input} value={content} onChange={handleChange}/>
+          <Form.Control as="textarea" name="content"  value={content} onChange={handleChange}/>
         </Form.Group>
         <Form.Group>
           <Form.Label>Upload an image</Form.Label>
-          <Form.File id="image-upload" accept="image/*" onChange={handleChangeImage} ref={inputImage}></Form.File>
+          <Form.File id="image-upload" accept="image/*"  ref={inputImage}></Form.File>
         </Form.Group>
+        <Button type="submit">Save</Button>
+        <Button onClick={() => history.goBack()}>Cancel</Button>
       </Container>
     </Form>
   );
