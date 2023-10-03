@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Button, Container, Form } from 'react-bootstrap';
+import { Button, Container, Form, Image } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 
@@ -62,8 +62,15 @@ const CreatePostForm = () => {
           <Form.Control as="textarea" name="content"  value={content} onChange={handleChange}/>
         </Form.Group>
         <Form.Group>
-          
-          <Form.Label>Upload an image</Form.Label>
+          {image ? (
+            <>
+              <figure>
+                <Image src={image} rounded/>
+              </figure>
+            </>
+          ) : (
+            <Form.Label>Upload an image</Form.Label>
+          ) }
           <Form.File id="image-upload" accept="image/*" ref={inputImage} onChange={handleChangeImage}></Form.File>
         </Form.Group>
         <Button type="submit">Save</Button>
