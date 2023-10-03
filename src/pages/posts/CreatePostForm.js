@@ -13,7 +13,12 @@ const CreatePostForm = () => {
   const {title, content, image} = postData;
 
 
-
+  const handleChange = (event) => {
+    setPostData({
+      ...postData,
+      [event.target.name]: event.target.value
+    })
+  };
   return (
     <Form>
       <Container>
