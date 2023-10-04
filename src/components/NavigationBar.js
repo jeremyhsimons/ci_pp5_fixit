@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { Navbar, Button, Nav, NavDropdown, Form, FormControl, Container  } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
 import styles from '../styles/NavigationBar.module.css'

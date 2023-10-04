@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 
 const CreatePostForm = () => {
-  const [errors, setErrors] = useState();
+  const [errors, setErrors] = useState({});
   const history = useHistory();
   const inputImage = useRef(null);
   const [postData, setPostData] = useState({
@@ -42,7 +42,8 @@ const CreatePostForm = () => {
     formData.append('image', inputImage.current.files[0])
 
     try {
-      const {data} = await axiosReq.post('/posts/', formData);
+      const {data} = await axiosReq.post(
+        '/posts/', formData);
       history.push(`/posts/${data.id}`)
     } catch (err) {
       console.log(err)
@@ -64,7 +65,7 @@ const CreatePostForm = () => {
         )}
         <Form.Group controlId="title">
           <Form.Label>Content</Form.Label>
-          <Form.Control as="textarea" name="content"  value={content} onChange={handleChange}/>
+          <Form.Control as="textarea" name="content" value={content} onChange={handleChange}/>
         </Form.Group>
         {errors.content?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>
@@ -97,6 +98,9 @@ const CreatePostForm = () => {
         )}
         <Button type="submit">Save</Button>
         <Button onClick={() => history.goBack()}>Cancel</Button>
+        {errors.non_field_errors?.map((message, idx) =>
+          <Alert variant="warning" key={idx}>{message}</Alert>
+        )}
       </Container>
     </Form>
   );
