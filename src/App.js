@@ -8,9 +8,6 @@ import SignInForm from './pages/auth/SignInForm';
 import CreatePostForm from './pages/posts/CreatePostForm';
 import PostPage from './pages/posts/PostPage';
 
-
-
-
 function App() {
 
   return (
