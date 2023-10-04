@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Button, Container, Form, Image } from 'react-bootstrap';
+import { Button, Container, Form, Image, Alert } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 
@@ -10,9 +10,10 @@ const CreatePostForm = () => {
   const [postData, setPostData] = useState({
     title: "",
     content: "",
+    category: "",
     image: "",
   });
-  const {title, content, image} = postData;
+  const {title, content, category, image} = postData;
 
   const handleChange = (event) => {
     setPostData({
@@ -37,6 +38,7 @@ const CreatePostForm = () => {
 
     formData.append('title', title)
     formData.append('content', content)
+    formData.append('category', category)
     formData.append('image', inputImage.current.files[0])
 
     try {
@@ -51,16 +53,33 @@ const CreatePostForm = () => {
   }
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Container>
         <Form.Group controlId="title">
           <Form.Label>Title</Form.Label>
           <Form.Control type="text" name="title"  value={title} onChange={handleChange}/>
         </Form.Group>
+        {errors.title?.map((message, idx) =>
+          <Alert variant="warning" key={idx}>{message}</Alert>
+        )}
         <Form.Group controlId="title">
           <Form.Label>Content</Form.Label>
           <Form.Control as="textarea" name="content"  value={content} onChange={handleChange}/>
         </Form.Group>
+        {errors.content?.map((message, idx) =>
+          <Alert variant="warning" key={idx}>{message}</Alert>
+        )}
+        <Form.Group>
+          <Form.Label>Category</Form.Label>
+          <Form.Control as="select" name="category" value={category} onChange={handleChange}>
+            <option value="BC">Bikes and Cars</option>
+            <option value="EC">Electronics</option>
+            <option value="DIY">DIY</option>
+          </Form.Control>
+        </Form.Group>
+        {errors.category?.map((message, idx) =>
+          <Alert variant="warning" key={idx}>{message}</Alert>
+        )}
         <Form.Group>
           {image ? (
             <>
@@ -73,6 +92,9 @@ const CreatePostForm = () => {
           ) }
           <Form.File id="image-upload" accept="image/*" ref={inputImage} onChange={handleChangeImage}></Form.File>
         </Form.Group>
+        {errors.image?.map((message, idx) =>
+          <Alert variant="warning" key={idx}>{message}</Alert>
+        )}
         <Button type="submit">Save</Button>
         <Button onClick={() => history.goBack()}>Cancel</Button>
       </Container>
