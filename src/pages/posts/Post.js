@@ -2,6 +2,7 @@ import React from 'react'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { axiosRes } from '../../api/axiosDefaults';
 
 const Post = (props) => {
   const {
@@ -19,11 +20,44 @@ const Post = (props) => {
     updated_at,
     upvote_id,
     upvotes_count,
-    postPage
+    postPage,
+    setPost,
   } = props
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === author
+
+  const handleUpvote = async () => {
+    try {
+      const {data} = await axiosRes.post('/post-upvotes/', {post:id})
+      setPost((prevPost) => ({
+        ...prevPost,
+        results: prevPost.results.map((post) => {
+          return post.id === id
+          ? {...post, upvotes_count: post.upvotes_count + 1, upvote_id: data.id}
+          : post;
+        })
+      }))
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
+  const handleRemoveUpvote = async () => {
+    try {
+      await axiosRes.delete(`/post-upvotes/${upvote_id}/`)
+      setPost((prevPost) => ({
+        ...prevPost,
+        results: prevPost.results.map((post) => {
+          return post.id === id
+          ? {...post, upvotes_count: post.upvotes_count - 1, upvote_id: null}
+          : post;
+        })
+      }))
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
   return (
     <div>
@@ -55,12 +89,12 @@ const Post = (props) => {
                 <i className="fa-regular fa-hand-point-up"></i>
               </OverlayTrigger>
             ) : upvote_id ? (
-              <span onClick={() => {}}>
+              <span onClick={handleRemoveUpvote}>
                 <i className="fa-solid fa-hand-point-up"></i>
                 {/* Handles un-upvoting the post */}
               </span>
             ) : currentUser ? (
-              <span onClick={() => {}}>
+              <span onClick={handleUpvote}>
                 <i className="fa-regular fa-hand-point-up"></i>
                 {/* Handles upvoting the post */}
               </span>
@@ -81,7 +115,7 @@ const Post = (props) => {
               >
                 <i class="fa-regular fa-bookmark"></i>
               </OverlayTrigger>
-            ) : upvote_id ? (
+            ) : bookmark_id ? (
               <span onClick={() => {}}>
                 <i class="fa-solid fa-bookmark"></i>
                 {/* Handles un-upvoting the post */}
@@ -100,7 +134,6 @@ const Post = (props) => {
                 {/* handles users not logged in, and can't upvote */}
               </OverlayTrigger>
             )}
-            {upvotes_count}
             <Link to={`/posts/${id}`}>
               <i className='far fa-comments'></i>
             {comments_count}
