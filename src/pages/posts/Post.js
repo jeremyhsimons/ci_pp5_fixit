@@ -46,6 +46,12 @@ const Post = (props) => {
         <Card.Body>
           {title && <Card.Title className="text-center">{title}</Card.Title>}
           {content && <Card.Text className="text-center">{content}</Card.Text>}
+          <div>
+            {upvotes_count}
+            <Link to={`/posts/${id}`}>
+            {comments_count}
+            </Link>
+          </div>
         </Card.Body>
       </Card>
     </div>
