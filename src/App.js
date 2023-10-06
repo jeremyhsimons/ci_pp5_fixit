@@ -7,6 +7,7 @@ import SignUpForm from './pages/auth/SignUpForm';
 import SignInForm from './pages/auth/SignInForm';
 import CreatePostForm from './pages/posts/CreatePostForm';
 import PostPage from './pages/posts/PostPage';
+import PostsPage from './pages/posts/PostsPage';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
       <NavigationBar />
       <Container className={styles.Main}>
         <Switch>
-          <Route exact path="/" render={() => <h1>Home</h1>} />
+          <Route exact path="/" render={() => <PostsPage message="No results found. Try using another keyword."/>} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <CreatePostForm />}/>
