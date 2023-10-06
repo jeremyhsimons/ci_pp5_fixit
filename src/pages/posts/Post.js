@@ -43,6 +43,22 @@ const Post = (props) => {
     }
   }
 
+  const handleBookmark = async () => {
+    try {
+      const {data} = await axiosRes.post('/bookmarks/', {post:id})
+      setPost((prevPost) => ({
+        ...prevPost,
+        results: prevPost.results.map((post) => {
+          return post.id === id
+          ? {...post, bookmark_id: data.id}
+          : post;
+        })
+      }))
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
   const handleRemoveUpvote = async () => {
     try {
       await axiosRes.delete(`/post-upvotes/${upvote_id}/`)
@@ -51,6 +67,22 @@ const Post = (props) => {
         results: prevPost.results.map((post) => {
           return post.id === id
           ? {...post, upvotes_count: post.upvotes_count - 1, upvote_id: null}
+          : post;
+        })
+      }))
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
+  const handleRemoveBookmark = async () => {
+    try {
+      await axiosRes.delete(`/bookmarks/${bookmark_id}/`)
+      setPost((prevPost) => ({
+        ...prevPost,
+        results: prevPost.results.map((post) => {
+          return post.id === id
+          ? {...post, bookmark_id: null}
           : post;
         })
       }))
@@ -116,12 +148,12 @@ const Post = (props) => {
                 <i class="fa-regular fa-bookmark"></i>
               </OverlayTrigger>
             ) : bookmark_id ? (
-              <span onClick={() => {}}>
+              <span onClick={handleRemoveBookmark}>
                 <i class="fa-solid fa-bookmark"></i>
                 {/* Handles un-upvoting the post */}
               </span>
             ) : currentUser ? (
-              <span onClick={() => {}}>
+              <span onClick={handleBookmark}>
                 <i class="fa-regular fa-bookmark"></i>
                 {/* Handles upvoting the post */}
               </span>
@@ -136,7 +168,7 @@ const Post = (props) => {
             )}
             <Link to={`/posts/${id}`}>
               <i className='far fa-comments'></i>
-            {comments_count}
+              {comments_count}
             </Link>
           </div>
         </Card.Body>
