@@ -1,6 +1,7 @@
 import React, { useState, useEffect }from 'react'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
+import Post from './Post';
 
 const PostPage = () => {
   const {id} = useParams();
@@ -25,7 +26,7 @@ const PostPage = () => {
   return (
     <div>
       <p>Popular profiles component for mobiles</p>
-      <p>Post component</p>
+      <Post {...post.results[0]} setPost={setPost}/>
       <p>Popular profiles component for desktop</p>
     </div>
   )
