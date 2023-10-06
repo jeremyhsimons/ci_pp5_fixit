@@ -26,7 +26,7 @@ const PostPage = () => {
   return (
     <div>
       <p>Popular profiles component for mobiles</p>
-      <Post {...post.results[0]} setPost={setPost}/>
+      <Post {...post.results[0]} setPost={setPost} postPage/>
       <p>Popular profiles component for desktop</p>
     </div>
   )
