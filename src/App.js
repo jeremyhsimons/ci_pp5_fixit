@@ -24,6 +24,17 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <CreatePostForm />}/>
           <Route exact path="/posts/:id" render={() => <PostPage />}/>
+          <Route render={() => <p>404: Page not found</p>} />
+          <Route
+            exact 
+            path="/bikes-and-cars" 
+            render={() => (
+              <PostsPage 
+                message="No results found. Try a different category."
+                filter="category=BC&"
+              />
+            )}
+          />
         </Switch>
       </Container>
     </div>
