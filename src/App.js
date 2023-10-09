@@ -24,14 +24,14 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <CreatePostForm />}/>
           <Route exact path="/posts/:id" render={() => <PostPage />}/>
-          <Route render={() => <p>404: Page not found</p>} />
+          
           <Route
             exact 
-            path="/bikes-and-cars" 
+            path="/bikes-and-cars"
             render={() => (
               <PostsPage 
                 message="No results found. Try a different category."
-                filter="category=BC&"
+                filter="?category=BC&"
               />
             )}
           />
@@ -41,7 +41,7 @@ function App() {
             render={() => (
               <PostsPage 
                 message="No results found. Try a different category."
-                filter="category=EC&"
+                filter="?category=EC&"
               />
             )}
           />
@@ -51,10 +51,11 @@ function App() {
             render={() => (
               <PostsPage 
                 message="No results found. Try a different category."
-                filter="category=DIY&"
+                filter="?category=DIY&"
               />
             )}
           />
+          <Route render={() => <p>404: Page not found</p>} />
         </Switch>
       </Container>
     </div>
