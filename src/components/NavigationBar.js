@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar, Button, Nav, NavDropdown, Form, FormControl, Container  } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
 import styles from '../styles/NavigationBar.module.css'
+import appStyles from '../App.module.css'
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext'
 import axios from 'axios'
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle'
@@ -22,9 +23,36 @@ const NavigationBar = () => {
     }
   }
 
+  const filterOptions = (
+    <>
+      <div className={appStyles.Main}>
+        <NavLink 
+          className={styles.NavLink} 
+          activeClassName={styles.Active}
+          to="/bikes-and-cars" 
+          >
+            Bikes/Cars
+        </NavLink>
+        <NavLink 
+          className={styles.NavLink} 
+          activeClassName={styles.Active}
+          to="/electronics" 
+          >
+            Electronics
+        </NavLink>
+        <NavLink 
+          className={styles.NavLink} 
+          activeClassName={styles.Active}
+          to="/diy" 
+          >
+            DIY
+        </NavLink>
+      </div>
+    </>
+  )
+
   const loggedInIcons = (
     <>
-      <h1>{currentUser?.username}</h1>
       <NavLink 
         className={styles.NavLink} 
         activeClassName={styles.Active} 
@@ -40,30 +68,18 @@ const NavigationBar = () => {
         >
           Create a post
       </NavLink>
-      <NavLink 
-        className={styles.NavLink} 
-        activeClassName={styles.Active}
-        to="/bikes-and-cars" 
-        >
-          Bikes/Cars
+    </>
+  )
+  const loggedOutIcons = (
+    <>
+      <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signup">
+          Sign Up
       </NavLink>
-      <NavLink 
-        className={styles.NavLink} 
-        activeClassName={styles.Active}
-        to="/electronics" 
-        >
-          Electronics
-      </NavLink>
-      <NavLink 
-        className={styles.NavLink} 
-        activeClassName={styles.Active}
-        to="/diy" 
-        >
-          DIY
+      <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
+          Sign In
       </NavLink>
     </>
   )
-  const loggedOutIcons = <><h1>Please Log in</h1></>
 
 
   return (
@@ -79,17 +95,13 @@ const NavigationBar = () => {
                         <NavLink exact className={styles.NavLink} activeClassName={styles.Active} to="/">
                             Home
                         </NavLink>
-                        <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signup">
-                            Sign Up
-                        </NavLink>
-                        <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
-                            Sign In
-                        </NavLink>
-                        {currentUser ? loggedInIcons: loggedOutIcons}
+                        
+                        {currentUser ? loggedInIcons : loggedOutIcons}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+        {currentUser ? filterOptions : <p>Log in to filter posts</p>}
     </div>
   )
 }
