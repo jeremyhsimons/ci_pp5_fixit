@@ -9,6 +9,8 @@ import appStyles from "../../App.module.css";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 
+import Post from "./Post";
+
 function PostsPage({ message, filter="" }) {
   const [ posts, setPosts ] = useState({result: []});
   const [ hasLoaded, setHasLoaded ] = useState(false);
@@ -38,13 +40,19 @@ function PostsPage({ message, filter="" }) {
         {hasLoaded ? (
           <>
             {posts.results.length ? (
-              console.log("Map over posts")
+              posts.results.map(post => (
+                <Post key={post.id} {...post} setPosts={setPosts}/>
+              ))
             ) : (
-              console.log("no results message")
+              <Container>
+                <h2>{message}</h2>
+              </Container>
             )}
           </>
         ) : (
-          console.log("Show loading icon")
+          <Container>
+            <h2>LOADING...</h2>
+          </Container>
         )}
       </Col>
     </Row>

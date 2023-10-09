@@ -21,7 +21,7 @@ const Post = (props) => {
     upvote_id,
     upvotes_count,
     postPage,
-    setPost,
+    setPosts,
   } = props
 
   const currentUser = useCurrentUser();
@@ -30,7 +30,7 @@ const Post = (props) => {
   const handleUpvote = async () => {
     try {
       const {data} = await axiosRes.post('/post-upvotes/', {post:id})
-      setPost((prevPost) => ({
+      setPosts((prevPost) => ({
         ...prevPost,
         results: prevPost.results.map((post) => {
           return post.id === id
@@ -46,7 +46,7 @@ const Post = (props) => {
   const handleBookmark = async () => {
     try {
       const {data} = await axiosRes.post('/bookmarks/', {post:id})
-      setPost((prevPost) => ({
+      setPosts((prevPost) => ({
         ...prevPost,
         results: prevPost.results.map((post) => {
           return post.id === id
@@ -62,7 +62,7 @@ const Post = (props) => {
   const handleRemoveUpvote = async () => {
     try {
       await axiosRes.delete(`/post-upvotes/${upvote_id}/`)
-      setPost((prevPost) => ({
+      setPosts((prevPost) => ({
         ...prevPost,
         results: prevPost.results.map((post) => {
           return post.id === id
@@ -78,7 +78,7 @@ const Post = (props) => {
   const handleRemoveBookmark = async () => {
     try {
       await axiosRes.delete(`/bookmarks/${bookmark_id}/`)
-      setPost((prevPost) => ({
+      setPosts((prevPost) => ({
         ...prevPost,
         results: prevPost.results.map((post) => {
           return post.id === id
