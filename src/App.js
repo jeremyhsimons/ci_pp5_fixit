@@ -35,6 +35,26 @@ function App() {
               />
             )}
           />
+          <Route
+            exact 
+            path="/electronics" 
+            render={() => (
+              <PostsPage 
+                message="No results found. Try a different category."
+                filter="category=EC&"
+              />
+            )}
+          />
+          <Route
+            exact 
+            path="/diy" 
+            render={() => (
+              <PostsPage 
+                message="No results found. Try a different category."
+                filter="category=DIY&"
+              />
+            )}
+          />
         </Switch>
       </Container>
     </div>
