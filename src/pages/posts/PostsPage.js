@@ -11,6 +11,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 
 import Post from "./Post";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function PostsPage({ message, filter="" }) {
   const [ posts, setPosts ] = useState({result: []});
@@ -68,7 +69,7 @@ function PostsPage({ message, filter="" }) {
                 dataLength={posts.results.length}
                 loader={<h3>Loading...</h3>}
                 hasMore={!!posts.next}
-                next={() => {}}
+                next={() => fetchMoreData(posts, setPosts)}
               />
               
             ) : (
