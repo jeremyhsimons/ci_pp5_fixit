@@ -55,6 +55,16 @@ function App() {
               />
             )}
           />
+          <Route
+            exact 
+            path="/bookmarks" 
+            render={() => (
+              <PostsPage 
+                message="No results found. Please bookmark a post first."
+                filter={`bookmarks__owner__profile=${profile_id}&`}
+              />
+            )}
+          />
           <Route render={() => <p>404: Page not found</p>} />
         </Switch>
       </Container>

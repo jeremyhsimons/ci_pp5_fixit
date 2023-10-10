@@ -68,6 +68,13 @@ const NavigationBar = () => {
         >
           Create a post
       </NavLink>
+      <NavLink 
+        className={styles.NavLink} 
+        activeClassName={styles.Active}
+        to="/bookmarks" 
+        >
+          Bookmarks
+      </NavLink>
     </>
   )
   const loggedOutIcons = (
