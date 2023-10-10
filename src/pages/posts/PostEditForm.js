@@ -3,7 +3,7 @@ import { Button, Container, Form, Image, Alert } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 
-const CreatePostForm = () => {
+const PostEditForm = () => {
   const [errors, setErrors] = useState({});
   const history = useHistory();
   const inputImage = useRef(null);
@@ -106,4 +106,4 @@ const CreatePostForm = () => {
   );
 }
 
-export default CreatePostForm
+export default PostEditForm
