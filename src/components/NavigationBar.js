@@ -26,27 +26,29 @@ const NavigationBar = () => {
   const filterOptions = (
     <>
       <div className={appStyles.Main}>
-        <NavLink 
-          className={styles.NavLink} 
-          activeClassName={styles.Active}
-          to="/bikes-and-cars" 
-          >
-            Bikes/Cars
-        </NavLink>
-        <NavLink 
-          className={styles.NavLink} 
-          activeClassName={styles.Active}
-          to="/electronics" 
-          >
-            Electronics
-        </NavLink>
-        <NavLink 
-          className={styles.NavLink} 
-          activeClassName={styles.Active}
-          to="/diy" 
-          >
-            DIY
-        </NavLink>
+        <Container>
+          <NavLink 
+            className={styles.NavLink} 
+            activeClassName={styles.Active}
+            to="/bikes-and-cars" 
+            >
+              Bikes/Cars
+          </NavLink>
+          <NavLink 
+            className={styles.NavLink} 
+            activeClassName={styles.Active}
+            to="/electronics" 
+            >
+              Electronics
+          </NavLink>
+          <NavLink 
+            className={styles.NavLink} 
+            activeClassName={styles.Active}
+            to="/diy" 
+            >
+              DIY
+          </NavLink>
+        </Container>
       </div>
     </>
   )
