@@ -31,7 +31,7 @@ function App() {
             render={() => (
               <PostsPage 
                 message="No results found. Try a different category."
-                filter="?category=BC&"
+                filter="category=BC&"
               />
             )}
           />
@@ -41,7 +41,7 @@ function App() {
             render={() => (
               <PostsPage 
                 message="No results found. Try a different category."
-                filter="?category=EC&"
+                filter="category=EC&"
               />
             )}
           />
@@ -51,7 +51,7 @@ function App() {
             render={() => (
               <PostsPage 
                 message="No results found. Try a different category."
-                filter="?category=DIY&"
+                filter="category=DIY&"
               />
             )}
           />
