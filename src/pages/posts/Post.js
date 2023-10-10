@@ -1,7 +1,7 @@
 import React from 'react'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosRes } from '../../api/axiosDefaults';
 import { MoreDropdown } from '../../components/MoreDropdown';
 
@@ -13,7 +13,6 @@ const Post = (props) => {
     category,
     comments_count,
     content,
-    created_at,
     image,
     profile_id,
     profile_image,
@@ -27,6 +26,11 @@ const Post = (props) => {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === author
+  const history = useHistory();
+
+  const handleEdit = () => {
+    history.push(`posts/${id}/edit`)
+  }
 
   const handleUpvote = async () => {
     try {
@@ -102,7 +106,7 @@ const Post = (props) => {
             </Link>
             <div className="d-flex align-items-center">
               <span>{updated_at}</span>
-              {is_owner && postPage && <MoreDropdown />}
+              {is_owner && postPage && <MoreDropdown handleEdit={handleEdit}/>}
             </div>
           </Media>
         </Card.Body>

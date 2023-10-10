@@ -12,13 +12,13 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
-export const MoreDropdown = () => {
+export const MoreDropdown = ({handleEdit}) => {
   return(
     <Dropdown className="ml-auto" drop="left">
     <Dropdown.Toggle as={ThreeDots}/>
 
     <Dropdown.Menu className="text-center">
-      <Dropdown.Item onClick={() => {}} aria-label="edit">
+      <Dropdown.Item onClick={handleEdit} aria-label="edit">
         <p>Edit</p>
       </Dropdown.Item>
       <Dropdown.Item onClick={() => {}} aria-label="delete">
