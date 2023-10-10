@@ -96,7 +96,7 @@ const CreatePostForm = () => {
         {errors.image?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>
         )}
-        <Button type="submit">Save</Button>
+        <Button type="submit">Create</Button>
         <Button onClick={() => history.goBack()}>Cancel</Button>
         {errors.non_field_errors?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>

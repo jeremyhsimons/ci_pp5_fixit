@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Button, Container, Form, Image, Alert } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 
 const PostEditForm = () => {
@@ -14,6 +14,22 @@ const PostEditForm = () => {
     image: "",
   });
   const {title, content, category, image} = postData;
+
+  const {id} = useParams();
+
+  useEffect(() => {
+    const handleMount = async () => {
+      try {
+        const {data} = await axiosReq.get(`/posts/${id}/`);
+        const {title, content, category, image, is_owner} = data;
+
+        is_owner ? setPostData({title, content, category, image}) : history.push('/')
+      } catch(err) {
+        console.log(err);
+      }
+    };
+    handleMount();
+  }, [history, id]);
 
   const handleChange = (event) => {
     setPostData({
@@ -39,12 +55,13 @@ const PostEditForm = () => {
     formData.append('title', title)
     formData.append('content', content)
     formData.append('category', category)
-    formData.append('image', inputImage.current.files[0])
+    if (inputImage?.current?.files[0]){
+      formData.append('image', inputImage.current.files[0]);
+    }
 
     try {
-      const {data} = await axiosReq.post(
-        '/posts/', formData);
-      history.push(`/posts/${data.id}`)
+      await axiosReq.put(`/posts/${id}/`, formData);
+      history.push(`/posts/${id}`)
     } catch (err) {
       console.log(err)
       if (err.response?.status !== 401){
