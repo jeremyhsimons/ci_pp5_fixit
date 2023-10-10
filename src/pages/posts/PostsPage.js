@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 
 import Post from "./Post";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 function PostsPage({ message, filter="" }) {
   const [ posts, setPosts ] = useState({result: []});
@@ -58,9 +59,18 @@ function PostsPage({ message, filter="" }) {
         {hasLoaded ? (
           <>
             {posts.results.length ? (
-              posts.results.map(post => (
-                <Post key={post.id} {...post} setPosts={setPosts}/>
-              ))
+              <InfiniteScroll
+                children={
+                  posts.results.map(post => (
+                    <Post key={post.id} {...post} setPosts={setPosts}/>
+                  ))
+                }
+                dataLength={posts.results.length}
+                loader={<h3>Loading...</h3>}
+                hasMore={!!posts.next}
+                next={() => {}}
+              />
+              
             ) : (
               <Container>
                 <h2>{message}</h2>
