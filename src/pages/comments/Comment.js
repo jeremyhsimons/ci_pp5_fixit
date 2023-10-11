@@ -3,6 +3,8 @@ import { Media } from 'react-bootstrap'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
+import { MoreDropdown } from '../../components/MoreDropdown'
+import { axiosRes } from '../../api/axiosDefaults'
 
 const Comment = ({
   profile_id, 
@@ -10,11 +12,32 @@ const Comment = ({
   author, 
   updated_at, 
   content,
-  is_owner,
   upvote_id,
+  id,
+  setPost,
+  setComments,
 }) => {
 
   const currentUser = useCurrentUser();
+  const is_owner = currentUser?.username === author;
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/comments/${id}`);
+      setPost(prevPost => ({
+        results: [{
+          ...prevPost.results[0],
+          comments_count: prevPost.results[0].comments_count - 1
+        }]
+      }));
+      setComments(prevComments => ({
+        ...prevComments,
+        results: prevComments.results.filter((comment) => comment.id !== id)
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div>
@@ -57,6 +80,9 @@ const Comment = ({
               )}
             </div>
           </Media.Body>
+          {is_owner && (
+            <MoreDropdown handleEdit={() => {}} handleDelete={handleDelete}/>
+          )}
         </Media>
       </>
     </div>

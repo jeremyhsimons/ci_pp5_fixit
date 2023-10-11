@@ -53,7 +53,12 @@ const PostPage = () => {
           ) : null}
           {comments.results.length ? (
             comments.results.map(comment => (
-              <Comment key={comment.id} {...comment}/>
+              <Comment 
+                key={comment.id} 
+                {...comment}
+                setPost={setPost}
+                setComments={setComments}
+              />
             ))
           ) : currentUser ? (
             <span>It's pretty quiet here... Why not add a comment?</span>
