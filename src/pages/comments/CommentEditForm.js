@@ -1,4 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { Form } from 'react-bootstrap';
+import { axiosRes } from '../../api/axiosDefaults';
 
 const CommentEditForm = (props) => {
 
@@ -13,7 +15,7 @@ const CommentEditForm = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axiosRes.put(`/comments/${id}/`, {
+      await axiosRes.put(`/comments/${id}`, {
         content: formContent.trim(),
       });
       setComments((prevComments) => ({
@@ -38,7 +40,7 @@ const CommentEditForm = (props) => {
     <Form onSubmit={handleSubmit}>
       <Form.Group className="pr-1">
         <Form.Control
-          className={styles.Form}
+          className=""
           as="textarea"
           value={formContent}
           onChange={handleChange}
@@ -47,14 +49,14 @@ const CommentEditForm = (props) => {
       </Form.Group>
       <div className="text-right">
         <button
-          className={styles.Button}
+          className=""
           onClick={() => setShowEditForm(false)}
           type="button"
         >
           cancel
         </button>
         <button
-          className={styles.Button}
+          className=""
           disabled={!content.trim()}
           type="submit"
         >
@@ -62,7 +64,7 @@ const CommentEditForm = (props) => {
         </button>
       </div>
     </Form>
-  )
+  );
 }
 
-export default CommentEditForm
+export default CommentEditForm;

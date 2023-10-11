@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Media } from 'react-bootstrap'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import { MoreDropdown } from '../../components/MoreDropdown'
 import { axiosRes } from '../../api/axiosDefaults'
+import CommentEditForm from './CommentEditForm'
 
 const Comment = ({
   profile_id, 
@@ -13,6 +14,7 @@ const Comment = ({
   updated_at, 
   content,
   upvote_id,
+  upvotes_count,
   id,
   setPost,
   setComments,
@@ -20,6 +22,7 @@ const Comment = ({
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === author;
+  const [ showEditForm, setShowEditForm] = useState(false);
 
   const handleDelete = async () => {
     try {
@@ -50,7 +53,18 @@ const Comment = ({
           <Media.Body className="align-self-center ml-2">
             <span className="">{author}</span>
             <span className="">{updated_at}</span>
-            <p>{content}</p>
+            {showEditForm ? (
+              <CommentEditForm
+                id={id}
+                profile_id={profile_id}
+                content={content}
+                profileImage={profile_image}
+                setComments={setComments}
+                setShowEditForm={setShowEditForm}
+              />
+            ) : (
+              <p>{content}</p>
+            )}
             <div>
               {is_owner ? (
                 <OverlayTrigger
@@ -78,10 +92,14 @@ const Comment = ({
                   {/* handles users not logged in, and can't upvote */}
                 </OverlayTrigger>
               )}
+              {upvotes_count}
             </div>
           </Media.Body>
-          {is_owner && (
-            <MoreDropdown handleEdit={() => {}} handleDelete={handleDelete}/>
+          {is_owner && !showEditForm && (
+            <MoreDropdown 
+              handleEdit={() => setShowEditForm(true)} 
+              handleDelete={handleDelete}
+            />
           )}
         </Media>
       </>
