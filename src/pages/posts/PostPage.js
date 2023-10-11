@@ -8,6 +8,8 @@ import { Container } from 'react-bootstrap';
 import CommentForm from '../comments/CommentForm';
 import Comment from '../comments/Comment';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import { fetchMoreData } from '../../utils/utils';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 const PostPage = () => {
   const {id} = useParams();
@@ -52,14 +54,17 @@ const PostPage = () => {
             "Comments"
           ) : null}
           {comments.results.length ? (
-            comments.results.map(comment => (
-              <Comment 
-                key={comment.id} 
-                {...comment}
-                setPost={setPost}
-                setComments={setComments}
-              />
-            ))
+            <InfiniteScroll
+              children={
+                  comments.results.map(comment => (
+                      <Comment key={comment.id} {...comment} setPost={setPost} setComments={setComments} />
+                  ))
+              }
+              dataLength={comments.results.length}
+              loader={<p>Loading...</p>}
+              hasMore={!!comments.next}
+              next={() => fetchMoreData(comments, setComments)}
+            />
           ) : currentUser ? (
             <span>It's pretty quiet here... Why not add a comment?</span>
           ) : (
