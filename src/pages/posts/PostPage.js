@@ -6,6 +6,7 @@ import Post from './Post';
 import { Container } from 'react-bootstrap';
 
 import CommentForm from '../comments/CommentForm';
+import Comment from '../comments/Comment';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
 const PostPage = () => {
@@ -52,9 +53,7 @@ const PostPage = () => {
           ) : null}
           {comments.results.length ? (
             comments.results.map(comment => (
-              <p key={comment.id}>
-                {comment.author}: {comment.content}
-              </p>
+              <Comment key={comment.id} {...comment}/>
             ))
           ) : currentUser ? (
             <span>It's pretty quiet here... Why not add a comment?</span>
