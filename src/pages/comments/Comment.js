@@ -1,14 +1,21 @@
 import React from 'react'
 import { Media } from 'react-bootstrap'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import { OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { useCurrentUser } from '../../contexts/CurrentUserContext'
 
 const Comment = ({
   profile_id, 
-    profile_image, 
-    author, 
-    updated_at, 
-    content,
+  profile_image, 
+  author, 
+  updated_at, 
+  content,
+  is_owner,
+  upvote_id,
 }) => {
+
+  const currentUser = useCurrentUser();
+
   return (
     <div>
       <>
@@ -21,6 +28,34 @@ const Comment = ({
             <span className="">{author}</span>
             <span className="">{updated_at}</span>
             <p>{content}</p>
+            <div>
+              {is_owner ? (
+                <OverlayTrigger
+                  placement="top"
+                  overlay={<Tooltip>You can't upvote your own comment!</Tooltip>}
+                >
+                  <i className="fa-regular fa-hand-point-up"></i>
+                </OverlayTrigger>
+              ) : upvote_id ? (
+                <span onClick={() => {}}>
+                  <i className="fa-solid fa-hand-point-up"></i>
+                  {/* Handles un-upvoting the comment */}
+                </span>
+              ) : currentUser ? (
+                <span onClick={() => {}}>
+                  <i className="fa-regular fa-hand-point-up"></i>
+                  {/* Handles upvoting the comment */}
+                </span>
+              ) : (
+                <OverlayTrigger
+                  placement="top"
+                  overlay={<Tooltip>Log in to upvote comments!</Tooltip>}
+                >
+                  <i className="fa-regular fa-hand-point-up"></i>
+                  {/* handles users not logged in, and can't upvote */}
+                </OverlayTrigger>
+              )}
+            </div>
           </Media.Body>
         </Media>
       </>
