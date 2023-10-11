@@ -42,6 +42,14 @@ const Comment = ({
     }
   };
 
+  const handleUpvote = async () => {
+    try {
+      const {data} = await axiosRes.post('/comment-upvotes/', {post:id})
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
   return (
     <div>
       <>
