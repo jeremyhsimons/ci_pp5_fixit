@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Row } from 'react-bootstrap'
+import { Col, Row, Container } from 'react-bootstrap'
 import PopularProfiles from './PopularProfiles'
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
