@@ -12,6 +12,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import Post from "./Post";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function PostsPage({ message, filter="" }) {
   const [ posts, setPosts ] = useState({result: []});
@@ -43,7 +44,7 @@ function PostsPage({ message, filter="" }) {
   return (
     <Row className="h-100">
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-        <p>Popular profiles for desktop</p>
+        <PopularProfiles />
       </Col>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles mobile</p>
