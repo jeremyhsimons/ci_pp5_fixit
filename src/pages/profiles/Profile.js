@@ -11,6 +11,15 @@ const Profile = (props) => {
 
   return (
     <div className={`my-3 d-flex align-items-center ${mobile && "flex-column"}`}>
+      <div className={`text-left ${!mobile && "mr-auto"}`}>
+        {!mobile && currentUser && !is_owner && (
+          star_id ? (
+            <Button onClick={() => {}}>un-star</Button>
+          ) : (
+            <Button onClick={() => {}}>star</Button>
+          )
+        )}
+      </div>
       <div>
         <Link className="align-self-center" to={`/profiles/${id}`}>
           IMG
@@ -24,15 +33,7 @@ const Profile = (props) => {
           <span> | <i class="fa-regular fa-star"></i> {stars_count}</span>
         )}
       </div>
-      <div className={`text-right ${!mobile && "ml-auto"}`}>
-        {!mobile && currentUser && !is_owner && (
-          star_id ? (
-            <Button onClick={() => {}}>un-star</Button>
-          ) : (
-            <Button onClick={() => {}}>star</Button>
-          )
-        )}
-      </div>
+      
     </div>
   )
 }
