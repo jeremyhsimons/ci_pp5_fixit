@@ -44,7 +44,31 @@ const Comment = ({
 
   const handleUpvote = async () => {
     try {
-      const {data} = await axiosRes.post('/comment-upvotes/', {post:id})
+      const {data} = await axiosRes.post('/comment-upvotes/', {comment:id})
+      setComments((prevComments) => ({
+        ...prevComments,
+        results: prevComments.results.map((comment) => {
+          return comment.id === comment
+          ? {...comment, upvotes_count: comment.upvotes_count + 1, upvote_id: data.id}
+          : comment;
+        })
+      }))
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
+  const handleRemoveUpvote = async () => {
+    try {
+      await axiosRes.delete(`/comment-upvotes/${upvote_id}/`)
+      setComments((prevComments) => ({
+        ...prevComments,
+        results: prevComments.results.map((comment) => {
+          return comment.id === id
+          ? {...comment, upvotes_count: comment.upvotes_count - 1, upvote_id: null}
+          : comment;
+        })
+      }))
     } catch(err) {
       console.log(err)
     }
@@ -82,12 +106,12 @@ const Comment = ({
                   <i className="fa-regular fa-hand-point-up"></i>
                 </OverlayTrigger>
               ) : upvote_id ? (
-                <span onClick={() => {}}>
+                <span onClick={handleRemoveUpvote}>
                   <i className="fa-solid fa-hand-point-up"></i>
                   {/* Handles un-upvoting the comment */}
                 </span>
               ) : currentUser ? (
-                <span onClick={() => {}}>
+                <span onClick={handleUpvote}>
                   <i className="fa-regular fa-hand-point-up"></i>
                   {/* Handles upvoting the comment */}
                 </span>
