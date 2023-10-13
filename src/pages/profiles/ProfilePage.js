@@ -5,10 +5,14 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useProfileData, useSetProfileData } from '../../contexts/ProfileDataContext';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import Post from '../posts/Post';
+import { fetchMoreData } from '../../utils/utils';
 
 const ProfilePage = () => {
 
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [profilePosts, setProfilePosts] = useState({results: []})
   const currentUser = useCurrentUser();
   const {id} = useParams();
   const setProfileData = useSetProfileData();
@@ -19,13 +23,16 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [{data: pageProfile}] = await Promise.all([
-          axiosReq.get(`/profiles/${id}/`)
+        const [{data: pageProfile}, {data: profilePosts}] = await Promise.all([
+          axiosReq.get(`/profiles/${id}/`),
+          axiosReq.get(`/posts/?author__profile=${id}`),
         ])
         setProfileData(prevState => ({
           ...prevState,
           pageProfile: {results: [pageProfile]}
         }));
+
+        setProfilePosts(profilePosts);
         setHasLoaded(true);
       } catch (err) {
         console.log(err)
@@ -37,8 +44,7 @@ const ProfilePage = () => {
 
   const mainProfile = (
     <div>
-      <p>This is a profile</p>
-      <p>{profile?.profile_owner}</p>
+      <h2>{profile?.profile_owner}'s Profile</h2>
       <p>{profile?.status}</p>
       <Image src={profile?.image}/>
       <p>{profile?.bio}</p>
@@ -58,7 +64,22 @@ const ProfilePage = () => {
 
   const mainProfilePosts = (
     <div>
-      <p>The posts for this profile will go here.</p>
+      <h3>Posts by {profile?.profile_owner}</h3>
+      {profilePosts?.results.length ? (
+        <InfiniteScroll
+          children={
+            profilePosts.results.map(post => (
+              <Post key={post.id} {...post} setPosts={setProfilePosts}/>
+            ))
+          }
+          dataLength={profilePosts.results.length}
+          loader={<h3>Loading...</h3>}
+          hasMore={!!profilePosts.next}
+          next={() => fetchMoreData(profilePosts, setProfilePosts)}
+        />
+      ) : (
+        <h4>This user hasn't posted yet</h4>
+      )}
     </div>
   )
 
