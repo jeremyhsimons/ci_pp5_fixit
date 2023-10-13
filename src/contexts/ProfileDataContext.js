@@ -19,15 +19,15 @@ export const ProfileDataProvider = ({children}) => {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const {data} = await axiosReq.get("/profiles/?ordering=-stars_count")
+        const {data} = await axiosReq.get("/profiles/?ordering=-stars_count");
         setProfileData(prevState => ({
           ...prevState,
           popularProfiles: data,
-        }))
+        }));
       } catch (err) {
-        console.log(err)
+        console.log(err);
       }
-    }
+    };
 
     handleMount();
   }, [currentUser]);
