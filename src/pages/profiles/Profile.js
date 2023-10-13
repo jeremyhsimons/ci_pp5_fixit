@@ -28,9 +28,9 @@ const Profile = (props) => {
       <div className='mx-2'>
         <strong>{profile_owner}</strong>
         {star_id ? (
-          <span> | <i className="fa-solid fa-star"></i> {stars_count}</span>
+          <span> <i className="fa-solid fa-star"></i> {stars_count}</span>
         ) : (
-          <span> | <i class="fa-regular fa-star"></i> {stars_count}</span>
+          <span> <i class="fa-regular fa-star"></i> {stars_count}</span>
         )}
       </div>
       

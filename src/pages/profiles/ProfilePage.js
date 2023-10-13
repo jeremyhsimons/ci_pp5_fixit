@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Row, Container, Image } from 'react-bootstrap'
+import { Col, Row, Container, Image, Button } from 'react-bootstrap'
 import PopularProfiles from './PopularProfiles'
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
@@ -44,6 +44,15 @@ const ProfilePage = () => {
       <p>{profile?.bio}</p>
       <p>Posts: {profile?.posts_count}</p>
       <p>Stars: {profile?.stars_count}</p>
+      <div>
+        {currentUser && !is_owner && (
+          profile?.star_id ? (
+            <Button onClick={() => {}}>un-star</Button>
+          ) : (
+            <Button onClick={() => {}}>star</Button>
+          )
+        )}
+      </div>
     </div>
   )
 
