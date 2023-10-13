@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 import { axiosReq } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
-const PopularProfiles = () => {
+const PopularProfiles = ({mobile}) => {
 
   const [profileData, setProfileData] = useState({
     pageProfile: { results: [] },
@@ -29,13 +29,21 @@ const PopularProfiles = () => {
   }, [currentUser])
 
   return (
-    <Container>
+    <Container className={`${mobile && "d-lg-none text-center mb-3"}`}>
       {popularProfiles.results.length ? (
         <>
           <p>Trending contributors:</p>
-          {popularProfiles.results.map(profile => (
-            <p key={profile.id}>{profile.profile_owner}</p>
-          ))}
+          {mobile ? (
+            <div className="d-flex justify-content-around">
+              {popularProfiles.results.slice(0, 4).map(profile => (
+                <p key={profile.id}>{profile.profile_owner}</p>
+              ))}
+            </div>
+          ) : (
+            popularProfiles.results.map(profile => (
+              <p key={profile.id}>{profile.profile_owner}</p>
+            ))
+          )}
         </>
       ) : (
         <p>Loading...</p>

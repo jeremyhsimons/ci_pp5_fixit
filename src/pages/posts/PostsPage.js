@@ -47,7 +47,7 @@ function PostsPage({ message, filter="" }) {
         <PopularProfiles />
       </Col>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Popular profiles mobile</p>
+        <PopularProfiles mobile/>
         <i className="fas fa-search"></i>
         <Form className="" onSubmit={(event) => event.preventDefault()}>
           <Form.Control
