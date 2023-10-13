@@ -12,6 +12,18 @@ const ProfilePage = () => {
     setHasLoaded(true);
   })
 
+  const mainProfile = (
+    <div>
+      <p>This is a profle</p>
+    </div>
+  )
+
+  const mainProfilePosts = (
+    <div>
+      <p>The posts for this profile will go here.</p>
+    </div>
+  )
+
   return (
     <Row>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
@@ -20,8 +32,14 @@ const ProfilePage = () => {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile/>
         <Container>
-          <p>profile will go here</p>
-          <p>profile posts will go here</p>
+          {hasLoaded ? (
+            <>
+              {mainProfile}
+              {mainProfilePosts}
+            </>
+          ) : (
+            <h3>Loading...</h3>
+          )}
         </Container>
       </Col>
     </Row>
