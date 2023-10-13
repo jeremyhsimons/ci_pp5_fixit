@@ -30,10 +30,17 @@ const PopularProfiles = () => {
 
   return (
     <Container>
-      <p>Trending contributors:</p>
-      {popularProfiles.results.map(profile => (
-        <p key={profile.id}>{profile.profile_owner}</p>
-      ))}
+      {popularProfiles.results.length ? (
+        <>
+          <p>Trending contributors:</p>
+          {popularProfiles.results.map(profile => (
+            <p key={profile.id}>{profile.profile_owner}</p>
+          ))}
+        </>
+      ) : (
+        <p>Loading...</p>
+      )}
+      
     </Container>
   )
 }
