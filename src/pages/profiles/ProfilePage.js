@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import PopularProfiles from './PopularProfiles'
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
 const ProfilePage = () => {
+
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const currentUser = useCurrentUser();
+
+  useEffect(() => {
+    setHasLoaded(true);
+  })
+
   return (
     <Row>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
