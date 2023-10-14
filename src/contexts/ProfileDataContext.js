@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { axiosReq } from "../api/axiosDefaults";
+import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useCurrentUser } from "./CurrentUserContext";
 
 export const ProfileDataContext = createContext();
@@ -15,6 +15,32 @@ export const ProfileDataProvider = ({children}) => {
     popularProfiles: { results: [] },
   });
   const currentUser = useCurrentUser();
+
+  const handleStar = async (clickedProfile) => {
+    try {
+      const {data} = await axiosRes.post('/stars/', {profile: clickedProfile.id})
+      setProfileData((prevState) => ({
+        ...prevState,
+        pageProfile: {
+          results: prevState.pageProfile.results.map((profile) => {
+            return profile.id === clickedProfile.id
+            ? {...profile, stars_count: profile.stars_count + 1, star_id: data.id}
+            : profile;
+          })
+        },
+        popularProfiles: {
+          ...prevState.popularProfiles,
+          results: prevState.popularProfiles.results.map((profile) => {
+            return profile.id === clickedProfile.id
+            ? {...profile, stars_count: profile.stars_count + 1, star_id: data.id}
+            : profile;
+          })
+        }
+      }))
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
   useEffect(() => {
     const handleMount = async () => {
@@ -34,7 +60,7 @@ export const ProfileDataProvider = ({children}) => {
 
   return (
     <ProfileDataContext.Provider value={profileData}>
-      <SetProfileDataContext.Provider value={setProfileData}>
+      <SetProfileDataContext.Provider value={{setProfileData, handleStar}}>
         {children}
       </SetProfileDataContext.Provider>
     </ProfileDataContext.Provider>
