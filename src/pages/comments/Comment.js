@@ -48,7 +48,7 @@ const Comment = ({
       setComments((prevComments) => ({
         ...prevComments,
         results: prevComments.results.map((comment) => {
-          return comment.id === comment
+          return comment.id === id
           ? {...comment, upvotes_count: comment.upvotes_count + 1, upvote_id: data.id}
           : comment;
         })
