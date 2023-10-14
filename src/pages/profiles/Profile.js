@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { Button } from 'react-bootstrap';
 import { useSetProfileData } from '../../contexts/ProfileDataContext';
 
+import buttonStyles from '../../styles/Button.module.css'
+
 const Profile = (props) => {
   const {profile, mobile, imageSize=55} = props;
   const {id, star_id, stars_count, image, profile_owner} = profile;
@@ -16,9 +18,19 @@ const Profile = (props) => {
       <div className={`text-left ${!mobile && "mr-auto"}`}>
         {!mobile && currentUser && !is_owner && (
           star_id ? (
-            <Button onClick={() => handleUnStar(profile)}>un-star</Button>
+            <Button
+              className={buttonStyles.ActiveButton}
+              onClick={() => handleUnStar(profile)}
+            >
+              un-star
+            </Button>
           ) : (
-            <Button onClick={() => handleStar(profile)}>star</Button>
+            <Button
+              className={buttonStyles.Button}
+              onClick={() => handleStar(profile)}
+            >
+              star
+            </Button>
           )
         )}
       </div>

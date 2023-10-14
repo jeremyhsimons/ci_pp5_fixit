@@ -1,0 +1,27 @@
+.Button {
+  color: #D8D5DB;
+  background-color: #2D3142;
+  border: solid 1px #931aad;
+  border-radius: 20px;
+}
+
+.Button:hover {
+  color: #D8D5DB;
+  background-color: #931aad;
+  border: solid 1px #931aad;
+  border-radius: 20px;
+}
+
+.ActiveButton {
+  color: #2D3142;
+  background-color: #D8D5DB;
+  border: solid 1px #931aad;
+  border-radius: 20px;
+}
+
+.ActiveButton:hover {
+  color: #D8D5DB;
+  background-color: #931aad;
+  border: solid 1px #931aad;
+  border-radius: 20px;
+}

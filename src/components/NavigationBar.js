@@ -26,7 +26,7 @@ const NavigationBar = () => {
   const filterOptions = (
     <>
       <div className={`${appStyles.Main} ${styles.PostTypes} d-flex align-items-center`}>
-        <Container className='d-flex align-items-center'>
+        <Container className='d-flex align-items-center justify-content-center'>
           <NavLink 
             className={styles.NavLink} 
             activeClassName={styles.Active}
