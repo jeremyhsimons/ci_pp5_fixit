@@ -2,8 +2,10 @@ import React, { useRef, useState } from 'react'
 import { Button, Container, Form, Image, Alert } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
+import { useRedirect } from '../../hooks/useRedirect';
 
 const CreatePostForm = () => {
+  useRedirect('loggedOut');
   const [errors, setErrors] = useState({});
   const history = useHistory();
   const inputImage = useRef(null);
