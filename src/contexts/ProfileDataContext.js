@@ -42,6 +42,32 @@ export const ProfileDataProvider = ({children}) => {
     }
   }
 
+  const handleUnStar = async (clickedProfile) => {
+    try {
+      await axiosRes.delete(`/stars/${clickedProfile.star_id}/`)
+      setProfileData((prevState) => ({
+        ...prevState,
+        pageProfile: {
+          results: prevState.pageProfile.results.map((profile) => {
+            return profile.id === clickedProfile.id
+            ? {...profile, stars_count: profile.stars_count - 1, star_id: null}
+            : profile;
+          })
+        },
+        popularProfiles: {
+          ...prevState.popularProfiles,
+          results: prevState.popularProfiles.results.map((profile) => {
+            return profile.id === clickedProfile.id
+            ? {...profile, stars_count: profile.stars_count - 1, star_id: null}
+            : profile;
+          })
+        }
+      }))
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -60,7 +86,7 @@ export const ProfileDataProvider = ({children}) => {
 
   return (
     <ProfileDataContext.Provider value={profileData}>
-      <SetProfileDataContext.Provider value={{setProfileData, handleStar}}>
+      <SetProfileDataContext.Provider value={{setProfileData, handleStar, handleUnStar}}>
         {children}
       </SetProfileDataContext.Provider>
     </ProfileDataContext.Provider>

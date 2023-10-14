@@ -9,14 +9,14 @@ const Profile = (props) => {
   const {id, star_id, stars_count, image, profile_owner} = profile;
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === profile_owner;
-  const {handleStar} = useSetProfileData();
+  const {handleStar, handleUnStar} = useSetProfileData();
 
   return (
     <div className={`my-3 d-flex align-items-center ${mobile && "flex-column"}`}>
       <div className={`text-left ${!mobile && "mr-auto"}`}>
         {!mobile && currentUser && !is_owner && (
           star_id ? (
-            <Button onClick={() => {}}>un-star</Button>
+            <Button onClick={() => handleUnStar(profile)}>un-star</Button>
           ) : (
             <Button onClick={() => handleStar(profile)}>star</Button>
           )

@@ -15,7 +15,7 @@ const ProfilePage = () => {
   const [profilePosts, setProfilePosts] = useState({results: []})
   const currentUser = useCurrentUser();
   const {id} = useParams();
-  const {setProfileData, handleStar} = useSetProfileData();
+  const {setProfileData, handleStar, handleUnStar} = useSetProfileData();
   const {pageProfile} = useProfileData();
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.profile_owner;
@@ -53,7 +53,7 @@ const ProfilePage = () => {
       <div>
         {currentUser && !is_owner && (
           profile?.star_id ? (
-            <Button onClick={() => {}}>un-star</Button>
+            <Button onClick={() => handleUnStar(profile)}>un-star</Button>
           ) : (
             <Button onClick={() => handleStar(profile)}>star</Button>
           )
