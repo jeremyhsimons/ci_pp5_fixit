@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Col, Form, Row, Image, Container } from 'react-bootstrap'
+import { Col, Form, Row, Image, Container, Button } from 'react-bootstrap'
 import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { axiosReq } from '../../api/axiosDefaults';
 
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();
@@ -48,7 +49,7 @@ const ProfileEditForm = () => {
   };
 
   return (
-    <Form>
+    <Form onSubmit={() => {}}>
       <Row>
         <Col className='text-center' md={6}>
           <Form.Group>
@@ -105,18 +106,22 @@ const ProfileEditForm = () => {
         </Col>
       </Row>
       <Row>
-        <Col sm={6}>
-          <Button
-            className="text-center"
-            onClick={() => history.goBack()}
-          >
-            cancel
-          </Button>
+        <Col className="ml-auto" sm={6}>
+          <Container>
+            <Button
+              className="text-center"
+              onClick={() => history.goBack()}
+            >
+              cancel
+            </Button>
+          </Container>
         </Col>
         <Col sm={6}>
-          <Button className="text-center" type="submit">
-            save
-          </Button>
+          <Container>
+            <Button className="mr-auto text-center" type="submit">
+              save
+            </Button>
+          </Container>
         </Col>
       </Row>
     </Form>
