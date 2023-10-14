@@ -48,6 +48,30 @@ const ProfileEditForm = () => {
     });
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("bio", bio);
+    formData.append("category", category);
+
+    if (imageFile?.current?.files[0]) {
+      formData.append("image", imageFile?.current?.files[0]);
+    }
+
+    try {
+      const { data } = await axiosReq.put(`/profiles/${id}/`, formData);
+      setCurrentUser((currentUser) => ({
+        ...currentUser,
+        profile_image: data.image,
+      }));
+      history.goBack();
+    } catch (err) {
+      console.log(err);
+      setErrors(err.response?.data);
+    }
+  };
+
   return (
     <Form onSubmit={() => {}}>
       <Row>
