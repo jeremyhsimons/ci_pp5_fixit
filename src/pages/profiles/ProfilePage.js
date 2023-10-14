@@ -21,6 +21,11 @@ const ProfilePage = () => {
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.profile_owner;
 
+  const askMeStatus = () => {
+    return (
+      <span>ask me anything</span>
+    )
+  }
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -47,7 +52,12 @@ const ProfilePage = () => {
     <div>
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <h2>{profile?.profile_owner}'s Profile</h2>
-      <p>{profile?.status}</p>
+      <strong>Status: </strong>
+      {profile?.status === "AME" ? (<span>Ask Me anything</span>) : (<span></span>)}
+      {profile?.status === "JB" ? (<span>Just Browsing</span>) : (<span></span>)}
+      {profile?.status === "LFH" ? (<span>Looking For Help</span>) : (<span></span>)}
+      {profile?.status === "SME" ? (<span>Subject Matter Expert</span>) : (<span></span>)}
+      {profile?.status === "NA" ? (<span>Not Active</span>) : (<span></span>)}
       <Image src={profile?.image}/>
       <p>{profile?.bio}</p>
       <p>Posts: {profile?.posts_count}</p>

@@ -15,10 +15,10 @@ const ProfileEditForm = () => {
   const [profileData, setProfileData] = useState({
     name: "",
     bio: "",
-    category: "",
+    status: "",
     image: "",
   });
-  const { name, bio, category, image } = profileData;
+  const { name, bio, status, image } = profileData;
 
   const [errors, setErrors] = useState({});
 
@@ -27,8 +27,8 @@ const ProfileEditForm = () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {
           const { data } = await axiosReq.get(`/profiles/${id}/`);
-          const { name, bio, category, image } = data;
-          setProfileData({ name, bio, category, image });
+          const { name, bio, status, image } = data;
+          setProfileData({ name, bio, status, image });
         } catch (err) {
           console.log(err);
           history.push("/");
@@ -53,7 +53,7 @@ const ProfileEditForm = () => {
     const formData = new FormData();
     formData.append("name", name);
     formData.append("bio", bio);
-    formData.append("category", category);
+    formData.append("status", status);
 
     if (imageFile?.current?.files[0]) {
       formData.append("image", imageFile?.current?.files[0]);
@@ -73,7 +73,7 @@ const ProfileEditForm = () => {
   };
 
   return (
-    <Form onSubmit={() => {}}>
+    <Form onSubmit={handleSubmit}>
       <Row>
         <Col className='text-center' md={6}>
           <Form.Group>
@@ -82,7 +82,7 @@ const ProfileEditForm = () => {
               as="textarea"
               value={bio}
               onChange={handleChange}
-              name="content"
+              name="bio"
               rows={7}
             />
           </Form.Group>
@@ -93,7 +93,7 @@ const ProfileEditForm = () => {
           ))}
           <Form.Group>
             <Form.Label>Category</Form.Label>
-            <Form.Control as="select" name="category" value={category} onChange={handleChange}>
+            <Form.Control as="select" name="status" value={status} onChange={handleChange}>
               <option value="">Select...</option>
               <option value="LFH">Looking for help</option>
               <option value="SME">Subject matter expert</option>
