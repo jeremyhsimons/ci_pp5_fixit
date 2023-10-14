@@ -2,7 +2,20 @@ import React from 'react'
 import { Col, Form, Row } from 'react-bootstrap'
 
 const ProfileEditForm = () => {
+  const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
+  const { id } = useParams();
+  const history = useHistory();
+  const imageFile = useRef();
 
+  const [profileData, setProfileData] = useState({
+    name: "",
+    content: "",
+    image: "",
+  });
+  const { name, content, image } = profileData;
+
+  const [errors, setErrors] = useState({});
 
   return (
     <Form>
