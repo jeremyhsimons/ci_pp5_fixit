@@ -8,6 +8,7 @@ import { useProfileData, useSetProfileData } from '../../contexts/ProfileDataCon
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Post from '../posts/Post';
 import { fetchMoreData } from '../../utils/utils';
+import { ProfileEditDropdown } from '../../components/MoreDropdown';
 
 const ProfilePage = () => {
 
@@ -44,6 +45,7 @@ const ProfilePage = () => {
 
   const mainProfile = (
     <div>
+      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <h2>{profile?.profile_owner}'s Profile</h2>
       <p>{profile?.status}</p>
       <Image src={profile?.image}/>
