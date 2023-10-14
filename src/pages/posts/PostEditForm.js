@@ -90,6 +90,7 @@ const PostEditForm = () => {
         <Form.Group>
           <Form.Label>Category</Form.Label>
           <Form.Control as="select" name="category" value={category} onChange={handleChange}>
+            <option value="">Select...</option>
             <option value="BC">Bikes and Cars</option>
             <option value="EC">Electronics</option>
             <option value="DIY">DIY</option>
