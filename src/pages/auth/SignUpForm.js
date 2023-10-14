@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
 import { useRedirect } from '../../hooks/useRedirect';
 
+import buttonStyles from '../../styles/Button.module.css'
+
 const SignUpForm = () => {
   useRedirect('loggedIn');
   const [signUpData, setSignUpData] = useState({
@@ -81,7 +83,7 @@ const SignUpForm = () => {
             {errors.password2?.map((message, idx) =>
               <Alert variant="warning" key={idx}>{message}</Alert>
             )}
-            <Button variant="primary" type="submit">
+            <Button className={buttonStyles.Button} variant="primary" type="submit">
                 Submit
             </Button>
             {errors.non_field_errors?.map((message, idx) =>

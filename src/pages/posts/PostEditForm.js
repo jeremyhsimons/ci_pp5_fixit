@@ -3,6 +3,8 @@ import { Button, Container, Form, Image, Alert } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 
+import buttonStyles from '../../styles/Button.module.css'
+
 const PostEditForm = () => {
   const [errors, setErrors] = useState({});
   const history = useHistory();
@@ -114,8 +116,8 @@ const PostEditForm = () => {
         {errors.image?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>
         )}
-        <Button type="submit">Save</Button>
-        <Button onClick={() => history.goBack()}>Cancel</Button>
+        <Button className={buttonStyles.Button} type="submit">Save</Button>
+        <Button className={buttonStyles.Button} onClick={() => history.goBack()}>Cancel</Button>
         {errors.non_field_errors?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>
         )}

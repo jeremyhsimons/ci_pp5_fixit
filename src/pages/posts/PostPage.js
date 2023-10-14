@@ -3,13 +3,14 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 import Post from './Post';
 
-import { Container } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 import CommentForm from '../comments/CommentForm';
 import Comment from '../comments/Comment';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { fetchMoreData } from '../../utils/utils';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import PopularProfiles from '../profiles/PopularProfiles';
 
 const PostPage = () => {
   const {id} = useParams();
@@ -38,39 +39,45 @@ const PostPage = () => {
 
   return (
     <div>
-      <p>Popular profiles component for mobiles</p>
-      <Post {...post.results[0]} setPost={setPost} postPage />
-      <Container className="">
-          {currentUser ? (
-            <CommentForm
-              profile_id={currentUser.profile_id}
-              profileImage={profile_image}
-              post={id}
-              setPost={setPost}
-              setComments={setComments}
-            />
-          ) : comments.results.length ? (
-            "Comments"
-          ) : null}
-          {comments.results.length ? (
-            <InfiniteScroll
-              children={
-                  comments.results.map(comment => (
-                      <Comment key={comment.id} {...comment} setPost={setPost} setComments={setComments} />
-                  ))
-              }
-              dataLength={comments.results.length}
-              loader={<p>Loading...</p>}
-              hasMore={!!comments.next}
-              next={() => fetchMoreData(comments, setComments)}
-            />
-          ) : currentUser ? (
-            <span>It's pretty quiet here... Why not add a comment?</span>
-          ) : (
-            <span>No comments yet.</span>
-          )}
-        </Container>
-      <p>Popular profiles component for desktop</p>
+      <Row>
+        <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+          <PopularProfiles />
+        </Col>
+        <Col className="py-2 p-0 p-lg-2" lg={8}>
+          <PopularProfiles mobile/>
+          <Post {...post.results[0]} setPost={setPost} postPage />
+          <Container className="">
+              {currentUser ? (
+                <CommentForm
+                  profile_id={currentUser.profile_id}
+                  profileImage={profile_image}
+                  post={id}
+                  setPost={setPost}
+                  setComments={setComments}
+                />
+              ) : comments.results.length ? (
+                "Comments"
+              ) : null}
+              {comments.results.length ? (
+                <InfiniteScroll
+                  children={
+                      comments.results.map(comment => (
+                          <Comment key={comment.id} {...comment} setPost={setPost} setComments={setComments} />
+                      ))
+                  }
+                  dataLength={comments.results.length}
+                  loader={<p>Loading...</p>}
+                  hasMore={!!comments.next}
+                  next={() => fetchMoreData(comments, setComments)}
+                />
+              ) : currentUser ? (
+                <span>It's pretty quiet here... Why not add a comment?</span>
+              ) : (
+                <span>No comments yet.</span>
+              )}
+            </Container>
+          </Col>
+        </Row>
     </div>
   )
 }

@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/useRedirect';
 
+import buttonStyles from '../../styles/Button.module.css'
+
 const CreatePostForm = () => {
   useRedirect('loggedOut');
   const [errors, setErrors] = useState({});
@@ -99,8 +101,8 @@ const CreatePostForm = () => {
         {errors.image?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>
         )}
-        <Button type="submit">Create</Button>
-        <Button onClick={() => history.goBack()}>Cancel</Button>
+        <Button className={buttonStyles.Button} type="submit">Create</Button>
+        <Button className={buttonStyles.Button} onClick={() => history.goBack()}>Cancel</Button>
         {errors.non_field_errors?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>
         )}
