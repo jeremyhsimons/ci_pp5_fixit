@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Col, Form, Row, Image } from 'react-bootstrap'
+import { Col, Form, Row, Image, Container } from 'react-bootstrap'
 import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -13,10 +13,11 @@ const ProfileEditForm = () => {
 
   const [profileData, setProfileData] = useState({
     name: "",
-    content: "",
+    bio: "",
+    category: "",
     image: "",
   });
-  const { name, content, image } = profileData;
+  const { name, bio, category, image } = profileData;
 
   const [errors, setErrors] = useState({});
 
@@ -25,8 +26,8 @@ const ProfileEditForm = () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {
           const { data } = await axiosReq.get(`/profiles/${id}/`);
-          const { name, content, image } = data;
-          setProfileData({ name, content, image });
+          const { name, bio, category, image } = data;
+          setProfileData({ name, bio, category, image });
         } catch (err) {
           console.log(err);
           history.push("/");
@@ -54,7 +55,7 @@ const ProfileEditForm = () => {
           <Form.Label>Bio</Form.Label>
             <Form.Control
               as="textarea"
-              value={content}
+              value={bio}
               onChange={handleChange}
               name="content"
               rows={7}
@@ -101,6 +102,21 @@ const ProfileEditForm = () => {
                 }}
               />
           </Form.Group>
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={6}>
+          <Button
+            className="text-center"
+            onClick={() => history.goBack()}
+          >
+            cancel
+          </Button>
+        </Col>
+        <Col sm={6}>
+          <Button className="text-center" type="submit">
+            save
+          </Button>
         </Col>
       </Row>
     </Form>
