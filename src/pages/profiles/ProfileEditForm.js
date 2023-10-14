@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Col, Form, Row, Image, Container, Button } from 'react-bootstrap'
+import { Col, Form, Row, Image, Container, Button, Alert } from 'react-bootstrap'
 import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -86,6 +86,11 @@ const ProfileEditForm = () => {
               rows={7}
             />
           </Form.Group>
+          {errors?.bio?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
           <Form.Group>
             <Form.Label>Category</Form.Label>
             <Form.Control as="select" name="category" value={category} onChange={handleChange}>
@@ -97,6 +102,11 @@ const ProfileEditForm = () => {
               <option value="NA">Not active</option>
             </Form.Control>
           </Form.Group>
+          {errors?.category?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
         </Col>
         <Col md={6}>
           <Form.Group>
@@ -127,6 +137,11 @@ const ProfileEditForm = () => {
                 }}
               />
           </Form.Group>
+          {errors?.image?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
         </Col>
       </Row>
       <Row>
@@ -148,6 +163,11 @@ const ProfileEditForm = () => {
           </Container>
         </Col>
       </Row>
+      {errors?.non_field_errors?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
     </Form>
   )
 }
