@@ -1,11 +1,28 @@
 .NavigationBar {
-    background-color: aqua;
+    background-color: #EAE8FF;
+    border-bottom: solid 1px #c7a2d2;
 }
 
 .NavLink {
-    padding: 10px;
+    padding: 30px;
+    color: #301934;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: solid 1px transparent;
+}
+
+.NavLink:hover {
+    text-decoration: none;
+    color: #931aad;
+    border: solid 1px #c7a2d2;
+    border-radius: 5px;
 }
 
 .Active {
-    color: black;
+    color: #301934;
+}
+
+.PostTypes {
+    background-color: #D8D5DB;
+    margin-top: 50px;
 }
