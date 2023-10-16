@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min
 import { axiosReq } from '../../api/axiosDefaults';
 
 import buttonStyles from '../../styles/Button.module.css'
+import formStyles from '../../styles/CreatePostForm.module.css'
 
 const PostEditForm = () => {
   const [errors, setErrors] = useState({});
@@ -73,8 +74,8 @@ const PostEditForm = () => {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Container>
+    <Form className={formStyles.Card} onSubmit={handleSubmit}>
+      <Container className={formStyles.Fields}>
         <Form.Group controlId="title">
           <Form.Label>Title</Form.Label>
           <Form.Control type="text" name="title"  value={title} onChange={handleChange}/>
