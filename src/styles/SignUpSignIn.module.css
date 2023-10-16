@@ -3,4 +3,16 @@
   padding: 25px;
   margin-top: 50px;
   border: 1px solid #2D3142;
+  border-radius: 25px;
+}
+
+.Fields {
+  width: 70%;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .Fields {
+    width: 100%;
+  }
 }

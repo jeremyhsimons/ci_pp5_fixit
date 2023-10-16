@@ -1,10 +1,11 @@
 import { React, useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Form, Button, Alert, Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
 import { useRedirect } from '../../hooks/useRedirect';
 
 import buttonStyles from '../../styles/Button.module.css'
+import formStyles from '../../styles/SignUpSignIn.module.css'
 
 const SignUpForm = () => {
   useRedirect('loggedIn');
@@ -42,12 +43,14 @@ const SignUpForm = () => {
 
   return (
     <div>
-        <h1>Sign up to Fixit.</h1>
+      <Container className={formStyles.Card}>
+        <h1 className='d-flex justify-content-center text-center'>Sign up to Fixit.</h1>
         <Form onSubmit={handleSubmit}>
+          <Container className={formStyles.Fields}>
             <Form.Group controlId="username">
-                <Form.Label>Username</Form.Label>
                 <Form.Control 
                     type="text" 
+                    aria-label="username"
                     placeholder="username"
                     name="username"
                     value={username}
@@ -58,22 +61,23 @@ const SignUpForm = () => {
               <Alert variant="warning" key={idx}>{message}</Alert>
             )}
             <Form.Group controlId="password1">
-                <Form.Label>Password</Form.Label>
                 <Form.Control 
-                    type="password" 
+                    type="password"
+                    aria-label="password"
                     placeholder="Password" 
                     name="password1" 
                     value={password1}
                     onChange={handleChange}
+
                 />
             </Form.Group>
             {errors.password1?.map((message, idx) =>
               <Alert variant="warning" key={idx}>{message}</Alert>
             )}
             <Form.Group controlId="password2">
-                <Form.Label>Re-enter your Password</Form.Label>
                 <Form.Control 
-                    type="password" 
+                    type="password"
+                    aria-label="confirm password"
                     placeholder="Re-enter your Password" 
                     name="password2"
                     value={password2}
@@ -83,13 +87,15 @@ const SignUpForm = () => {
             {errors.password2?.map((message, idx) =>
               <Alert variant="warning" key={idx}>{message}</Alert>
             )}
-            <Button className={buttonStyles.Button} variant="primary" type="submit">
+            <Button className={`${buttonStyles.Button}`} variant="primary" type="submit">
                 Submit
             </Button>
             {errors.non_field_errors?.map((message, idx) =>
               <Alert variant="warning" key={idx}>{message}</Alert>
             )}
+          </Container>
         </Form>
+      </Container>
     </div>
   )
 }

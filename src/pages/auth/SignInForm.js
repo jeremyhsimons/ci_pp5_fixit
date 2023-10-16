@@ -46,9 +46,9 @@ const SignInForm = () => {
   return (
     <div>
       <Container className={` ${formStyles.Card}`}>
-        <h1 className="d-flex justify-content-center">Sign In to Fixit.</h1>
+        <h1 className="d-flex justify-content-center text-center">Sign In to Fixit.</h1>
         <Form onSubmit={handleSubmit}>
-          <Container>
+          <Container className={formStyles.Fields}>
             <Form.Group controlId="username">
                 <Form.Control 
                     type="text"
