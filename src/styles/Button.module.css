@@ -3,6 +3,7 @@
   background-color: #2D3142;
   border: solid 1px #931aad;
   border-radius: 20px;
+  margin: 10px;
 }
 
 .Button:hover {
@@ -10,22 +11,26 @@
   background-color: #931aad;
   border: solid 1px #931aad;
   border-radius: 20px;
+  margin: 10px;
 }
 
 .Button:hover:active {
   background-color: #931aad !important;
   border: solid 1px #931aad !important;
   border-radius: 20px !important;
+  margin: 10px;
 }
 
 .Button:active {
   background-color: #931aad !important;
   border: solid 1px #931aad !important;
   border-radius: 20px !important;
+  margin: 10px;
 }
 
 .Button:focus {
   background-color: #931aad;
+  margin: 10px;
 }
 
 .ActiveButton {
@@ -33,6 +38,7 @@
   background-color: #EAE8FF;
   border: solid 1px #931aad;
   border-radius: 20px;
+  margin: 10px;
 }
 
 .ActiveButton:hover {
@@ -40,20 +46,24 @@
   background-color: #931aad;
   border: solid 1px #931aad;
   border-radius: 20px;
+  margin: 10px;
 }
 
 .ActiveButton:hover:active {
   background-color: #931aad !important;
   border: solid 1px #931aad !important;
   border-radius: 20px !important;
+  margin: 10px;
 }
 
 .ActiveButton:active {
   background-color: #931aad !important;
   border: solid 1px #931aad !important;
   border-radius: 20px !important;
+  margin: 10px;
 }
 
 .ActiveButton:focus {
   background-color: #931aad;
+  margin: 10px;
 }

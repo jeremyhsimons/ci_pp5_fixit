@@ -5,6 +5,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 import { useRedirect } from '../../hooks/useRedirect';
 
 import buttonStyles from '../../styles/Button.module.css'
+import formStyles from '../../styles/CreatePostForm.module.css'
 
 const CreatePostForm = () => {
   useRedirect('loggedOut');
@@ -58,8 +59,8 @@ const CreatePostForm = () => {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Container>
+    <Form className={formStyles.Card} onSubmit={handleSubmit}>
+      <Container className={formStyles.Fields}>
         <Form.Group controlId="title">
           <Form.Label>Title</Form.Label>
           <Form.Control type="text" name="title"  value={title} onChange={handleChange}/>
@@ -86,15 +87,17 @@ const CreatePostForm = () => {
         {errors.category?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>
         )}
-        <Form.Group>
+        <Form.Group className={`${formStyles.Image}`}>
           {image ? (
             <>
               <figure>
-                <Image src={image} rounded/>
+                <Image className={formStyles.Image} src={image} rounded/>
               </figure>
             </>
           ) : (
-            <Form.Label>Upload an image</Form.Label>
+            <div>
+              <Form.Label>Upload an image</Form.Label>
+            </div>
           ) }
           <Form.File id="image-upload" accept="image/*" ref={inputImage} onChange={handleChangeImage}></Form.File>
         </Form.Group>

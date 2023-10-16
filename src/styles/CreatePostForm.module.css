@@ -1,0 +1,17 @@
+.Card {
+  padding: 25px;
+  background-color: #d8d5db;
+  border: 1px solid #2D3142;
+  border-radius: 25px;
+}
+
+.Fields {
+  width: 70%;
+  text-align: center;
+  color: #2D3142;
+  font-weight: 700;
+}
+
+.Image {
+  max-height: 400px;
+}
