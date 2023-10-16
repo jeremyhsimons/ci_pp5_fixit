@@ -1,10 +1,11 @@
 import { React, useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Form, Button, Alert, Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
 import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/useRedirect';
 import buttonStyles from '../../styles/Button.module.css'
+import formStyles from '../../styles/SignUpSignIn.module.css'
 
 const SignInForm = () => {
 
@@ -44,12 +45,14 @@ const SignInForm = () => {
 
   return (
     <div>
-        <h1>Sign In to Fixit.</h1>
+      <Container className={` ${formStyles.Card}`}>
+        <h1 className="d-flex justify-content-center">Sign In to Fixit.</h1>
         <Form onSubmit={handleSubmit}>
+          <Container>
             <Form.Group controlId="username">
-                <Form.Label>Username</Form.Label>
                 <Form.Control 
-                    type="text" 
+                    type="text"
+                    aria-lable="username"
                     placeholder="username"
                     name="username"
                     value={username}
@@ -60,9 +63,9 @@ const SignInForm = () => {
               <Alert variant="warning" key={idx}>{message}</Alert>
             )}
             <Form.Group controlId="password">
-                <Form.Label>Password</Form.Label>
                 <Form.Control 
-                    type="password" 
+                    type="password"
+                    aria-label="password"
                     placeholder="Password" 
                     name="password" 
                     value={password}
@@ -78,7 +81,9 @@ const SignInForm = () => {
             {errors.non_field_errors?.map((message, idx) =>
               <Alert variant="warning" key={idx}>{message}</Alert>
             )}
+          </Container>
         </Form>
+      </Container>
     </div>
   )
 }
