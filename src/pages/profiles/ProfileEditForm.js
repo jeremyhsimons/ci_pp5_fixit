@@ -4,6 +4,10 @@ import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserCon
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
+import FormImpl from 'react-bootstrap/esm/Form';
+
+import formStyles from '../../styles/ProfileEditForm.module.css'
+import buttonStyles from '../../styles/Button.module.css'
 
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();
@@ -75,93 +79,91 @@ const ProfileEditForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        <Col className='text-center' md={6}>
-          <Form.Group>
-          <Form.Label>Bio</Form.Label>
-            <Form.Control
-              as="textarea"
-              value={bio}
-              onChange={handleChange}
-              name="bio"
-              rows={7}
-            />
-          </Form.Group>
-          {errors?.bio?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
-          <Form.Group>
-            <Form.Label>Category</Form.Label>
-            <Form.Control as="select" name="status" value={status} onChange={handleChange}>
-              <option value="">Select...</option>
-              <option value="LFH">Looking for help</option>
-              <option value="SME">Subject matter expert</option>
-              <option value="JB">Just browsing</option>
-              <option value="AME">Ask me anything!</option>
-              <option value="NA">Not active</option>
-            </Form.Control>
-          </Form.Group>
-          {errors?.category?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
+        <Col  md={6}>
+          <Container className={`${formStyles.Card}`}>
+            <Form.Group className={` ${formStyles.Fields}`} md={6}>
+            <Form.Label>Bio</Form.Label>
+              <Form.Control
+                as="textarea"
+                value={bio}
+                onChange={handleChange}
+                name="bio"
+                rows={7}
+              />
+            </Form.Group>
+            {errors?.bio?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group className={` ${formStyles.Fields}`}>
+              <Form.Label>Category</Form.Label>
+              <Form.Control as="select" name="status" value={status} onChange={handleChange}>
+                <option value="">Select...</option>
+                <option value="LFH">Looking for help</option>
+                <option value="SME">Subject matter expert</option>
+                <option value="JB">Just browsing</option>
+                <option value="AME">Ask me anything!</option>
+                <option value="NA">Not active</option>
+              </Form.Control>
+            </Form.Group>
+            {errors?.category?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+          </Container>
         </Col>
         <Col md={6}>
-          <Form.Group>
-            {image && (
-              <figure>
-                <Image src={image} fluid />
-              </figure>
-            )}
-            <div>
-                <Form.Label
-                  className={`btn my-auto`}
-                  htmlFor="image-upload"
-                >
-                  Change the image
-                </Form.Label>
-              </div>
-              <Form.File
-                id="image-upload"
-                ref={imageFile}
-                accept="image/*"
-                onChange={(e) => {
-                  if (e.target.files.length) {
-                    setProfileData({
-                      ...profileData,
-                      image: URL.createObjectURL(e.target.files[0]),
-                    });
-                  }
-                }}
-              />
-          </Form.Group>
-          {errors?.image?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
+          <Container className={formStyles.Card}>
+            <Form.Group className={formStyles.Fields}>
+              {image && (
+                <figure>
+                  <Image className={formStyles.Image} src={image} fluid />
+                </figure>
+              )}
+              <div>
+                  <Form.Label
+                    className={`btn my-auto`}
+                    htmlFor="image-upload"
+                  >
+                    Change the image
+                  </Form.Label>
+                </div>
+                <Form.File
+                  id="image-upload"
+                  ref={imageFile}
+                  accept="image/*"
+                  onChange={(e) => {
+                    if (e.target.files.length) {
+                      setProfileData({
+                        ...profileData,
+                        image: URL.createObjectURL(e.target.files[0]),
+                      });
+                    }
+                  }}
+                />
+            </Form.Group>
+            {errors?.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+          </Container>
         </Col>
       </Row>
       <Row>
-        <Col className="ml-auto" sm={6}>
-          <Container>
-            <Button
-              className="text-center"
-              onClick={() => history.goBack()}
-            >
-              cancel
-            </Button>
-          </Container>
-        </Col>
-        <Col sm={6}>
-          <Container>
-            <Button className="mr-auto text-center" type="submit">
-              save
-            </Button>
-          </Container>
-        </Col>
+        <Container className={`d-flex justify-content-center`}>
+          <Button
+            className={buttonStyles.Button}
+            onClick={() => history.goBack()}
+          >
+            cancel
+          </Button>
+          <Button className={buttonStyles.Button} type="submit">
+            save
+          </Button>
+        </Container>
       </Row>
       {errors?.non_field_errors?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
