@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 import { useSetProfileData } from '../../contexts/ProfileDataContext';
 
 import buttonStyles from '../../styles/Button.module.css'
+import styles from '../../styles/Profile.module.css'
 
 const Profile = (props) => {
   const {profile, mobile, imageSize=55} = props;
@@ -14,7 +15,7 @@ const Profile = (props) => {
   const {handleStar, handleUnStar} = useSetProfileData();
 
   return (
-    <div className={`my-3 d-flex align-items-center ${mobile && "flex-column"}`}>
+    <div className={`my-3 d-flex align-items-center ${mobile && "flex-column"} ${styles.Profile}`}>
       <div className={`text-left ${!mobile && "mr-auto"}`}>
         {!mobile && currentUser && !is_owner && (
           star_id ? (
