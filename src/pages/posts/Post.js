@@ -126,9 +126,7 @@ const Post = (props) => {
             </div>
           </Media>
         </Card.Body>
-        <Link to={`/posts/${id}`}>
-          <Card.Img className={postStyles.Image} src={image} alt={title}/>
-        </Link>
+        
         <Card.Body className={postStyles.TextPanel}>
           {title && <Card.Title className={`text-center ${postStyles.Title}`}>{title}</Card.Title>}
           {content && <Card.Text className="text-center">{content}</Card.Text>}
@@ -191,6 +189,9 @@ const Post = (props) => {
               {comments_count}
             </Link>
           </div>
+          <Link to={`/posts/${id}`}>
+            <Card.Img className={postStyles.Image} src={image} alt={title}/>
+          </Link>
         </Card.Body>
       </Card>
     </div>
