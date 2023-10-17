@@ -1,0 +1,22 @@
+.Searchbar {
+  margin: 5px;
+  background-color: #FAF9F6;
+  border: 1px solid #2D3142;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.Form {
+  min-width: 95%;
+}
+
+.Search {
+  background-color: #FAF9F6;
+  width: 100%;
+}
+
+.Item {
+  margin-left: 5px;
+  margin-right: 5px;
+  border: none;
+}

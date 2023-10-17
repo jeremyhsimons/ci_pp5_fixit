@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import { Form } from 'react-bootstrap';
 import { axiosRes } from '../../api/axiosDefaults';
 
+import buttonStyles from '../../styles/Button.module.css'
+
 const CommentEditForm = (props) => {
 
   const { id, content, setShowEditForm, setComments } = props;
@@ -49,14 +51,14 @@ const CommentEditForm = (props) => {
       </Form.Group>
       <div className="text-right">
         <button
-          className=""
+          className={buttonStyles.Button}
           onClick={() => setShowEditForm(false)}
           type="button"
         >
           cancel
         </button>
         <button
-          className=""
+          className={buttonStyles.Button}
           disabled={!content.trim()}
           type="submit"
         >

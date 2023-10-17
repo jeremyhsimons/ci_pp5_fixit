@@ -5,7 +5,6 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
-import appStyles from "../../App.module.css";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 
@@ -13,6 +12,8 @@ import Post from "./Post";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+
+import searchStyles from '../../styles/Searchbar.module.css'
 
 function PostsPage({ message, filter="" }) {
   const [ posts, setPosts ] = useState({result: []});
@@ -47,16 +48,18 @@ function PostsPage({ message, filter="" }) {
       </Col>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile/>
-        <i className="fas fa-search"></i>
-        <Form className="" onSubmit={(event) => event.preventDefault()}>
-          <Form.Control
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            type="text"
-            className="mr-sm-2"
-            placeholder="Search posts"
-          />
-        </Form>
+        <div className={`d-flex align-items-center ${searchStyles.Searchbar}`}>
+          <i className={`fas fa-search ${searchStyles.Item}`}></i>
+          <Form className={searchStyles.Form} onSubmit={(event) => event.preventDefault()}>
+            <Form.Control
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              type="text"
+              className={`mr-sm-2 ${searchStyles.Item} ${searchStyles.Search}`}
+              placeholder="Search posts"
+            />
+          </Form>
+        </div>
         {hasLoaded ? (
           <>
             {posts.results.length ? (
