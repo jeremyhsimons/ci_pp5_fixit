@@ -49,7 +49,6 @@ const Profile = (props) => {
           IMG
         </Link>
       </div>
-      
     </div>
   )
 }

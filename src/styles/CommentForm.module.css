@@ -1,0 +1,14 @@
+.Form {
+  background-color: #d8d3db;
+  border: 1px solid #2d3142;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.Text {
+  background-color: #EAE8FF;
+  border: #ADACB5;
+  border-radius: 5px;
+  color: black;
+  margin-left: 20px;
+}

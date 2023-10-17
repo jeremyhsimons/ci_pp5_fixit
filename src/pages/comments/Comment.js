@@ -7,6 +7,8 @@ import { MoreDropdown } from '../../components/MoreDropdown'
 import { axiosRes } from '../../api/axiosDefaults'
 import CommentEditForm from './CommentEditForm'
 
+import styles from '../../styles/Comment.module.css'
+
 const Comment = ({
   profile_id, 
   profile_image, 
@@ -78,7 +80,7 @@ const Comment = ({
     <div>
       <>
         <hr />
-        <Media>
+        <Media className={styles.Comment}>
           <Link to={`/profiles/${profile_id}`}>
             <p>Image goes here</p>
           </Link>
