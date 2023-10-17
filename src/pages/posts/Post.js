@@ -164,16 +164,16 @@ const Post = (props) => {
                 placement="top"
                 overlay={<Tooltip>You can't bookmark your own post!</Tooltip>}
               >
-                <i class="fa-regular fa-bookmark"></i>
+                <i className="fa-regular fa-bookmark"></i>
               </OverlayTrigger>
             ) : bookmark_id ? (
               <span onClick={handleRemoveBookmark}>
-                <i class="fa-solid fa-bookmark"></i>
+                <i className="fa-solid fa-bookmark"></i>
                 {/* Handles un-upvoting the post */}
               </span>
             ) : currentUser ? (
               <span onClick={handleBookmark}>
-                <i class="fa-regular fa-bookmark"></i>
+                <i className="fa-regular fa-bookmark"></i>
                 {/* Handles upvoting the post */}
               </span>
             ) : (
@@ -181,7 +181,7 @@ const Post = (props) => {
                 placement="top"
                 overlay={<Tooltip>Log in to bookmark posts!</Tooltip>}
               >
-                <i class="fa-regular fa-bookmark"></i>
+                <i className="fa-regular fa-bookmark"></i>
                 {/* handles users not logged in, and can't upvote */}
               </OverlayTrigger>
             )}

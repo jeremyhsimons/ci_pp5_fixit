@@ -6,6 +6,7 @@ import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import { useRedirect } from '../../hooks/useRedirect';
 import buttonStyles from '../../styles/Button.module.css'
 import formStyles from '../../styles/SignUpSignIn.module.css'
+import { setTokenTimestamp } from '../../utils/utils';
 
 const SignInForm = () => {
 
@@ -35,8 +36,9 @@ const SignInForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-        const {data} = await axios.post('/dj-rest-auth/login/', signInData)
-        setCurrentUser(data.user)
+        const {data} = await axios.post('/dj-rest-auth/login/', signInData);
+        setCurrentUser(data.user);
+        setTokenTimestamp(data);
         history.goBack();
     } catch(err) {
         setErrors(err.response?.data);
@@ -52,7 +54,7 @@ const SignInForm = () => {
             <Form.Group controlId="username">
                 <Form.Control 
                     type="text"
-                    aria-lable="username"
+                    aria-label="username"
                     placeholder="username"
                     name="username"
                     value={username}
