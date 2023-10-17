@@ -9,6 +9,7 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     border: solid 1px transparent;
+    margin-bottom: 4px;
 }
 
 .NavLink:hover {
@@ -25,4 +26,5 @@
 .PostTypes {
     background-color: #D8D5DB;
     margin-top: 50px;
+    border: 1px solid #2d3142;
 }

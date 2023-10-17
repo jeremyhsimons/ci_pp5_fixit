@@ -98,7 +98,7 @@ const NavigationBar = () => {
         <Navbar expanded={expanded} className={styles.NavigationBar} expand="md" fixed="top">
             <Container>
                 <NavLink to="/">
-                  <Navbar.Brand href="#home">Fixit</Navbar.Brand>
+                  <h1>Fixit</h1>
                 </NavLink>
                 <Navbar.Toggle ref={ref} onClick={() => setExpanded(!expanded)} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
