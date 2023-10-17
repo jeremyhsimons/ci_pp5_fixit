@@ -34,18 +34,19 @@ const Profile = (props) => {
           )
         )}
       </div>
-      <div>
-        <Link className="align-self-center" to={`/profiles/${id}`}>
-          IMG
-        </Link>
-      </div>
+      
       <div className='mx-2'>
-        <strong>{profile_owner}</strong>
         {star_id ? (
           <span> <i className="fa-solid fa-star"></i> {stars_count}</span>
         ) : (
           <span> <i className="fa-regular fa-star"></i> {stars_count}</span>
         )}
+        <strong className='ml-3'>{profile_owner}</strong>
+      </div>
+      <div>
+        <Link className="align-self-center" to={`/profiles/${id}`}>
+          IMG
+        </Link>
       </div>
       
     </div>
