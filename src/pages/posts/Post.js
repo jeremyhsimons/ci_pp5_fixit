@@ -5,6 +5,8 @@ import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq, axiosRes } from '../../api/axiosDefaults';
 import { MoreDropdown } from '../../components/MoreDropdown';
 
+import postStyles from '../../styles/Post.module.css'
+
 const Post = (props) => {
   const {
     id,
@@ -107,14 +109,14 @@ const Post = (props) => {
 
   return (
     <div>
-      <Card>
+      <Card className={postStyles.Post}>
         <Card.Body>
           <Media className="align-items-center justify-content-between">
             <Link to={`/profiles/${profile_id}`}>
               {author}
             </Link>
             <div className="d-flex align-items-center">
-              <span>{updated_at}</span>
+              <span className={postStyles.Title}>{updated_at}</span>
               {is_owner && postPage && (
                 <MoreDropdown 
                   handleEdit={handleEdit} 
@@ -125,13 +127,12 @@ const Post = (props) => {
           </Media>
         </Card.Body>
         <Link to={`/posts/${id}`}>
-          <Card.Img src={image} alt={title}/>
-         
+          <Card.Img className={postStyles.Image} src={image} alt={title}/>
         </Link>
-        <Card.Body>
-          {title && <Card.Title className="text-center">{title}</Card.Title>}
+        <Card.Body className={postStyles.TextPanel}>
+          {title && <Card.Title className={`text-center ${postStyles.Title}`}>{title}</Card.Title>}
           {content && <Card.Text className="text-center">{content}</Card.Text>}
-          <div>
+          <div className='d-flex justify-content-center'>
             {is_owner ? (
               <OverlayTrigger
                 placement="top"
@@ -141,7 +142,7 @@ const Post = (props) => {
               </OverlayTrigger>
             ) : upvote_id ? (
               <span onClick={handleRemoveUpvote}>
-                <i className="fa-solid fa-hand-point-up"></i>
+                <i className="fa-solid fa-hand-point-up "></i>
                 {/* Handles un-upvoting the post */}
               </span>
             ) : currentUser ? (
@@ -164,16 +165,16 @@ const Post = (props) => {
                 placement="top"
                 overlay={<Tooltip>You can't bookmark your own post!</Tooltip>}
               >
-                <i className="fa-regular fa-bookmark"></i>
+                <i className="fa-regular fa-bookmark ml-2"></i>
               </OverlayTrigger>
             ) : bookmark_id ? (
               <span onClick={handleRemoveBookmark}>
-                <i className="fa-solid fa-bookmark"></i>
+                <i className="fa-solid fa-bookmark ml-2"></i>
                 {/* Handles un-upvoting the post */}
               </span>
             ) : currentUser ? (
               <span onClick={handleBookmark}>
-                <i className="fa-regular fa-bookmark"></i>
+                <i className="fa-regular fa-bookmark ml-2"></i>
                 {/* Handles upvoting the post */}
               </span>
             ) : (
@@ -181,12 +182,12 @@ const Post = (props) => {
                 placement="top"
                 overlay={<Tooltip>Log in to bookmark posts!</Tooltip>}
               >
-                <i className="fa-regular fa-bookmark"></i>
+                <i className="fa-regular fa-bookmark ml-2"></i>
                 {/* handles users not logged in, and can't upvote */}
               </OverlayTrigger>
             )}
             <Link to={`/posts/${id}`}>
-              <i className='far fa-comments'></i>
+              <i className='far fa-comments ml-2'></i>
               {comments_count}
             </Link>
           </div>

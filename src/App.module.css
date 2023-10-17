@@ -5,4 +5,15 @@
 .Main {
     padding-top: 60px;
     font-family: 'Montserrat', sans-serif;
+    color: #2D3142;
+}
+
+i {
+    font-size: 1.6rem;
+    padding: 7px;
+    vertical-align: middle;
+}
+
+i:hover {
+    color: #931aad;
 }
