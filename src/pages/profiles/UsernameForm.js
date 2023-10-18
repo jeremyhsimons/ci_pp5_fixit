@@ -14,6 +14,9 @@ import {
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
 
+import styles from '../../styles/SignUpSignIn.module.css'
+import buttonStyles from '../../styles/Button.module.css'
+
 const UsernameForm = () => {
   const [username, setUsername] = useState("");
   const [errors, setErrors] = useState({});
@@ -50,12 +53,12 @@ const UsernameForm = () => {
   };
 
   return (
-    <Row>
+    <Row className={styles.Card}>
       <Col className="py-2 mx-auto text-center" md={6}>
-        <Container className="">
-          <Form onSubmit={handleSubmit} className="my-2">
-            <Form.Group>
-              <Form.Label>Change username</Form.Label>
+        <Container>
+          <Form onSubmit={handleSubmit} className="my-2 text-center">
+            <Form.Group className={`mx-auto ${styles.Fields}`}>
+              <Form.Label className={styles.Title}>Change username</Form.Label>
               <Form.Control
                 placeholder="username"
                 type="text"
@@ -69,13 +72,13 @@ const UsernameForm = () => {
               </Alert>
             ))}
             <Button
-              className=""
+              className={buttonStyles.Button}
               onClick={() => history.goBack()}
             >
               cancel
             </Button>
             <Button
-              className=""
+              className={buttonStyles.Button}
               type="submit"
             >
               save

@@ -11,6 +11,9 @@ import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
+import styles from '../../styles/SignUpSignIn.module.css'
+import buttonStyles from '../../styles/Button.module.css'
+
 const UserPasswordForm = () => {
   const history = useHistory();
   const { id } = useParams();
@@ -50,12 +53,12 @@ const UserPasswordForm = () => {
   };
 
   return (
-    <Row>
+    <Row className={styles.Card}>
       <Col className="py-2 mx-auto text-center" md={6}>
         <Container className="">
           <Form onSubmit={handleSubmit}>
-            <Form.Group>
-              <Form.Label>New password</Form.Label>
+            <Form.Group className={`mx-auto ${styles.Fields}`}>
+              <Form.Label className={styles.Title}>New password</Form.Label>
               <Form.Control
                 placeholder="new password"
                 type="password"
@@ -69,8 +72,8 @@ const UserPasswordForm = () => {
                 {message}
               </Alert>
             ))}
-            <Form.Group>
-              <Form.Label>Confirm password</Form.Label>
+            <Form.Group className={`mx-auto ${styles.Fields}`}>
+              <Form.Label className={styles.Title}>Confirm password</Form.Label>
               <Form.Control
                 placeholder="confirm new password"
                 type="password"
@@ -85,14 +88,14 @@ const UserPasswordForm = () => {
               </Alert>
             ))}
             <Button
-              className=""
+              className={buttonStyles.Button}
               onClick={() => history.goBack()}
             >
               cancel
             </Button>
             <Button
               type="submit"
-              className=""
+              className={buttonStyles.Button}
             >
               save
             </Button>

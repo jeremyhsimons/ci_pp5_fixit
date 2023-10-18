@@ -13,6 +13,17 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
+const ThreeDotsHorizontal = React.forwardRef(({ onClick }, ref) => (
+  <i
+    className="fas fa-ellipsis-h"
+    ref={ref}
+    onClick={(e) => {
+      e.preventDefault();
+      onClick(e);
+    }}
+  />
+));
+
 export const MoreDropdown = ({handleEdit, handleDelete}) => {
   return(
     <Dropdown className="ml-auto" drop="left">
@@ -37,7 +48,7 @@ export function ProfileEditDropdown({ id }) {
   const history = useHistory();
   return (
     <Dropdown className={`ml-auto px-3`} drop="left">
-      <Dropdown.Toggle as={ThreeDots} />
+      <Dropdown.Toggle as={ThreeDotsHorizontal} />
       <Dropdown.Menu>
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit`)}

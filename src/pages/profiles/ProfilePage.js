@@ -52,8 +52,8 @@ const ProfilePage = () => {
 
   const mainProfile = (
     <div className={`text-center ${styles.Page}`}>
+      <h2 className={`${styles.Title}`}>{profile?.profile_owner}'s profile</h2>
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
-      <h2 className={`text-center ${styles.Title}`}>{profile?.profile_owner}'s profile</h2>
       <div className='text-center'>
         <strong>Status: </strong>
         {profile?.status === "AME" ? (<span>Ask Me anything</span>) : (<span></span>)}
