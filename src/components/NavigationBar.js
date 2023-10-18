@@ -112,6 +112,7 @@ const NavigationBar = () => {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+        <div className={styles.Buffer}></div>
         {currentUser ? filterOptions : <p>Log in to filter posts</p>}
     </div>
   )

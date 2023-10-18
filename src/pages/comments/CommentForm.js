@@ -8,6 +8,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 
 import styles from '../../styles/CommentForm.module.css'
 import buttonStyles from '../../styles/Button.module.css'
+import Avatar from "../../components/Avatar";
 
 function CommentForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
@@ -47,7 +48,7 @@ function CommentForm(props) {
       <Form.Group className="">
         <InputGroup>
           <Link to={`/profiles/${profile_id}`}>
-            <p>Your profile</p>
+            <Avatar src={profileImage} height={50} />
           </Link>
           <Form.Control
             className={styles.Text}
@@ -60,7 +61,7 @@ function CommentForm(props) {
         </InputGroup>
       </Form.Group>
       <button
-        className={`btn d-block ml-auto ${buttonStyles.Button}`}
+        className={` ml-auto ${buttonStyles.Button}`}
         disabled={!content.trim()}
         type="submit"
       >

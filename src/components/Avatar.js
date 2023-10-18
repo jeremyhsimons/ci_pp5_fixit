@@ -7,7 +7,7 @@ const Avatar = (props) => {
   return (
     <span>
         <img className={styles.Avatar} src={src} height={height} width={height} alt="avatar"/>
-        <strong className={`ml-3 ${styles.Name}`}>{text}</strong>
+        <p><strong className={`ml-3 ${styles.Name}`}>{text}</strong></p>
     </span>
   )
 }

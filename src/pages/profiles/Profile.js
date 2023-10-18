@@ -6,6 +6,7 @@ import { useSetProfileData } from '../../contexts/ProfileDataContext';
 
 import buttonStyles from '../../styles/Button.module.css'
 import styles from '../../styles/Profile.module.css'
+import Avatar from '../../components/Avatar';
 
 const Profile = (props) => {
   const {profile, mobile, imageSize=55} = props;
@@ -37,16 +38,16 @@ const Profile = (props) => {
       </div>
       
       <div className='mx-2'>
-        {star_id ? (
+        {/* {star_id ? (
           <span> <i className="fa-solid fa-star"></i> {stars_count}</span>
         ) : (
           <span> <i className="fa-regular fa-star"></i> {stars_count}</span>
-        )}
+        )} */}
         <strong className='ml-3'>{profile_owner}</strong>
       </div>
       <div>
         <Link className="align-self-center" to={`/profiles/${id}`}>
-          IMG
+          <Avatar src={image} height={50} />
         </Link>
       </div>
     </div>
