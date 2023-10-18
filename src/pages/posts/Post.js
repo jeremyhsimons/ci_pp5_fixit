@@ -5,7 +5,9 @@ import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq, axiosRes } from '../../api/axiosDefaults';
 import { MoreDropdown } from '../../components/MoreDropdown';
 
+import avatarStyles from '../../styles/Avatar.module.css'
 import postStyles from '../../styles/Post.module.css'
+import Avatar from '../../components/Avatar';
 
 const Post = (props) => {
   const {
@@ -112,8 +114,8 @@ const Post = (props) => {
       <Card className={postStyles.Post}>
         <Card.Body>
           <Media className="align-items-center justify-content-between">
-            <Link to={`/profiles/${profile_id}`}>
-              {author}
+            <Link className={avatarStyles.Link} to={`/profiles/${profile_id}`}>
+              <Avatar src={profile_image} text={author} height={80} />
             </Link>
             <div className="d-flex align-items-center">
               <span className={postStyles.Title}>{updated_at}</span>
