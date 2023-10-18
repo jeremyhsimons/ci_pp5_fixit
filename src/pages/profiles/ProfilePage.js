@@ -10,6 +10,8 @@ import Post from '../posts/Post';
 import { fetchMoreData } from '../../utils/utils';
 import { ProfileEditDropdown } from '../../components/MoreDropdown';
 
+import styles from '../../styles/ProfilePage.module.css'
+
 const ProfilePage = () => {
 
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -49,20 +51,22 @@ const ProfilePage = () => {
   }, [id, setProfileData]);
 
   const mainProfile = (
-    <div>
+    <div className={`text-center ${styles.Page}`}>
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
-      <h2>{profile?.profile_owner}'s Profile</h2>
-      <strong>Status: </strong>
-      {profile?.status === "AME" ? (<span>Ask Me anything</span>) : (<span></span>)}
-      {profile?.status === "JB" ? (<span>Just Browsing</span>) : (<span></span>)}
-      {profile?.status === "LFH" ? (<span>Looking For Help</span>) : (<span></span>)}
-      {profile?.status === "SME" ? (<span>Subject Matter Expert</span>) : (<span></span>)}
-      {profile?.status === "NA" ? (<span>Not Active</span>) : (<span></span>)}
-      {profile?.status === "" ? (<span>No Status Selected</span>) : (<span></span>)}
-      <Image src={profile?.image}/>
+      <h2 className={`text-center ${styles.Title}`}>{profile?.profile_owner}'s profile</h2>
+      <div className='text-center'>
+        <strong>Status: </strong>
+        {profile?.status === "AME" ? (<span>Ask Me anything</span>) : (<span></span>)}
+        {profile?.status === "JB" ? (<span>Just Browsing</span>) : (<span></span>)}
+        {profile?.status === "LFH" ? (<span>Looking For Help</span>) : (<span></span>)}
+        {profile?.status === "SME" ? (<span>Subject Matter Expert</span>) : (<span></span>)}
+        {profile?.status === "NA" ? (<span>Not Active</span>) : (<span></span>)}
+        {profile?.status === "" ? (<span>No Status Selected</span>) : (<span></span>)}
+      </div>
+      <Image className={`text-center mt-5 ${styles.Image}`} src={profile?.image}/>
       <p>{profile?.bio}</p>
-      <p>Posts: {profile?.posts_count}</p>
-      <p>Stars: {profile?.stars_count}</p>
+      <p><strong>Posts:</strong> {profile?.posts_count}</p>
+      <p><strong>Stars:</strong> {profile?.stars_count}</p>
       <div>
         {currentUser && !is_owner && (
           profile?.star_id ? (
@@ -77,7 +81,7 @@ const ProfilePage = () => {
 
   const mainProfilePosts = (
     <div>
-      <h3>Posts by {profile?.profile_owner}</h3>
+      <h3 className={`text-center ${styles.Title}`}>Posts by {profile?.profile_owner}</h3>
       {profilePosts?.results.length ? (
         <InfiniteScroll
           children={
@@ -107,6 +111,7 @@ const ProfilePage = () => {
           {hasLoaded ? (
             <>
               {mainProfile}
+              <hr/>
               {mainProfilePosts}
             </>
           ) : (
