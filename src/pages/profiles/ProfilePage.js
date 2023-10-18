@@ -58,6 +58,7 @@ const ProfilePage = () => {
       {profile?.status === "LFH" ? (<span>Looking For Help</span>) : (<span></span>)}
       {profile?.status === "SME" ? (<span>Subject Matter Expert</span>) : (<span></span>)}
       {profile?.status === "NA" ? (<span>Not Active</span>) : (<span></span>)}
+      {profile?.status === "" ? (<span>No Status Selected</span>) : (<span></span>)}
       <Image src={profile?.image}/>
       <p>{profile?.bio}</p>
       <p>Posts: {profile?.posts_count}</p>

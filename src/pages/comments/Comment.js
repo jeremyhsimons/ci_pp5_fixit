@@ -82,11 +82,11 @@ const Comment = ({
         <hr />
         <Media className={styles.Comment}>
           <Link to={`/profiles/${profile_id}`}>
-            <p>Image goes here</p>
+            <p>IMG</p>
           </Link>
           <Media.Body className="align-self-center ml-2">
-            <span className="">{author}</span>
-            <span className="">{updated_at}</span>
+            <span className="mx-3"><strong>{author}</strong></span>
+            <span className={styles.Date}>{updated_at}</span>
             {showEditForm ? (
               <CommentEditForm
                 id={id}
@@ -97,7 +97,7 @@ const Comment = ({
                 setShowEditForm={setShowEditForm}
               />
             ) : (
-              <p>{content}</p>
+              <p className='my-3'>{content}</p>
             )}
             <div>
               {is_owner ? (
