@@ -11,6 +11,7 @@ import { fetchMoreData } from '../../utils/utils';
 import { ProfileEditDropdown } from '../../components/MoreDropdown';
 
 import styles from '../../styles/ProfilePage.module.css'
+import spinner from '../../assets/spinner_updated.gif'
 
 const ProfilePage = () => {
 
@@ -23,11 +24,6 @@ const ProfilePage = () => {
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.profile_owner;
 
-  const askMeStatus = () => {
-    return (
-      <span>ask me anything</span>
-    )
-  }
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -90,7 +86,11 @@ const ProfilePage = () => {
             ))
           }
           dataLength={profilePosts.results.length}
-          loader={<h3>Loading...</h3>}
+          loader={
+            <Container className='d-flex justify-content-center'>
+              <Image src={spinner} />
+            </Container>
+          }
           hasMore={!!profilePosts.next}
           next={() => fetchMoreData(profilePosts, setProfilePosts)}
         />
