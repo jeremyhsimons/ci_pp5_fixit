@@ -16,19 +16,19 @@ const Profile = (props) => {
   const {handleStar, handleUnStar} = useSetProfileData();
 
   return (
-    <div className={`my-3 d-flex align-items-center ${mobile && "flex-column"} ${styles.Profile}`}>
-      <div className={`text-left ${!mobile && "mr-auto"}`}>
+    <div className={`d-flex align-items-center ${mobile && "flex-column"} ${styles.Profile}`}>
+      <div className={`${!mobile && "mr-auto"}`}>
         {!mobile && currentUser && !is_owner && (
           star_id ? (
             <Button
-              className={buttonStyles.ActiveButton}
+              className={`py-2 ${buttonStyles.ActiveButton}`}
               onClick={() => handleUnStar(profile)}
             >
               un-star
             </Button>
           ) : (
             <Button
-              className={buttonStyles.Button}
+              className={`py-2 ${buttonStyles.Button}`}
               onClick={() => handleStar(profile)}
             >
               star
@@ -43,11 +43,16 @@ const Profile = (props) => {
         ) : (
           <span> <i className="fa-regular fa-star"></i> {stars_count}</span>
         )} */}
-        <strong className='ml-3'>{profile_owner}</strong>
+        {/* <strong className='ml-3'>{profile_owner}</strong> */}
       </div>
       <div>
         <Link className="align-self-center" to={`/profiles/${id}`}>
-          <Avatar src={image} height={50} />
+          <span className="d-none d-lg-block p-0 p-lg-2">
+            <Avatar src={image} height={80} text={profile_owner}/>
+          </span>
+          <span className='d-sm-block d-md-none p-0 p-lg-2'>
+            <Avatar src={image} height={50} text={profile_owner} />
+          </span>
         </Link>
       </div>
     </div>

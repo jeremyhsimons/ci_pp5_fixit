@@ -115,7 +115,7 @@ const Post = (props) => {
         <Card.Body>
           <Media className="align-items-center justify-content-between">
             <Link className={avatarStyles.Link} to={`/profiles/${profile_id}`}>
-              <Avatar src={profile_image} text={author} height={80} />
+              <Avatar src={profile_image} text={author} height={100} />
             </Link>
             <div className="d-flex align-items-center">
               <span className={postStyles.Title}>{updated_at}</span>
