@@ -4,7 +4,6 @@ import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserCon
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
-import FormImpl from 'react-bootstrap/esm/Form';
 
 import formStyles from '../../styles/ProfileEditForm.module.css'
 import buttonStyles from '../../styles/Button.module.css'
