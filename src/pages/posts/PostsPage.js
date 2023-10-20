@@ -14,7 +14,7 @@ import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
 import searchStyles from '../../styles/Searchbar.module.css'
-import spinner from '../../assets/spinner.gif'
+import spinner from '../../assets/spinner_updated.gif'
 import { Image } from "react-bootstrap";
 
 function PostsPage({ message, filter="" }) {

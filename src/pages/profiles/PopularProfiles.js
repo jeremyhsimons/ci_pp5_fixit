@@ -6,7 +6,7 @@ import Profile from './Profile';
 import { useProfileData } from '../../contexts/ProfileDataContext';
 
 import profileListStyles from '../../styles/PopularProfiles.module.css'
-import spinner from '../../assets/spinner.gif'
+import spinner from '../../assets/spinner_updated.gif'
 
 const PopularProfiles = ({mobile}) => {
 
