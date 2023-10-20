@@ -11,3 +11,9 @@
   text-align: center;
   letter-spacing: 2px;
 }
+
+@media screen and (max-width: 450px) {
+  .Card {
+      margin: none !important; 
+  }
+}
