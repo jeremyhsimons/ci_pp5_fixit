@@ -12,6 +12,7 @@ import { ProfileEditDropdown } from '../../components/MoreDropdown';
 
 import styles from '../../styles/ProfilePage.module.css'
 import spinner from '../../assets/spinner_updated.gif'
+import buttonStyles from '../../styles/Button.module.css'
 
 const ProfilePage = () => {
 
@@ -66,9 +67,9 @@ const ProfilePage = () => {
       <div>
         {currentUser && !is_owner && (
           profile?.star_id ? (
-            <Button onClick={() => handleUnStar(profile)}>un-star</Button>
+            <Button className={buttonStyles.ActiveButton} onClick={() => handleUnStar(profile)}>un-star</Button>
           ) : (
-            <Button onClick={() => handleStar(profile)}>star</Button>
+            <Button className={buttonStyles.Button} onClick={() => handleStar(profile)}>star</Button>
           )
         )}
       </div>
