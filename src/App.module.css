@@ -17,3 +17,7 @@ i {
 i:hover {
     color: #931aad;
 }
+
+a:hover {
+    text-decoration: none;
+}

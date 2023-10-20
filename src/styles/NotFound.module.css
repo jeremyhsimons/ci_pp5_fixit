@@ -1,6 +1,7 @@
 .Image {
   max-width: 500px;
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 50px;
   border: 2px solid #adacb5;
   border-radius: 10px;
 }
