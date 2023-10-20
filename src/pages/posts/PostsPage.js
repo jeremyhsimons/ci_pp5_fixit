@@ -72,7 +72,7 @@ function PostsPage({ message, filter="" }) {
                   ))
                 }
                 dataLength={posts.results.length}
-                loader={<Image src={spinner}/>}
+                loader={<Image className="text-center" src={spinner}/>}
                 hasMore={!!posts.next}
                 next={() => fetchMoreData(posts, setPosts)}
               />
@@ -84,8 +84,8 @@ function PostsPage({ message, filter="" }) {
             )}
           </>
         ) : (
-          <Container>
-            <Image src={spinner}/>
+          <Container className="d-flex justify-content-center">
+            <Image className="text-center" src={spinner}/>
           </Container>
         )}
       </Col>

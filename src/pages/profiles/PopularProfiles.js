@@ -30,10 +30,11 @@ const PopularProfiles = ({mobile}) => {
           )}
         </>
       ) : (
-        // <p>Loading...</p>
-        <Image src={spinner} />
+        <Container className='d-flex justify-content-center'>
+          <Image src={spinner} />
+        </Container>
+        
       )}
-      
     </Container>
   )
 }
