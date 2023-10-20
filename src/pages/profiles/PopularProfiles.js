@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Image } from 'react-bootstrap'
 import { axiosReq } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import Profile from './Profile';
 import { useProfileData } from '../../contexts/ProfileDataContext';
 
 import profileListStyles from '../../styles/PopularProfiles.module.css'
+import spinner from '../../assets/spinner.gif'
 
 const PopularProfiles = ({mobile}) => {
 
@@ -29,7 +30,8 @@ const PopularProfiles = ({mobile}) => {
           )}
         </>
       ) : (
-        <p>Loading...</p>
+        // <p>Loading...</p>
+        <Image src={spinner} />
       )}
       
     </Container>

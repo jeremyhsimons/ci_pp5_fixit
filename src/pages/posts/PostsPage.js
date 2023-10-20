@@ -14,6 +14,8 @@ import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
 import searchStyles from '../../styles/Searchbar.module.css'
+import spinner from '../../assets/spinner.gif'
+import { Image } from "react-bootstrap";
 
 function PostsPage({ message, filter="" }) {
   const [ posts, setPosts ] = useState({result: []});
@@ -70,7 +72,7 @@ function PostsPage({ message, filter="" }) {
                   ))
                 }
                 dataLength={posts.results.length}
-                loader={<h3>Loading...</h3>}
+                loader={<Image src={spinner}/>}
                 hasMore={!!posts.next}
                 next={() => fetchMoreData(posts, setPosts)}
               />
@@ -83,7 +85,7 @@ function PostsPage({ message, filter="" }) {
           </>
         ) : (
           <Container>
-            <h2>LOADING...</h2>
+            <Image src={spinner}/>
           </Container>
         )}
       </Col>
