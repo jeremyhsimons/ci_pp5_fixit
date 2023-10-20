@@ -34,6 +34,21 @@
 }
 
 .Logo {
-    font-size: 250%;
+    font-size: 350%;
     color: #301934;
+}
+
+.Icons {
+    font-size: 200%;
+    color: #301934;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 450px) {
+    .Icons {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }

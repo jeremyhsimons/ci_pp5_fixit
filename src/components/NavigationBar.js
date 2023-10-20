@@ -58,25 +58,23 @@ const NavigationBar = () => {
       <div className={`${appStyles.Main} ${styles.PostTypes} d-flex align-items-center`}>
         <Container className='d-flex align-items-center justify-content-center'>
           <NavLink 
-            className=""
+            className={styles.Icon}
             activeClassName={styles.Active}
             to="/bikes-and-cars" 
             >
-            <i className="fa-solid fa-car-side"></i>
+            <i className={`fa-solid fa-car-side ${styles.Icons}`}></i>
           </NavLink>
           <NavLink 
-            className=""
             activeClassName={styles.Active}
             to="/electronics" 
             >
-              <i class="fa-solid fa-microchip"></i>
+              <i className={`fa-solid fa-microchip ${styles.Icons}`}></i>
           </NavLink>
           <NavLink 
-            className="" 
             activeClassName={styles.Active}
             to="/diy" 
             >
-              <i class="fa-solid fa-hammer"></i>
+              <i className={`fa-solid fa-hammer ${styles.Icons}`}></i>
           </NavLink>
         </Container>
       </div>
