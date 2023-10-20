@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Button, Nav, NavDropdown, Form, FormControl, Container  } from 'react-bootstrap'
+import { Navbar, Button, Nav, NavDropdown, Form, FormControl, Container, Row  } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
 import styles from '../styles/NavigationBar.module.css'
 import appStyles from '../App.module.css'
@@ -27,6 +27,7 @@ const NavigationBar = () => {
 
   const filterOptions = (
     <>
+    <Row className='d-none d-md-block p-0 p-lg-2'>
       <div className={`${appStyles.Main} ${styles.PostTypes} d-flex align-items-center`}>
         <Container className='d-flex align-items-center justify-content-center'>
           <NavLink 
@@ -52,6 +53,34 @@ const NavigationBar = () => {
           </NavLink>
         </Container>
       </div>
+    </Row>
+    <Row className='d-sm-block d-md-none p-0 p-lg-2'>
+      <div className={`${appStyles.Main} ${styles.PostTypes} d-flex align-items-center`}>
+        <Container className='d-flex align-items-center justify-content-center'>
+          <NavLink 
+            className=""
+            activeClassName={styles.Active}
+            to="/bikes-and-cars" 
+            >
+              BC
+          </NavLink>
+          <NavLink 
+            className=""
+            activeClassName={styles.Active}
+            to="/electronics" 
+            >
+              EC
+          </NavLink>
+          <NavLink 
+            className="" 
+            activeClassName={styles.Active}
+            to="/diy" 
+            >
+              DIY
+          </NavLink>
+        </Container>
+      </div>
+    </Row>
     </>
   )
 
