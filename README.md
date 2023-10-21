@@ -41,11 +41,30 @@ This first iteration of the site has a separate front end and back end design. U
 
 ## Project Goals
 
+### New users
+* To be able to sign up and post about a problem I'm having in a specific category of DIY
+* To be able to view comments and suggestions from other users who can help me.
+* To be able to scroll and search posts so that I can content from users who might have had the same issue as me.
+* To upvote and star users/posts/comments that were helpful to me as a means of saying thank you.
+
+### Existing users
+* To comment on other users' posts so that I can help them and earn upvotes and stars.
+* To see a list of popular profiles and see how close I am to being one of the top contributors.
+
 ## User Experience
 
 ### Target audience
+* Bike and car enthusiasts who have an interest in maintaining their own vehicles.
+* Electronics and hardware enthusiasts.
+* Home Improvement enthusiasts, or new home owners looking for advice.
+* Anyone interested in solving a one-off problem.
+* Potentially other groups of enthusiasts as and when new categories are added to the database.
 
 ### User requirements
+
+* To be able to scroll infinitely through a post list to browse content.
+* To be able to search for posts and users based on keywords.
+* To be able to bookamrk a helpful post in my account so that I can revisit it later.
 
 ### User Manual
 
