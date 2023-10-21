@@ -8,6 +8,7 @@ import { axiosRes } from '../../api/axiosDefaults'
 import CommentEditForm from './CommentEditForm'
 
 import styles from '../../styles/Comment.module.css'
+import Avatar from '../../components/Avatar'
 
 const Comment = ({
   profile_id, 
@@ -82,10 +83,9 @@ const Comment = ({
         <hr />
         <Media className={styles.Comment}>
           <Link to={`/profiles/${profile_id}`}>
-            <p>IMG</p>
+            <Avatar height={60} src={profile_image} text={author}/>
           </Link>
           <Media.Body className="align-self-center ml-2">
-            <span className="mx-3"><strong>{author}</strong></span>
             <span className={styles.Date}>{updated_at}</span>
             {showEditForm ? (
               <CommentEditForm
