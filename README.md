@@ -172,7 +172,47 @@ The following React Libraries were also used:
 
 #### Tablet screens
 
+<details>
+    <summary>Authentication</summary>
+    <img src="docs/wireframes/auth-tablet.png" alt="wireframe for login page on tablet screen">
+</details>
+
+<details>
+    <summary>Home</summary>
+    <img src="docs/wireframes/home-tablet.png" alt="wireframe for main page on tablet screen">
+</details>
+
+<details>
+    <summary>Profile</summary>
+    <img src="docs/wireframes/profile-tablet.png" alt="wireframe for profile page on tablet screen">
+</details>
+
+<details>
+    <summary>Post form</summary>
+    <img src="docs/wireframes/postform-tablet.png" alt="wireframe for post form page on tablet screen">
+</details>
+
 #### Desktop screens
+
+<details>
+    <summary>Authentication</summary>
+    <img src="docs/wireframes/auth-desktop.png" alt="wireframe for login page on desktop screen">
+</details>
+
+<details>
+    <summary>Home</summary>
+    <img src="docs/wireframes/home-desktop.png" alt="wireframe for main page on desktop screen">
+</details>
+
+<details>
+    <summary>Profile</summary>
+    <img src="docs/wireframes/profile-desktop.png" alt="wireframe for profile page on desktop screen">
+</details>
+
+<details>
+    <summary>Post form</summary>
+    <img src="docs/wireframes/postform-desktop.png" alt="wireframe for post form page on desktop screen">
+</details>
 
 ## Agile workflow
 
