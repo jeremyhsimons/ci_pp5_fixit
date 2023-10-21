@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 import Post from "./Post";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -23,6 +24,8 @@ function PostsPage({ message, filter="" }) {
   const {pathname} = useLocation();
 
   const [query, setQuery] = useState("");
+
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -41,7 +44,7 @@ function PostsPage({ message, filter="" }) {
     return () => {
       clearTimeout(timer)
     }
-  }, [filter, query, pathname])
+  }, [filter, query, pathname, currentUser])
 
   return (
     <Row className="h-100">
