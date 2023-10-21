@@ -11,9 +11,17 @@
   text-align: center;
 }
 
+.Image {
+  max-width: 700px;
+  border: 20px #b0d7ff solid;
+}
+
 @media screen and (max-width: 600px) {
   .Fields {
     width: 100%;
+  }
+  .Image {
+    max-width: 90%;
   }
 }
 

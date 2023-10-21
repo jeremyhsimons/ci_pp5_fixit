@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import { Form, Button, Alert, Container } from 'react-bootstrap';
+import { Form, Button, Alert, Container, Image } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
 import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
@@ -7,6 +7,7 @@ import { useRedirect } from '../../hooks/useRedirect';
 import buttonStyles from '../../styles/Button.module.css'
 import formStyles from '../../styles/SignUpSignIn.module.css'
 import { setTokenTimestamp } from '../../utils/utils';
+import tools from '../../assets/signup.webp'
 
 const SignInForm = () => {
 
@@ -47,6 +48,9 @@ const SignInForm = () => {
 
   return (
     <div>
+      <Container className={`my-1 text-center ${formStyles.Card}`}>
+        <Image className={formStyles.Image} src={tools} rounded/>
+      </Container>
       <Container className={` ${formStyles.Card}`}>
         <h1 className="d-flex justify-content-center text-center">Sign In to Fixit.</h1>
         <Form onSubmit={handleSubmit}>
