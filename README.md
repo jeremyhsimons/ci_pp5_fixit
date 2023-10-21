@@ -10,7 +10,6 @@ This documentation covers the design, features, hosting, and testing of the Reac
 ## Introduction
 
 ## Contents
-
 * [Project Goals](#project-goals)<br>
     * [For the user](#for-the-user)
     * [For the site owner](#for-the-site-owner)
@@ -77,8 +76,6 @@ Click the dropdown to view the user manual:
 
 ### Other tools/websites/libraries used
 
-#### 3rd party Python Libraries used
-
 ## Deployment & Local Development
 
 ## Testing
@@ -86,6 +83,16 @@ Click the dropdown to view the user manual:
 ## Validation
 
 ## Bugs
+
+| Bug | Action Taken to Fix |
+| --- | --- |
+| When initially trying to run the react app using `$ npm start`. An error occurred saying that the build failed. | I tried installing and using an older long-term support version of node (v16.16.0). Once that was installed the command to start the app worked fine. Gitpod has been set to version 18.18 by default. |
+| Submitting the signup form results a console error and doesn’t work as expected. The error is as follows: `Access to XMLHttpRequest at 'https://fixit-drf-api-b3b58b2bc39c.herokuapp.com/dj-rest-auth/registration/' from origin 'https://ci-pp5-fixit-eda4cb59906b.herokuapp.com' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource` | Heroku hadn’t saved environment variables properly. Re-doing this solved the problem |
+| Submitting a post create form resulted in a 400 bad request from the API. The http response said that the author was a required field. | Author was not defined as a read-only field in the post serializer in the API. Adding this fixed the issue. |
+| bookmarking a post results in a 405 error returned from the API | I had typed the wrong endpoint into my axiosRes instance. I had entered /bookmark/ instead of /bookmarks/. |
+| Upvoting a comment worked, but the state didn’t update when the user upvoted, and the page had to refresh in order for the upvote to appear. | This was fixed by making sure that the return statement for the handleupvote function checked if the comment.id passed to the map was equal to the id supplied from the parent component |
+| The post title is a link and this has changed the text color/styles. | I forgot to wrap the post title and content in a separate card body component *outside* the link component that wraps the post image. |
+
 
 ## Credits
 
