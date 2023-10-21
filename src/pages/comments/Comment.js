@@ -41,7 +41,7 @@ const Comment = ({
         results: prevComments.results.filter((comment) => comment.id !== id)
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -57,7 +57,7 @@ const Comment = ({
         })
       }))
     } catch(err) {
-      console.log(err)
+      // console.log(err)
     }
   }
 
@@ -73,7 +73,7 @@ const Comment = ({
         })
       }))
     } catch(err) {
-      console.log(err)
+      // console.log(err)
     }
   }
 
