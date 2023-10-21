@@ -127,11 +127,25 @@ Click the dropdown to view the user manual:
 
 #### Fonts
 
+[Google Fonts](https://fonts.google.com/) CDN was used to supply the fonts for this site.
+
+Montserrat light was chosen as the font for site content because of its readability.
+
 #### Colours
 
 [Coolors.co](https://coolors.co/104f55-32746d-f4d8cd-01200f-011502) was used to generate the color palate of the site.
 
+<img src="docs/colorscheme.png" alt="A screenshot of the 5 most prominent colours used in the design of the site.">
+
 ### Front End Libraries
+
+[React Bootstrap v4](https://react-bootstrap-v4.netlify.app/) was used to expedite the front-end development process, specifically to provide row, column, and container components to order site content positionally.
+
+Additionally the Image component was used extensively throughout the site to speed up formatting of images rendered on the front end.
+
+The following React Libraries were also used:
+[React Router DOM]() for linking internal urls in the site.
+[React MSW]() for creating mock endpoints for testing.
 
 ### Wireframes
 
