@@ -23,3 +23,13 @@
   max-height: 400px;
   margin-top: 20px;
 }
+
+@media screen and (max-width: 450px) {
+  .Post {
+    padding: 10px;
+  }
+  
+  .Date {
+    letter-spacing: normal;
+  }
+}
