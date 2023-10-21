@@ -44,7 +44,7 @@ function CommentForm(props) {
   };
 
   return (
-    <Form className={`mt-2 d-flex justify-content-center ${styles.Form}`} onSubmit={handleSubmit}>
+    <Form className={`mt-2 d-flex justify-content-center align-items-center ${styles.Form}`} onSubmit={handleSubmit}>
       <Form.Group className="">
         <InputGroup>
           <Link to={`/profiles/${profile_id}`}>
@@ -57,11 +57,12 @@ function CommentForm(props) {
             value={content}
             onChange={handleChange}
             rows={2}
+            cols={50}
           />
         </InputGroup>
       </Form.Group>
       <button
-        className={` ml-auto ${buttonStyles.Button}`}
+        className={`ml-auto ${buttonStyles.Button} ${styles.Submit}`}
         disabled={!content.trim()}
         type="submit"
       >
