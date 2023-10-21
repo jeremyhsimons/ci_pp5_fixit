@@ -149,6 +149,16 @@ The following React Libraries were also used:
 
 ### Wireframes
 
+#### Phone screens
+<details>
+    <summary>Authentication</summary>
+    <img src="docs/wireframes/login-phone.png" alt="wireframe for login page">
+</details>
+
+#### Tablet screens
+
+#### Desktop screens
+
 ## Agile workflow
 
 ## Features
