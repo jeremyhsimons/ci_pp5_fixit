@@ -106,7 +106,7 @@ const PostEditForm = () => {
           {image ? (
             <>
               <figure>
-                <Image src={image} rounded/>
+                <Image className={formStyles.Image} src={image} rounded/>
               </figure>
             </>
           ) : (

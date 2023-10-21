@@ -24,7 +24,9 @@
   .Fields {
     width: 95%;
   }
+}
 
+@media screen and (max-width: 770px) {
   .Image {
     max-width: 95%;
   }
