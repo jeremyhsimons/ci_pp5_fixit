@@ -9,6 +9,13 @@ This documentation covers the design, features, hosting, and testing of the Reac
 
 ## Introduction
 
+Fixit is the forum for any budding DIY enthusiast to link up with like minded tinkerers to solve problems together. Where developers pool knowledge on platforms like [Stack Overflow](https://stackoverflow.com/), Fixit aims to be the go-to place for any user to find help solving their problem. After all, why should people struggle alone when most technical problems (whether a busted bike derailleur or a blocked drain) have probably already been solved?
+
+This first iteration of the site has a separate front end and back end design. User data is stored and distributed via a Django REST API, and the front end site which users interact with is a separate application made using React. This first iteration focuses user content into 3 main categories: 
+1. Bikes, cars, and other vehicular mechanics.
+2. Electronics and circuitry
+3. A more general DIY category that could cover most home improvement projects/problems.
+
 ## Contents
 * [Project Goals](#project-goals)<br>
     * [For the user](#for-the-user)
