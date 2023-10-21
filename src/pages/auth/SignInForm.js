@@ -48,7 +48,7 @@ const SignInForm = () => {
 
   return (
     <div>
-      <Container className={`my-1 text-center ${formStyles.Card}`}>
+      <Container className={`text-center ${formStyles.Card}`}>
         <Image className={formStyles.Image} src={tools} rounded/>
       </Container>
       <Container className={` ${formStyles.Card}`}>

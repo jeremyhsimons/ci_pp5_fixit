@@ -16,17 +16,21 @@
   border: 20px #b0d7ff solid;
 }
 
-@media screen and (max-width: 600px) {
-  .Fields {
-    width: 100%;
-  }
-  .Image {
-    max-width: 90%;
-  }
-}
-
 .Title {
   font-size: 150%;
   font-weight: 700;
   letter-spacing: 2px;
+}
+
+@media screen and (max-width: 600px) {
+  .Fields {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .Image {
+    max-width: 90%;
+    border: 1px #b0d7ff solid;
+  }
 }
