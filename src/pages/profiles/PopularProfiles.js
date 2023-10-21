@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Container, Image } from 'react-bootstrap'
-import { axiosReq } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import Profile from './Profile';
 import { useProfileData } from '../../contexts/ProfileDataContext';
 

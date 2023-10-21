@@ -2,7 +2,7 @@ import React from 'react'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import { axiosReq, axiosRes } from '../../api/axiosDefaults';
+import { axiosRes } from '../../api/axiosDefaults';
 import { MoreDropdown } from '../../components/MoreDropdown';
 
 import avatarStyles from '../../styles/Avatar.module.css'
@@ -14,7 +14,6 @@ const Post = (props) => {
     id,
     author,
     bookmark_id,
-    category,
     comments_count,
     content,
     image,

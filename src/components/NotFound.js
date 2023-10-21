@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Container, Image, NavLink } from 'react-bootstrap'
+import { Container, Image, } from 'react-bootstrap'
 import noResults from '../assets/404.webp'
 
 import styles from '../styles/NotFound.module.css'

@@ -9,7 +9,7 @@ import styles from '../../styles/Profile.module.css'
 import Avatar from '../../components/Avatar';
 
 const Profile = (props) => {
-  const {profile, mobile, imageSize=55} = props;
+  const {profile, mobile} = props;
   const {id, star_id, stars_count, image, profile_owner} = profile;
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === profile_owner;
