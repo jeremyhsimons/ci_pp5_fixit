@@ -47,7 +47,7 @@ const Profile = (props) => {
       </div>
       <div>
         <Link className="align-self-center" to={`/profiles/${id}`}>
-          <span className="d-none d-lg-block p-0 p-lg-2">
+          <span className="d-none d-md-block p-0 p-lg-2">
             <Avatar src={image} height={80} text={profile_owner}/>
           </span>
           <span className='d-sm-block d-md-none p-0 p-lg-2'>
