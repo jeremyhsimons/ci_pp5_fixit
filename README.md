@@ -152,7 +152,22 @@ The following React Libraries were also used:
 #### Phone screens
 <details>
     <summary>Authentication</summary>
-    <img src="docs/wireframes/login-phone.png" alt="wireframe for login page">
+    <img src="docs/wireframes/auth-phone.png" alt="wireframe for login page on phone screen">
+</details>
+
+<details>
+    <summary>Home</summary>
+    <img src="docs/wireframes/home-phone.png" alt="wireframe for main page on phone screen">
+</details>
+
+<details>
+    <summary>Profile</summary>
+    <img src="docs/wireframes/profile-phone.png" alt="wireframe for profile page on phone screen">
+</details>
+
+<details>
+    <summary>Post form</summary>
+    <img src="docs/wireframes/postform-phone.png" alt="wireframe for post form page on phone screen">
 </details>
 
 #### Tablet screens
