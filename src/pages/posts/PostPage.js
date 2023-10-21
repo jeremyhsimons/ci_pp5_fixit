@@ -73,7 +73,7 @@ const PostPage = () => {
                   next={() => fetchMoreData(comments, setComments)}
                 />
               ) : currentUser ? (
-                <span>It's pretty quiet here... Why not add a comment?</span>
+                <span>It&rsquo;s pretty quiet here... Why not add a comment?</span>
               ) : (
                 <Container className='d-flex justify-content-center'>
                   <Image src={spinner}/>

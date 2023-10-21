@@ -144,8 +144,8 @@ Montserrat light was chosen as the font for site content because of its readabil
 Additionally the Image component was used extensively throughout the site to speed up formatting of images rendered on the front end.
 
 The following React Libraries were also used:
-[React Router DOM]() for linking internal urls in the site.
-[React MSW]() for creating mock endpoints for testing.
+* [React Router DOM](https://www.npmjs.com/package/react-router-dom) for linking internal urls in the site.
+* [React MSW](https://mswjs.io/) for creating mock endpoints for testing.
 
 ### Wireframes
 

@@ -135,7 +135,7 @@ const Post = (props) => {
             {is_owner ? (
               <OverlayTrigger
                 placement="top"
-                overlay={<Tooltip>You can't bookmark your own post!</Tooltip>}
+                overlay={<Tooltip>You can&rsquo;t bookmark your own post!</Tooltip>}
               >
                 <i className="fa-regular fa-bookmark mr-5"></i>
               </OverlayTrigger>
@@ -161,7 +161,7 @@ const Post = (props) => {
             {is_owner ? (
               <OverlayTrigger
                 placement="top"
-                overlay={<Tooltip>You can't upvote your own post!</Tooltip>}
+                overlay={<Tooltip>You can&rsquo;t upvote your own post!</Tooltip>}
               >
                 <i className="fa-regular fa-hand-point-up"></i>
               </OverlayTrigger>

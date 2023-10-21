@@ -103,7 +103,7 @@ const Comment = ({
               {is_owner ? (
                 <OverlayTrigger
                   placement="top"
-                  overlay={<Tooltip>You can't upvote your own comment!</Tooltip>}
+                  overlay={<Tooltip>You can&rsquo;t upvote your own comment!</Tooltip>}
                 >
                   <i className="fa-regular fa-hand-point-up"></i>
                 </OverlayTrigger>

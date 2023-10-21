@@ -2,7 +2,7 @@ import React from "react";
 import { Dropdown } from "react-bootstrap";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-const ThreeDots = React.forwardRef(({ onClick }, ref) => (
+const threeDots = React.forwardRef(({ onClick }, ref) => (
   <i
     className="fas fa-ellipsis-v"
     ref={ref}
@@ -13,7 +13,7 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
-const ThreeDotsHorizontal = React.forwardRef(({ onClick }, ref) => (
+const threeDotsHorizontal = React.forwardRef(({ onClick }, ref) => (
   <i
     className="fas fa-ellipsis-h"
     ref={ref}
@@ -27,7 +27,7 @@ const ThreeDotsHorizontal = React.forwardRef(({ onClick }, ref) => (
 export const MoreDropdown = ({handleEdit, handleDelete}) => {
   return(
     <Dropdown className="ml-auto" drop="left">
-    <Dropdown.Toggle as={ThreeDots}/>
+    <Dropdown.Toggle as={threeDots}/>
 
     <Dropdown.Menu 
       className="text-center"
@@ -48,7 +48,7 @@ export function ProfileEditDropdown({ id }) {
   const history = useHistory();
   return (
     <Dropdown className={`ml-auto px-3`} drop="left">
-      <Dropdown.Toggle as={ThreeDotsHorizontal} />
+      <Dropdown.Toggle as={threeDotsHorizontal} />
       <Dropdown.Menu>
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit`)}

@@ -49,7 +49,7 @@ const ProfilePage = () => {
 
   const mainProfile = (
     <div className={`text-center ${styles.Page}`}>
-      <h2 className={`${styles.Title}`}>{profile?.profile_owner}'s profile</h2>
+      <h2 className={`${styles.Title}`}>{profile?.profile_owner}&rsquo;s profile</h2>
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <div className='text-center'>
         <strong>Status: </strong>
@@ -96,7 +96,7 @@ const ProfilePage = () => {
           next={() => fetchMoreData(profilePosts, setProfilePosts)}
         />
       ) : (
-        <h4>This user hasn't posted yet</h4>
+        <h4>This user hasn&rsquo;t posted yet</h4>
       )}
     </div>
   )
