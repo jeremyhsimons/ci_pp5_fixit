@@ -132,7 +132,33 @@ const Post = (props) => {
         <Card.Body className={postStyles.TextPanel}>
           {title && <Card.Title className={`text-center ${postStyles.Title}`}>{title}</Card.Title>}
           {content && <Card.Text className="text-center">{content}</Card.Text>}
-          <div className='d-flex justify-content-center'>
+          <div className='d-flex justify-content-center align-items-center'>
+            {is_owner ? (
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>You can't bookmark your own post!</Tooltip>}
+              >
+                <i className="fa-regular fa-bookmark mr-5"></i>
+              </OverlayTrigger>
+            ) : bookmark_id ? (
+              <span onClick={handleRemoveBookmark}>
+                <i className="fa-solid fa-bookmark mr-5"></i>
+                {/* Handles un-upvoting the post */}
+              </span>
+            ) : currentUser ? (
+              <span onClick={handleBookmark}>
+                <i className="fa-regular fa-bookmark mr-5"></i>
+                {/* Handles upvoting the post */}
+              </span>
+            ) : (
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Log in to bookmark posts!</Tooltip>}
+              >
+                <i className="fa-regular fa-bookmark mr-5"></i>
+                {/* handles users not logged in, and can't upvote */}
+              </OverlayTrigger>
+            )}
             {is_owner ? (
               <OverlayTrigger
                 placement="top"
@@ -160,34 +186,8 @@ const Post = (props) => {
               </OverlayTrigger>
             )}
             {upvotes_count}
-            {is_owner ? (
-              <OverlayTrigger
-                placement="top"
-                overlay={<Tooltip>You can't bookmark your own post!</Tooltip>}
-              >
-                <i className="fa-regular fa-bookmark ml-2"></i>
-              </OverlayTrigger>
-            ) : bookmark_id ? (
-              <span onClick={handleRemoveBookmark}>
-                <i className="fa-solid fa-bookmark ml-2"></i>
-                {/* Handles un-upvoting the post */}
-              </span>
-            ) : currentUser ? (
-              <span onClick={handleBookmark}>
-                <i className="fa-regular fa-bookmark ml-2"></i>
-                {/* Handles upvoting the post */}
-              </span>
-            ) : (
-              <OverlayTrigger
-                placement="top"
-                overlay={<Tooltip>Log in to bookmark posts!</Tooltip>}
-              >
-                <i className="fa-regular fa-bookmark ml-2"></i>
-                {/* handles users not logged in, and can't upvote */}
-              </OverlayTrigger>
-            )}
-            <Link to={`/posts/${id}`}>
-              <i className='far fa-comments ml-2'></i>
+            <Link to={`/posts/${id}`} className={postStyles.CommentIcon}>
+              <i className='far fa-comments ml-5'></i>
               {comments_count}
             </Link>
           </div>

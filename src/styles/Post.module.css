@@ -24,11 +24,15 @@
   margin-top: 20px;
 }
 
+.CommentIcon {
+  color: #2D3142;
+}
+
 @media screen and (max-width: 450px) {
   .Post {
     padding: 10px;
   }
-  
+
   .Date {
     letter-spacing: normal;
   }

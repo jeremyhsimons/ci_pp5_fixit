@@ -16,8 +16,8 @@ const Profile = (props) => {
   const {handleStar, handleUnStar} = useSetProfileData();
 
   return (
-    <div className={`d-flex align-items-center ${mobile && "flex-column"} ${styles.Profile}`}>
-      <div className={`${!mobile && "mr-auto"}`}>
+    <div className={`d-flex align-items-center pr-5 ${mobile && "flex-column"} ${styles.Profile}`}>
+      <div className={`${!mobile && "ml-auto"}`}>
         {!mobile && currentUser && !is_owner && (
           star_id ? (
             <Button
@@ -38,12 +38,25 @@ const Profile = (props) => {
       </div>
       
       <div className='mx-2'>
-        {/* {star_id ? (
-          <span> <i className="fa-solid fa-star"></i> {stars_count}</span>
+        {star_id ? (
+          <div className='d-none d-lg-block'>
+            <div>
+              <i className="fa-solid fa-star"></i>
+            </div>
+            <div className='ml-3'>
+              {stars_count}
+            </div>
+          </div>
         ) : (
-          <span> <i className="fa-regular fa-star"></i> {stars_count}</span>
-        )} */}
-        {/* <strong className='ml-3'>{profile_owner}</strong> */}
+          <div className='d-none d-lg-block'>
+            <div>
+              <i className="fa-regular fa-star "></i>
+            </div>
+            <div className='ml-3'>
+              {stars_count}
+            </div>
+          </div>
+        )}
       </div>
       <div>
         <Link className="align-self-center" to={`/profiles/${id}`}>
