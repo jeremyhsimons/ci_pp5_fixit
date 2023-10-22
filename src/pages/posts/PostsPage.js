@@ -60,6 +60,7 @@ function PostsPage({ message, filter="" }) {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               type="text"
+              aria-label="search bar"
               className={`mr-sm-2 ${searchStyles.Item} ${searchStyles.Search}`}
               placeholder="Search posts"
             />

@@ -83,7 +83,7 @@ const PostEditForm = () => {
         {errors.title?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>
         )}
-        <Form.Group controlId="title">
+        <Form.Group controlId="content">
           <Form.Label>Content</Form.Label>
           <Form.Control as="textarea" name="content" value={content} onChange={handleChange}/>
         </Form.Group>
@@ -102,7 +102,7 @@ const PostEditForm = () => {
         {errors.category?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>
         )}
-        <Form.Group>
+        <Form.Group controlId='image-upload'>
           {image ? (
             <>
               <figure>

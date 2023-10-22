@@ -12,7 +12,7 @@ const NotFound = () => {
       <h1 className={styles.Text}>404</h1>
       <h2 className={styles.Text}>Uh oh... It looks like the page you&lsquo;re looking for doesn&lsquo;t exist.</h2>
       <Container className='d-flex justify-content-center'>
-        <Image className={styles.Image} src={noResults}/>
+        <Image className={styles.Image} src={noResults} alt='Crashed car'/>
       </Container>
       <Link className={`p-2 my-2 ${buttonStyles.Button}`} to="/">
         HOME

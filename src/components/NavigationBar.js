@@ -60,19 +60,23 @@ const NavigationBar = () => {
           <NavLink 
             className={styles.Icon}
             activeClassName={styles.Active}
-            to="/bikes-and-cars" 
+            to="/bikes-and-cars"
+            aria-label="bikes and cars feed"
+
             >
             <i className={`fa-solid fa-car-side ${styles.Icons}`}></i>
           </NavLink>
           <NavLink 
             activeClassName={styles.Active}
-            to="/electronics" 
+            to="/electronics"
+            aria-label="electronics feed"
             >
               <i className={`fa-solid fa-microchip ${styles.Icons}`}></i>
           </NavLink>
           <NavLink 
             activeClassName={styles.Active}
-            to="/diy" 
+            to="/diy"
+            aria-label="DIY feed"
             >
               <i className={`fa-solid fa-hammer ${styles.Icons}`}></i>
           </NavLink>
@@ -124,9 +128,8 @@ const NavigationBar = () => {
     <div>
         <Navbar expanded={expanded} className={styles.NavigationBar} expand="md" fixed="top">
             <Container>
-                <NavLink className="mr-3" to="/">
+                <NavLink className="mr-3" to="/" aria-label="Logo">
                   <i className={`fa-solid fa-screwdriver-wrench ${styles.Logo}`}></i>
-                  
                 </NavLink>
                 <Navbar.Toggle ref={ref} onClick={() => setExpanded(!expanded)} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

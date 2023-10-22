@@ -68,9 +68,9 @@ const CreatePostForm = () => {
         {errors.title?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>
         )}
-        <Form.Group controlId="title">
+        <Form.Group controlId="content">
           <Form.Label>Content</Form.Label>
-          <Form.Control as="textarea" name="content" value={content} onChange={handleChange}/>
+          <Form.Control  as="textarea" name="content" value={content} onChange={handleChange}/>
         </Form.Group>
         {errors.content?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>
@@ -87,7 +87,7 @@ const CreatePostForm = () => {
         {errors.category?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>
         )}
-        <Form.Group className={`${formStyles.Image}`}>
+        <Form.Group className={`${formStyles.Image}`} controlId='image-upload'>
           {image ? (
             <>
               <figure>
@@ -95,11 +95,9 @@ const CreatePostForm = () => {
               </figure>
             </>
           ) : (
-            <div>
-              <Form.Label>Upload an image</Form.Label>
-            </div>
+            <Form.Label>Upload an image</Form.Label>
           ) }
-          <Form.File id="image-upload" accept="image/*" ref={inputImage} onChange={handleChangeImage}></Form.File>
+          <Form.File id="image-upload" name="image" accept="image/*" ref={inputImage} onChange={handleChangeImage}></Form.File>
         </Form.Group>
         {errors.image?.map((message, idx) =>
           <Alert variant="warning" key={idx}>{message}</Alert>
