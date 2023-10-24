@@ -251,9 +251,40 @@ This does not mean that the site will never have this feature, and this user sto
 
 ## Features
 
+### Authentication
+
+#### Sign Up Page
+
+* A form to create a new account for Fixit. 
+* Uses password validation built into django rest auth.
+* Any form errors are displayed to users.
+* User stories covered: 1
+
+#### Sign In Page
+* A form that allows users to access all the sites features upon successful authentication.
+* In the background, a JWT is issued to the user so that they can remain logged in for 24 hours, even if they close the browser in the meantime.
+* User stories covered: 2, 3
+
+#### Sign Out Button
+* Allows the user to sign out from the navigation bar.
+* Allows them to keep their account secure by destroying/invalidating the JWT that normally keeps them logged in.
+* User stories covered: 4
+
+#### Update Username & Password Forms
+* Allows users to update their username and password respectively.
+* Allows users to customise their profile, and also to keep their account secure by regularly updating passwords.
+* User stories covered: 5
+
+### Navigation
+
+#### Auto redirect to signup
+
+#### Auto redirect to signin
+
 ### Feature ideas for future development
 
 * A page on the site, reachable from the navbar for logged in users, to scroll through a list of profiles that they have starred.
+* Feedback messages to users so that they can be sure that when they create a post or update, their actions have been successful.
 * More categories for posts which could include furniture-making/woodwork, gardening/yard maintanence.
 * A system whereby popular profiles are displayed as an aggregate of stars and upvotes that a user has received.
 * Rewards or badges for top users based on their aggregate score.
