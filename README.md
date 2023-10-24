@@ -333,6 +333,54 @@ The pages of this project were tested using the [W3C Validation service]() all p
 
 </details>
 
+### CSS
+
+All CSS files in this project were validated using the [W3C Jigsaw]() validator. All modules passed with no errors or warnings.
+
+<details>
+    <summary>Avatar.module.css</summary>
+</details>
+<details>
+    <summary>Button.module.css</summary>
+</details>
+<details>
+    <summary>Comment.module.css</summary>
+</details>
+<details>
+    <summary>CommentForm.module.css</summary>
+</details>
+<details>
+    <summary>CreatePostForm.module.css</summary>
+</details>
+<details>
+    <summary>NavigationBar.module.css</summary>
+</details>
+<details>
+    <summary>NotFound.module.css</summary>
+</details>
+<details>
+    <summary>PopularProfiles.module.css</summary>
+</details>
+<details>
+    <summary>Post.module.css</summary>
+</details>
+<details>
+    <summary>Profile.module.css</summary>
+</details>
+<details>
+    <summary>ProfileEditForm.module.css</summary>
+</details>
+<details>
+    <summary>ProfilePage.module.css</summary>
+</details>
+<details>
+    <summary>SearchBar.module.css</summary>
+</details>
+<details>
+    <summary>SignUpSignIn.module.css</summary>
+</details>
+
+
 ## Bugs
 
 | Bug | Action Taken to Fix |
