@@ -143,7 +143,7 @@ Montserrat light was chosen as the font for site content because of its readabil
 
 Additionally the Image component was used extensively throughout the site to speed up formatting of images rendered on the front end.
 
-[Font Awesome]() CDN was used to provide icons for the site.
+[Font Awesome](https://fontawesome.com/) CDN was used to provide icons for the site.
 
 The following React Libraries were also used:
 * [React Router DOM](https://www.npmjs.com/package/react-router-dom) for linking internal urls in the site.
@@ -252,12 +252,22 @@ This does not mean that the site will never have this feature, and this user sto
 ## Features
 
 ### Feature ideas for future development
+
+* A page on the site, reachable from the navbar for logged in users, to scroll through a list of profiles that they have starred.
+* More categories for posts which could include furniture-making/woodwork, gardening/yard maintanence.
+* A system whereby popular profiles are displayed as an aggregate of stars and upvotes that a user has received.
+* Rewards or badges for top users based on their aggregate score.
+* Direct messaging for users: e.g. if they see a profile with a status of 'ask me anything', they could reach out with a question.
   
 ## Technologies Used
 
+* [React.js](https://react.dev/)
+
 ### Languages used
 
-### Frameworks/3rd party Libraries used for CSS and JS
+* JavaScript
+* HTML / JSX
+* CSS
 
 ### Other tools/websites/libraries used
 
@@ -278,7 +288,6 @@ This does not mean that the site will never have this feature, and this user sto
 | Upvoting a comment worked, but the state didn’t update when the user upvoted, and the page had to refresh in order for the upvote to appear. | This was fixed by making sure that the return statement for the handleupvote function checked if the comment.id passed to the map was equal to the id supplied from the parent component |
 | The post title is a link and this has changed the text color/styles. | I forgot to wrap the post title and content in a separate card body component *outside* the link component that wraps the post image. |
 
-
 ## Credits
 
 ### 3rd party code used
@@ -286,8 +295,6 @@ This does not mean that the site will never have this feature, and this user sto
 ### images used
 
 ### Tutorials used
-
-### 3rd party Python libraries/modules
 
 ### Other 3rd party libraries and online tools used
 
