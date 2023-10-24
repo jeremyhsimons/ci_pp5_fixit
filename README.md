@@ -435,6 +435,59 @@ All Custom JavaScript files were validated using the [ESLint](https://eslint.org
     <img src="docs/validation/jsx/utils.png" alt="screenshot of JS file validated.">
 </details>
 
+### Accessibility
+
+All pages of this application were tested using the [WAVE validator](https://wave.webaim.org/) to ensure that all components accessible for screen-reading users. All pages passed with no errors.
+
+<details>
+    <summary>Home</summary>
+    <img src="docs/validation/html/html-home.png" alt="screenshot of page html validated.">
+</details>
+<details>
+    <summary>Post page</summary>
+    <img src="docs/validation/html/html-post.png" alt="screenshot of page html validated.">
+
+</details>
+<details>
+    <summary>Create Post</summary>
+    <img src="docs/validation/html/html-postcreate.png" alt="screenshot of page html validated.">
+
+</details>
+<details>
+    <summary>Edit Post</summary>
+    <img src="docs/validation/html/html-postedit.png" alt="screenshot of page html validated.">
+
+</details>
+<details>
+    <summary>Profile</summary>
+    <img src="docs/validation/html/html-profile.png" alt="screenshot of page html validated.">
+
+</details>
+<details>
+    <summary>Edit Profile</summary>
+    <img src="docs/validation/html/html-profileedit.png" alt="screenshot of page html validated.">
+
+</details>
+<details>
+    <summary>Edit Username</summary>
+    <img src="docs/validation/html/html-username.png" alt="screenshot of page html validated.">
+
+</details>
+<details>
+    <summary>Edit Password</summary>
+    <img src="docs/validation/html/html-password.png" alt="screenshot of page html validated.">
+
+</details>
+<details>
+    <summary>Sign in</summary>
+    <img src="docs/validation/html/html-signin.png" alt="screenshot of page html validated.">
+
+</details>
+<details>
+    <summary>Sign up</summary>
+    <img src="docs/validation/html/html-signup.png" alt="screenshot of page html validated.">
+
+</details>
 
 ## Bugs
 
