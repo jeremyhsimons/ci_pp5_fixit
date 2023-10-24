@@ -480,6 +480,16 @@ All pages of this application were tested using the [WAVE validator](https://wav
     <img src="docs/validation/wave/wave-signup.png" alt="screenshot of page accessibility validated.">
 </details>
 
+### Lighthouse
+
+The application was tested using the [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) tool in Chrome developer tools. The test was run for both desktop and mobile devices. Please note that performance figures can vary depending on internet speeds.
+
+##### Desktop:
+<img src="docs/validation/lighthouse/lighthouse-home-desktop.png" alt="screenshot of the lighthouse report">
+
+##### Mobile:
+<img src="docs/validation/lighthouse/lighthouse-home-mobile.png" alt="screenshot of the lighthouse report">
+
 ## Bugs
 
 | Bug | Action Taken to Fix |
