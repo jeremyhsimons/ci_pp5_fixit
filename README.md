@@ -367,6 +367,28 @@ User stories covered: 26, 27
 
 ## Deployment & Local Development
 
+### Forking GitHub Repository
+
+This repository can be forked using the following process:
+
+1. On the repository's page, go to the top-right of the page underneath the dark ribbon.
+1. Click on the fork button
+1. You can now work on a fork of this project.
+
+### Cloning GitHub Repository
+
+This repository can be cloned using the following process:
+
+1. Go to this repository's page on GitHub.
+1. Click on the code button (not the one in the navbar, but the one right above the file list).
+1. Select an option, HTTPS, SSH, GitHub CLI.
+1. Copy the url below to your clipboard.
+1. Open Git Bash/your IDE terminal.
+1. Ensure the directory you are working in is the correct one you want to paste the project into.
+1. Type the command '$ git clone'
+1. Paste the URL of the repository after this.
+1. Hit enter on your keyboard and the project will be cloned.
+
 ## Testing
 
 ## Validation
