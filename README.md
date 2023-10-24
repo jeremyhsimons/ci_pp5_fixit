@@ -441,52 +441,43 @@ All pages of this application were tested using the [WAVE validator](https://wav
 
 <details>
     <summary>Home</summary>
-    <img src="docs/validation/html/html-home.png" alt="screenshot of page html validated.">
+    <img src="docs/validation/wave/wave-home.png" alt="screenshot of page accessibility validated.">
 </details>
 <details>
     <summary>Post page</summary>
-    <img src="docs/validation/html/html-post.png" alt="screenshot of page html validated.">
-
+    <img src="docs/validation/wave/wave-post.png" alt="screenshot of page accessibility validated.">
 </details>
 <details>
     <summary>Create Post</summary>
-    <img src="docs/validation/html/html-postcreate.png" alt="screenshot of page html validated.">
-
+    <img src="docs/validation/wave/wave-createpost.png" alt="screenshot of page accessibility validated.">
 </details>
 <details>
     <summary>Edit Post</summary>
-    <img src="docs/validation/html/html-postedit.png" alt="screenshot of page html validated.">
-
+    <img src="docs/validation/wave/wave-postedit.png" alt="screenshot of page accessibility validated.">
 </details>
 <details>
     <summary>Profile</summary>
-    <img src="docs/validation/html/html-profile.png" alt="screenshot of page html validated.">
-
+    <img src="docs/validation/wave/wave-profile.png" alt="screenshot of page accessibility validated.">
 </details>
 <details>
     <summary>Edit Profile</summary>
-    <img src="docs/validation/html/html-profileedit.png" alt="screenshot of page html validated.">
-
+    <img src="docs/validation/wave/wave-profileedit.png" alt="screenshot of page accessibility validated.">
 </details>
 <details>
     <summary>Edit Username</summary>
-    <img src="docs/validation/html/html-username.png" alt="screenshot of page html validated.">
-
+    <img src="docs/validation/wave/wave-username.png" alt="screenshot of page accessibility validated.">
 </details>
 <details>
     <summary>Edit Password</summary>
-    <img src="docs/validation/html/html-password.png" alt="screenshot of page html validated.">
-
+    <img src="docs/validation/wave/wave-password.png" alt="screenshot of page accessibility validated.">
 </details>
 <details>
     <summary>Sign in</summary>
-    <img src="docs/validation/html/html-signin.png" alt="screenshot of page html validated.">
-
+    <img src="docs/validation/wave/wave-signin.png" alt="screenshot of page accessibility validated.">
 </details>
 <details>
     <summary>Sign up</summary>
-    <img src="docs/validation/html/html-signup.png" alt="screenshot of page html validated.">
-
+    <img src="docs/validation/wave/wave-signup.png" alt="screenshot of page accessibility validated.">
 </details>
 
 ## Bugs
