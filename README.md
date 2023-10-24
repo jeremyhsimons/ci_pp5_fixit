@@ -281,7 +281,7 @@ This does not mean that the site will never have this feature, and this user sto
 ## Validation
 
 ### HTML
-The pages of this project were tested using the [W3C Validation service]() all pages passed with no errors or warnings.
+The pages of this project were tested using the [W3C Validation service](https://validator.w3.org/) all pages passed with no errors or warnings.
 
 <details>
     <summary>Home</summary>
@@ -335,7 +335,7 @@ The pages of this project were tested using the [W3C Validation service]() all p
 
 ### CSS
 
-All CSS files in this project were validated using the [W3C Jigsaw]() validator. All modules passed with no errors or warnings.
+All CSS files in this project were validated using the [W3C Jigsaw](https://jigsaw.w3.org/css-validator/#validate_by_input+with_options) validator. All modules passed with no errors or warnings.
 
 <details>
     <summary>Avatar.module.css</summary>
@@ -396,35 +396,43 @@ All CSS files in this project were validated using the [W3C Jigsaw]() validator.
 
 ### JSX
 
-All Custom JavaScript files were validated using the ESLint package. When installed, this package can be run by executing the command `npx eslint .filePath.js`. When the code is valid, no errors are recorded in the terminal. Screenshots of the commands being run are included below:
+All Custom JavaScript files were validated using the [ESLint](https://eslint.org/) package. When installed, this package can be run by executing the command `npx eslint .filePath.js`. When the code is valid, no errors are recorded in the terminal. Screenshots of the commands being run are included below:
 
 <details>
     <summary>App.js</summary>
-    <img src="docs/validation/jsx/app.png" alt="screenshot of css module validated.">
+    <img src="docs/validation/jsx/app.png" alt="screenshot of JS file validated.">
 </details>
 <details>
     <summary>Components</summary>
+    <img src="docs/validation/jsx/components.png" alt="screenshot of JS file validated.">
 </details>
 <details>
     <summary>Contexts</summary>
+    <img src="docs/validation/jsx/contexts.png" alt="screenshot of JS file validated.">
 </details>
 <details>
     <summary>Hooks</summary>
+    <img src="docs/validation/jsx/hooks.png" alt="screenshot of JS file validated.">
 </details>
 <details>
     <summary>Auth pages</summary>
+    <img src="docs/validation/jsx/pages-auth.png" alt="screenshot of JS file validated.">
 </details>
 <details>
     <summary>Comment pages</summary>
+    <img src="docs/validation/jsx/pages-comments.png" alt="screenshot of JS file validated.">
 </details>
 <details>
     <summary>Post pages</summary>
+    <img src="docs/validation/jsx/pages-posts.png" alt="screenshot of JS file validated.">
 </details>
 <details>
     <summary>Profile pages</summary>
+    <img src="docs/validation/jsx/pages-profiles.png" alt="screenshot of JS file validated.">
 </details>
 <details>
     <summary>Utils</summary>
+    <img src="docs/validation/jsx/utils.png" alt="screenshot of JS file validated.">
 </details>
 
 
