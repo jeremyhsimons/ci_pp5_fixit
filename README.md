@@ -280,6 +280,41 @@ This does not mean that the site will never have this feature, and this user sto
 
 ## Validation
 
+### HTML
+The pages of this project were tested using the [W3C Validation service]() all pages passed with no errors or warnings.
+
+<details>
+    <summary>Home</summary>
+    <img src="docs/" alt="screenshot of homepage html validated.">
+</details>
+<details>
+    <summary>Post page</summary>
+</details>
+<details>
+    <summary>Create Post</summary>
+</details>
+<details>
+    <summary>Edit Post</summary>
+</details>
+<details>
+    <summary>Profile</summary>
+</details>
+<details>
+    <summary>Edit Profile</summary>
+</details>
+<details>
+    <summary>Edit Username</summary>
+</details>
+<details>
+    <summary>Edit Password</summary>
+</details>
+<details>
+    <summary>Sign in</summary>
+</details>
+<details>
+    <summary>Sign up</summary>
+</details>
+
 ## Bugs
 
 | Bug | Action Taken to Fix |
