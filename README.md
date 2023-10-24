@@ -218,17 +218,36 @@ The following React Libraries were also used:
 
 ## Agile workflow
 
+### Introduction
+
 A Github projects kanban board was used to manage the tasks in the project. User stories were organised into epics and this guided how features in the backlog were organised for any given sprint.
 
 Sprint 1: Navigation and Authentication
 
-Sprint 2: Posts (CRUD) + Bookmarks + Upvotes
+Sprint 2: Posts (CRUD) (+ Bookmarks + Upvotes)
 
-Sprint 3: Comments (CRUD) + Upvotes
+Sprint 3: Comments (CRUD) (+ Upvotes)
 
-Sprint 4: Profiles + Stars
+Sprint 4: Profiles (+ Stars)
 
+Screenshots:
+<img src="docs/kanban.png" alt="The kanban board used for this project">
 
+<img src="docs/epics.png" alt="The epics of user stories for this project">
+
+### Flexibility
+
+This approach to organising the project allowed for feature implementation to be assessed at each sprint. Each user story was assigned a label based on priority:
+
+* Must have
+* Should have
+* Could have
+
+Must-have features were all implemented, however upon starting the profiles sprint it became clear that there were too many features for the scope of this sprint so in order to maintain the best user experience with the existing features, the user story for a page on the site with a scrollable list of profiles that the user had 'starred' was given another label: 'wont have' to indicate that the first version of this site would not include this feature.
+
+<img src="docs/epics.png" alt="user story with won't have label on github.">
+
+This does not mean that the site will never have this feature, and this user story has, in fact, been moved to the 'feature ideas for future development' section of this document.
 
 ## Features
 
