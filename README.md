@@ -143,6 +143,8 @@ Montserrat light was chosen as the font for site content because of its readabil
 
 Additionally the Image component was used extensively throughout the site to speed up formatting of images rendered on the front end.
 
+[Font Awesome]() CDN was used to provide icons for the site.
+
 The following React Libraries were also used:
 * [React Router DOM](https://www.npmjs.com/package/react-router-dom) for linking internal urls in the site.
 * [React MSW](https://mswjs.io/) for creating mock endpoints for testing.
@@ -215,6 +217,18 @@ The following React Libraries were also used:
 </details>
 
 ## Agile workflow
+
+A Github projects kanban board was used to manage the tasks in the project. User stories were organised into epics and this guided how features in the backlog were organised for any given sprint.
+
+Sprint 1: Navigation and Authentication
+
+Sprint 2: Posts (CRUD) + Bookmarks + Upvotes
+
+Sprint 3: Comments (CRUD) + Upvotes
+
+Sprint 4: Profiles + Stars
+
+
 
 ## Features
 
