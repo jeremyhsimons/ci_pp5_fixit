@@ -294,10 +294,28 @@ This does not mean that the site will never have this feature, and this user sto
 
 ### images used
 
+Images used for the site were taken from [Unsplash](https://unsplash.com/). Details for the contributors can be found here.
+
+* [Michael Jin, crashed car](https://unsplash.com/photos/black-ford-car-ipHlSSaC3vk)
+* [Hunter Haley, tools](https://unsplash.com/photos/four-handheld-tools-on-boards8OO2--t-HmQ)
+* [Kenan Reed, broken car window](https://unsplash.com/photos/S5CUECZa8gw)
+* [TopSphere Media, Rusty sedan](https://unsplash.com/photos/pzqTAdsDdyI )
+* [Daniil Zameshaev, bike handlebars](https://unsplash.com/photos/_K4cfNFhPTw)
+* [Nicholas Thomas, circuitboard spaghetti](https://unsplash.com/photos/3GZi6OpSDcY )
+* [Tim Arterbury, smashed window](https://unsplash.com/photos/5Uh-wTSz-q0)
+* [Viridi Green, dandelions](https://unsplash.com/photos/i-uBAOo_BBA)
+
 ### Tutorials used
 
 ### Other 3rd party libraries and online tools used
 
+* [Convertio](https://convertio.co/) for converting images to webp format.
+* [Cloud Convert](https://cloudconvert.com/jpg-to-webp) for converting images to webp format.
+* [Loading.io](https://loading.io/) for generating the loading gif used on home page and popular profiles.
+
 ### Hosting platforms used.
+
+* [Heroku](https://id.heroku.com/login) for hosting code
+* [Cloudinary](https://cloudinary.com/) for image hosting
 
 ### Acknowledgements
