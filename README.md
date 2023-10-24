@@ -277,6 +277,8 @@ This does not mean that the site will never have this feature, and this user sto
 ### Navigation
 
 #### Auto redirect to signin
+* Code in the background does not allow unauthorised users to access restricted parts of the site such as post creation.
+* User stories covered: 6
 
 #### Navbar
 * Always appears at the top of the page.
@@ -288,6 +290,24 @@ This does not mean that the site will never have this feature, and this user sto
 * Appears at the top of every post feed in the site.
 * Allows users to search for keyowrds in post titles and usernames.
 * User stories covered: 10
+
+### Profiles
+
+#### Auto-create profile
+* When a new user logs in for the first time their profile page is accessible straight away.
+* User stories covered: 11
+
+#### Edit profile
+* A form accessible from the profile page that allows users to update their public details including their bio, status and profile image.
+* User stories covered: 12
+
+#### Popular profiles
+* A list of the 5 most-starred profiles in the community. From here users can star or unstar other users.
+* User stories covered: 13, 15, 16
+
+#### Single profile
+* A page for viewing a single profile where users can see the public details of other users. From here users can also star or unstar another user's profile"
+* User stories covered: 14, 15, 16
 
 ### Feature ideas for future development
 
