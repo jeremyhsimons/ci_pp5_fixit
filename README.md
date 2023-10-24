@@ -271,6 +271,9 @@ This does not mean that the site will never have this feature, and this user sto
 
 ### Other tools/websites/libraries used
 
+* [Axios]() for making network requests to my API
+* [React MSW]() for setting up mock endpoints.
+
 ## Deployment & Local Development
 
 ## Testing
@@ -292,6 +295,14 @@ This does not mean that the site will never have this feature, and this user sto
 
 ### 3rd party code used
 
+This project drew extensively on the [Code Institute]() 'Moments' walkthrough project and ideas from here were implemented to maximise user experience in Fixit. This includes:
+1. Custom user context and profile data context.
+1. custom click toggle and redirect hooks.
+1. organisation of components.
+1. custom utils to handle fetching more data from the API, as well as checking status of JWTs.
+
+[React Bootstrap](https://react-bootstrap-v4.netlify.app/) components were used to make features of the website including forms and navigation.
+
 ### images used
 
 Images used for the site were taken from [Unsplash](https://unsplash.com/). Details for the contributors can be found here.
@@ -306,6 +317,8 @@ Images used for the site were taken from [Unsplash](https://unsplash.com/). Deta
 * [Viridi Green, dandelions](https://unsplash.com/photos/i-uBAOo_BBA)
 
 ### Tutorials used
+
+* The [Gitpod documentation](https://www.gitpod.io/docs/introduction/languages/javascript) helped me troubleshoot issues with node versions and helped me set my workspace up.
 
 ### Other 3rd party libraries and online tools used
 
