@@ -536,6 +536,12 @@ Images used for the site were taken from [Unsplash](https://unsplash.com/). Deta
 * [Cloud Convert](https://cloudconvert.com/jpg-to-webp) for converting images to webp format.
 * [Loading.io](https://loading.io/) for generating the loading gif used on home page and popular profiles.
 
+* [W3C Validation service](https://validator.w3.org/)
+* [W3C Jigsaw](https://jigsaw.w3.org/css-validator/#validate_by_input+with_options)
+* [ESLint](https://eslint.org/)
+* [WAVE validator](https://wave.webaim.org/)
+* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+
 ### Hosting platforms used.
 
 * [Heroku](https://id.heroku.com/login) for hosting code
