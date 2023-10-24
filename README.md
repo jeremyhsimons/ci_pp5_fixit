@@ -309,7 +309,7 @@ This does not mean that the site will never have this feature, and this user sto
 * A page for viewing a single profile where users can see the public details of other users. From here users can also star or unstar another user's profile"
 * User stories covered: 14, 15, 16
 
-### Posts
+### Posts/comments
 
 #### Create post form
 * A form that allows users to specify the post title, content, image, and category of their post, then save it to the site.
@@ -318,11 +318,32 @@ This does not mean that the site will never have this feature, and this user sto
 #### Feed
 * An infinitely scrolling list of posts that are saved on the site's database.
 * From here users can access single posts, bookmark posts, upvote posts, and click on the author's profile picture to access their profile.
-* User stories covered: 18, 
+* User stories covered: 18, 20, 21, 22, 23
+
+#### Single post page
+* A page that displays the full content of post and comments/comment form. Users can also upvote, bookmark and access authors profile from this page.
+* User stories covered: 19, 20, 21, 22, 23
+
+#### Dropdown menu
+* Appears on posts that are owned by the user. Allows them to delete a post as well as access the post edit form.
+* User stories covered: 24, 25
+
+#### Comment form
+* A form that appears directly beneath a post. It allows users to add their thoughts to a user's post. This can also be accessed to edit a comment when the user is logged in
+User stories covered: 26, 27
+
+#### Dropdown
+* Allows users to access edit and delete buttons for their own comments when logged in.
+* User stories covered: 27, 28
+
+#### Comment list
+* An infinite list of comments that the user can read, and upvote the ones that are most helpful.
+* User stories covered: 29, 30, 31
 
 ### Feature ideas for future development
 
 * A page on the site, reachable from the navbar for logged in users, to scroll through a list of profiles that they have starred.
+* Auto-direct users to the signup page rather than the home page so that they can sign up straight away and get full access to the site.
 * Feedback messages to users so that they can be sure that when they create a post or update, their actions have been successful.
 * More categories for posts which could include furniture-making/woodwork, gardening/yard maintanence.
 * A system whereby popular profiles are displayed as an aggregate of stars and upvotes that a user has received.
