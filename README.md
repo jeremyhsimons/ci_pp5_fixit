@@ -394,6 +394,39 @@ All CSS files in this project were validated using the [W3C Jigsaw]() validator.
     <img src="docs/validation/css/css-signup.png" alt="screenshot of css module validated.">
 </details>
 
+### JSX
+
+All Custom JavaScript files were validated using the ESLint package. When installed, this package can be run by executing the command `npx eslint .filePath.js`. When the code is valid, no errors are recorded in the terminal. Screenshots of the commands being run are included below:
+
+<details>
+    <summary>App.js</summary>
+    <img src="docs/validation/jsx/app.png" alt="screenshot of css module validated.">
+</details>
+<details>
+    <summary>Components</summary>
+</details>
+<details>
+    <summary>Contexts</summary>
+</details>
+<details>
+    <summary>Hooks</summary>
+</details>
+<details>
+    <summary>Auth pages</summary>
+</details>
+<details>
+    <summary>Comment pages</summary>
+</details>
+<details>
+    <summary>Post pages</summary>
+</details>
+<details>
+    <summary>Profile pages</summary>
+</details>
+<details>
+    <summary>Utils</summary>
+</details>
+
 
 ## Bugs
 
