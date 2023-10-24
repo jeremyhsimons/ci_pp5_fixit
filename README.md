@@ -339,45 +339,59 @@ All CSS files in this project were validated using the [W3C Jigsaw]() validator.
 
 <details>
     <summary>Avatar.module.css</summary>
+    <img src="docs/validation/css/css-avatar.png" alt="screenshot of css module validated.">
 </details>
 <details>
     <summary>Button.module.css</summary>
+    <img src="docs/validation/css/css-button.png" alt="screenshot of css module validated.">
 </details>
 <details>
     <summary>Comment.module.css</summary>
+    <img src="docs/validation/css/css-comment.png" alt="screenshot of css module validated.">
 </details>
 <details>
     <summary>CommentForm.module.css</summary>
+    <img src="docs/validation/css/css-commentform.png" alt="screenshot of css module validated.">
 </details>
 <details>
     <summary>CreatePostForm.module.css</summary>
+    <img src="docs/validation/css/css-createpost.png" alt="screenshot of css module validated.">
 </details>
 <details>
     <summary>NavigationBar.module.css</summary>
+    <img src="docs/validation/css/css-navbar.png" alt="screenshot of css module validated.">
 </details>
 <details>
     <summary>NotFound.module.css</summary>
+    <img src="docs/validation/css/css-404.png" alt="screenshot of css module validated.">
 </details>
 <details>
     <summary>PopularProfiles.module.css</summary>
+    <img src="docs/validation/css/css-popularprofiles.png" alt="screenshot of css module validated.">
 </details>
 <details>
     <summary>Post.module.css</summary>
+    <img src="docs/validation/css/css-post.png" alt="screenshot of css module validated.">
 </details>
 <details>
     <summary>Profile.module.css</summary>
+    <img src="docs/validation/css/css-profile.png" alt="screenshot of css module validated.">
 </details>
 <details>
     <summary>ProfileEditForm.module.css</summary>
+    <img src="docs/validation/css/css-profileeditform.png" alt="screenshot of css module validated.">
 </details>
 <details>
     <summary>ProfilePage.module.css</summary>
+    <img src="docs/validation/css/css-profilepage.png" alt="screenshot of css module validated.">
 </details>
 <details>
     <summary>SearchBar.module.css</summary>
+    <img src="docs/validation/css/css-searchbar.png" alt="screenshot of css module validated.">
 </details>
 <details>
     <summary>SignUpSignIn.module.css</summary>
+    <img src="docs/validation/css/css-signup.png" alt="screenshot of css module validated.">
 </details>
 
 
