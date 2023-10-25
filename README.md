@@ -253,7 +253,6 @@ This does not mean that the site will never have this feature, and this user sto
 ### Authentication
 
 #### Sign Up Page
-
 * A form to create a new account for Fixit. 
 * Uses password validation built into django rest auth.
 * Any form errors are displayed to users.
