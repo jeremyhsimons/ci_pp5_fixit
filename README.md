@@ -66,14 +66,6 @@ This first iteration of the site has a separate front end and back end design. U
 * To be able to search for posts and users based on keywords.
 * To be able to bookamrk a helpful post in my account so that I can revisit it later.
 
-### User Manual
-
-Click the dropdown to view the user manual:
-<details>
-<summary>User Manual</summary>
-
-</details><br>
-
 ### User Stories
 
 #### Authentication
