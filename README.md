@@ -323,7 +323,7 @@ This does not mean that the site will never have this feature, and this user sto
 * A form that appears directly beneath a post. It allows users to add their thoughts to a user's post. This can also be accessed to edit a comment when the user is logged in
 User stories covered: 26, 27
 
-#### Dropdown
+#### Comment dropdown menu
 * Allows users to access edit and delete buttons for their own comments when logged in.
 * User stories covered: 27, 28
 
