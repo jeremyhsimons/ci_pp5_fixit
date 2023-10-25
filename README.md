@@ -362,10 +362,32 @@ User stories covered: 26, 27
 
 ### Other tools/websites/libraries used
 
-* [Axios]() for making network requests to my API
-* [React MSW]() for setting up mock endpoints.
+* [Axios](https://www.npmjs.com/package/axios) for making network requests to my API
+* [React MSW](https://mswjs.io/) for setting up mock endpoints.
+* [React Bootstrap v4](https://react-bootstrap-v4.netlify.app/)
 
 ## Deployment & Local Development
+
+This project was deployed to Heroku. The steps followed to complete this process are as follows:
+
+1. Login or create an account at [Heroku](https://dashboard.heroku.com/)
+<img src="docs/deployment/heroku1.png">
+2. Click on New > Create new app in the top right of the screen.
+<img src="docs/deployment/heroku2.png">
+3. Add an app name and select location, then click 'create app'.
+<img src="docs/deployment/heroku3.png">
+4. Under the deploy tab of the next page, select connect to GitHub.
+5. Log in to your GitHub account when prompted.
+<img src="docs/deployment/heroku4.png">
+6. Select the repository that you want to be connected to the Heroku app.
+<img src="docs/deployment/heroku5.png">
+10. Select automatic deploys to allow Heroku to build the site with new changes each time changes are pushed to GitHub.
+<img src="docs/deployment/heroku9.png">
+11. In the 'manual deploy' section beneath this, make sure the branch selected is 'main' and click deploy branch.
+<img src="docs/deployment/heroku10.png">
+12. The site should now be built and Heroku should provide a url for the built site.
+13. Create a new file named Procfile in the root directory of the project and type the following in the file: `web: serve -s build`
+14. Add, commit, and push the changes to Github once more and the project should automatically redeploy to Heroku with the new build command.
 
 ### Forking GitHub Repository
 
