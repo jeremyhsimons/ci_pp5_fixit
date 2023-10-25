@@ -249,38 +249,70 @@ This does not mean that the site will never have this feature, and this user sto
 * Uses password validation built into django rest auth.
 * Any form errors are displayed to users.
 * User stories covered: 1
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/signup.png" alt="signup page">
+</details>
 
 #### Sign In Page
 * A form that allows users to access all the sites features upon successful authentication.
 * In the background, a JWT is issued to the user so that they can remain logged in for 24 hours, even if they close the browser in the meantime.
 * User stories covered: 2, 3
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/signin.png" alt="signin page">
+</details>
 
 #### Sign Out Button
 * Allows the user to sign out from the navigation bar.
 * Allows them to keep their account secure by destroying/invalidating the JWT that normally keeps them logged in.
 * User stories covered: 4
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/signout.png" alt="signout button">
+</details>
 
 #### Update Username & Password Forms
 * Allows users to update their username and password respectively.
 * Allows users to customise their profile, and also to keep their account secure by regularly updating passwords.
 * User stories covered: 5
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/editusername.png" alt="edit username page">
+    <img src="docs/features/editpassword.png" alt="edit password page">
+</details>
 
 ### Navigation
 
 #### Auto redirect to signin
 * Code in the background does not allow unauthorised users to access restricted parts of the site such as post creation.
 * User stories covered: 6
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/unauth1.png" alt="home page">
+    <img src="docs/features/unauth2.png" alt="home page with unauthorised url">
+    <img src="docs/features/unauth1.png" alt="home page">
+</details>
 
 #### Navbar
 * Always appears at the top of the page.
 * Contains links to all the most important parts of the site.
 * Is fully responsive and adjusts to hamburger menu/icons on smaller screens.
 * User stories covered: 7, 9
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/navbar.png" alt="Navigation bar">
+</details>
 
 #### Searchbar
 * Appears at the top of every post feed in the site.
 * Allows users to search for keyowrds in post titles and usernames.
 * User stories covered: 10
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/searchbar.png" alt="Search bar">
+</details>
 
 ### Profiles
 
@@ -292,13 +324,28 @@ This does not mean that the site will never have this feature, and this user sto
 * A form accessible from the profile page that allows users to update their public details including their bio, status and profile image.
 * User stories covered: 12
 
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/editprofile.png" alt="Edit profile page">
+</details>
+
 #### Popular profiles
 * A list of the 5 most-starred profiles in the community. From here users can star or unstar other users.
 * User stories covered: 13, 15, 16
 
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/popularprofiles.png" alt="Popular profiles list">
+</details>
+
 #### Single profile
 * A page for viewing a single profile where users can see the public details of other users. From here users can also star or unstar another user's profile"
 * User stories covered: 14, 15, 16
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/profile.png" alt="profile page">
+</details>
 
 ### Posts/comments
 
@@ -306,30 +353,65 @@ This does not mean that the site will never have this feature, and this user sto
 * A form that allows users to specify the post title, content, image, and category of their post, then save it to the site.
 * User stories covered: 17
 
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/createpost.png" alt="create post page">
+</details>
+
 #### Feed
 * An infinitely scrolling list of posts that are saved on the site's database.
 * From here users can access single posts, bookmark posts, upvote posts, and click on the author's profile picture to access their profile.
 * User stories covered: 18, 20, 21, 22, 23
 
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/postlist.png" alt="post feed">
+</details>
+
 #### Single post page
 * A page that displays the full content of post and comments/comment form. Users can also upvote, bookmark and access authors profile from this page.
 * User stories covered: 19, 20, 21, 22, 23
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/postpage.png" alt="single post page">
+</details>
 
 #### Dropdown menu
 * Appears on posts that are owned by the user. Allows them to delete a post as well as access the post edit form.
 * User stories covered: 24, 25
 
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/postdropdown.png" alt="post dropdown component">
+</details>
+
 #### Comment form
 * A form that appears directly beneath a post. It allows users to add their thoughts to a user's post. This can also be accessed to edit a comment when the user is logged in
 User stories covered: 26, 27
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/commentform.png" alt="Comment form">
+</details>
 
 #### Comment dropdown menu
 * Allows users to access edit and delete buttons for their own comments when logged in.
 * User stories covered: 27, 28
 
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/commentdropdown.png" alt="Comment dropdown component.">
+</details>
+
 #### Comment list
 * An infinite list of comments that the user can read, and upvote the ones that are most helpful.
 * User stories covered: 29, 30, 31
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/commentlist.png" alt="Comments.">
+</details>
 
 ### Feature ideas for future development
 
