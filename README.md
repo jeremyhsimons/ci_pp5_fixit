@@ -78,7 +78,7 @@ This first iteration of the site has a separate front end and back end design. U
 
 #### Navigation
 
-(6) As a new user I want to be directed to the signup page if I try to access any feature that is not permitted for unauthenticated, so that the site can remain secure.
+(6) As a new user I want to be directed to the home page if I try to access any feature that is not permitted for unauthenticated, so that the site can remain secure.
 (7) As an existing user I want to access all the features of the site through one simple navbar at the top of the page.
 (8) As an existing user I want to access a list of the most popular profiles on the site on a sidebar/sidenav, so that I can easily see who is most influential.
 (9) As an existing user I want to switch between different kinds of DIY post so that I can see content that is relevant to me.
@@ -515,7 +515,6 @@ This repository can be cloned using the following process:
     <img src="" alt="">
 </details>
 
-
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 4. Sign out. | Sign out link | From homepage (logged in) click the sign out option in the navbar. | User is directed to home page with the logged-in options in the navbar visible. | Works as expected. |
@@ -528,6 +527,53 @@ This repository can be cloned using the following process:
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 5. Update user credentials. | update username & password forms | From user's own profile page, click the three dots. Select either edit username or user password. fill out the following form | User's username appears updated on their profile page. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+### Navigation
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 6. Auto redirect when accessing restricted area. | Redirect | From home page (logged-out) type url of a restricted page in the browser searchbar. | User redirected to the home page (loggout version). | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 7. Access areas of the site via a navbar. | Navbar | From home page click on a variety of icons/options in the navbar. | User directed to different pages accordingly. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 8. See a list of the most popular profiles. | Popular profiles component | From home page scroll down. | User should see profiles in descending order of stars. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 9. See different kinds of posts. | Lower navbar component | From home page (logged-in), scroll to the top of the page and click on the electronics option. | User should see *only* posts related to electronics. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 10. Search for posts based on a keyword. | Searchbar | From home page, scroll to the top of the page and type a keyword into the searchbar. | User should see posts where the the keyword matches a profile name or a post title. | Works as expected. |
 
 <details>
     <summary>Screenshots</summary>
