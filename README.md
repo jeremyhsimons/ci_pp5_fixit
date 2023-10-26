@@ -486,6 +486,54 @@ This repository can be cloned using the following process:
 
 ## Testing
 
+### Authentication
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 1. Sign up as a new user | Sign-up page | Clicking on sign up, entering details into the form, clicking submit | User is directed to sign in form to sign in. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 2. Sign in | Sign-in page | entering credentials into the form, clicking submit | User is directed to home page and new options appear in the navbar. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 3. Not to be logged out on closing the browser. | JWT in the background | From homepage (logged in) close the browser window. The url is then opened again after 5 minutes. | User is directed to home page with the logged-in options in the navbar visible. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 4. Sign out. | Sign out link | From homepage (logged in) click the sign out option in the navbar. | User is directed to home page with the logged-in options in the navbar visible. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 5. Update user credentials. | update username & password forms | From user's own profile page, click the three dots. Select either edit username or user password. fill out the following form | User's username appears updated on their profile page. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
 ## Validation
 
 ### HTML
