@@ -7,6 +7,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 
 import formStyles from '../../styles/ProfileEditForm.module.css'
 import buttonStyles from '../../styles/Button.module.css'
+import Message from '../../components/Message';
 
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();
@@ -24,6 +25,8 @@ const ProfileEditForm = () => {
   const { name, bio, status, image } = profileData;
 
   const [errors, setErrors] = useState({});
+
+  const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {
     const handleMount = async () => {
@@ -68,7 +71,10 @@ const ProfileEditForm = () => {
         ...currentUser,
         profile_image: data.image,
       }));
-      history.goBack();
+      setShowMessage(true);
+      setTimeout(function () {
+        history.goBack();
+      }, 3000)
     } catch (err) {
       // console.log(err);
       setErrors(err.response?.data);
@@ -77,6 +83,9 @@ const ProfileEditForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
+      {showMessage && (
+        <Message message='Your profile has been updated. Taking you back there...'/>
+      )}
       <Row>
         <Col  md={6}>
           <Container className={`${formStyles.Card}`}>

@@ -119,7 +119,7 @@ const Post = (props) => {
     <div>
       <Card className={postStyles.Post}>
         {showMessage && (
-          <Message message="Your post has been deleted. Taking you home"/>
+          <Message message="Your post has been deleted. Taking you home..."/>
         )}
         <Card.Body>
           <Media className="align-items-center justify-content-between">
