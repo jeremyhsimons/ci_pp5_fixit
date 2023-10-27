@@ -13,6 +13,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 import styles from '../../styles/SignUpSignIn.module.css'
 import buttonStyles from '../../styles/Button.module.css'
+import Message from "../../components/Message";
 
 const UserPasswordForm = () => {
   const history = useHistory();
@@ -26,6 +27,8 @@ const UserPasswordForm = () => {
   const { new_password1, new_password2 } = userData;
 
   const [errors, setErrors] = useState({});
+
+  const [showMessage, setShowMessage] = useState(false);
 
   const handleChange = (event) => {
     setUserData({
@@ -45,7 +48,10 @@ const UserPasswordForm = () => {
     event.preventDefault();
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
-      history.goBack();
+      setShowMessage(true);
+      setTimeout(function () {
+        history.goBack();
+      }, 3000);
     } catch (err) {
       // console.log(err);
       setErrors(err.response?.data);
@@ -54,6 +60,9 @@ const UserPasswordForm = () => {
 
   return (
     <Row className={styles.Card}>
+      {showMessage && (
+        <Message message="Password updated successfully! Taking you back to your profile..."/>
+      )}
       <Col className="py-2 mx-auto text-center" md={6}>
         <Container className="">
           <Form onSubmit={handleSubmit}>

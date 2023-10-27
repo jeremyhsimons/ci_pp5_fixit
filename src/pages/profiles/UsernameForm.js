@@ -16,10 +16,12 @@ import {
 
 import styles from '../../styles/SignUpSignIn.module.css'
 import buttonStyles from '../../styles/Button.module.css'
+import Message from "../../components/Message";
 
 const UsernameForm = () => {
   const [username, setUsername] = useState("");
   const [errors, setErrors] = useState({});
+  const [showMessage, setShowMessage] = useState(false);
 
   const history = useHistory();
   const { id } = useParams();
@@ -45,7 +47,10 @@ const UsernameForm = () => {
         ...prevUser,
         username,
       }));
-      history.goBack();
+      setShowMessage(true);
+      setTimeout(function () {
+        history.goBack();
+      }, 3000);
     } catch (err) {
       // console.log(err);
       setErrors(err.response?.data);
@@ -54,6 +59,9 @@ const UsernameForm = () => {
 
   return (
     <Row className={styles.Card}>
+      {showMessage && (
+        <Message message="Username updated sucessfully. Taking you back to your profile..."/>
+      )}
       <Col className="py-2 mx-auto text-center" md={6}>
         <Container>
           <Form onSubmit={handleSubmit} className="my-2 text-center">
