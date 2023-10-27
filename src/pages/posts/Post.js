@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -8,6 +8,7 @@ import { MoreDropdown } from '../../components/MoreDropdown';
 import avatarStyles from '../../styles/Avatar.module.css'
 import postStyles from '../../styles/Post.module.css'
 import Avatar from '../../components/Avatar';
+import Message from '../../components/Message';
 
 const Post = (props) => {
   const {
@@ -27,6 +28,8 @@ const Post = (props) => {
     setPosts,
   } = props
 
+  const [showMessage, setShowMessage] = useState(false);
+
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === author
   const history = useHistory();
@@ -37,8 +40,12 @@ const Post = (props) => {
 
   const handleDelete = async () => {
     try {
-      await axiosRes.delete(`/posts/${id}/`)
-      history.goBack()
+      await axiosRes.delete(`/posts/${id}/`);
+      setShowMessage(true);
+      setTimeout(function () {
+        history.goBack();
+      }, 3000);
+    
     } catch(err) {
       // console.log(err)
     }
@@ -111,6 +118,9 @@ const Post = (props) => {
   return (
     <div>
       <Card className={postStyles.Post}>
+        {showMessage && (
+          <Message message="Your post has been deleted. Taking you home"/>
+        )}
         <Card.Body>
           <Media className="align-items-center justify-content-between">
             <Link className={avatarStyles.Link} to={`/profiles/${profile_id}`}>
