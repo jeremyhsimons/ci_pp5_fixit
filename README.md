@@ -695,7 +695,7 @@ This repository can be cloned using the following process:
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
-| 23. remove upvote from a post. | Post page / home or filter pages | From the home page, click on the upvote symbol on a post. | The user should see the upvotes count next to the icon increase by 1. | Works as expected. |
+| 23. remove upvote from a post. | Post page / home or filter pages | From the home page, click on the upvote symbol on a post. | The user should see the upvotes count next to the icon decrease by 1. | Works as expected. |
 
 <details>
     <summary>Screenshots</summary>
@@ -714,6 +714,62 @@ This repository can be cloned using the following process:
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 25. Delete a post. | Post delete option in dropdown menu | From a post page owned by the user, click on the three icons next to the date. Select delete from the dropdown menu. | From the home page, if the user searches the post title, it should no longer appear in the feed. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+### Comments
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 26. Write a comment. | Comment form | From a post page scroll down to just below the post. Write the desired comment in the comment form and click submit. | The user should see their comment appear in the comment section. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 27. Edit a comment. | Edit comment form | From a post page scroll down to a comment owned by the user. Click on the three dots next to it and select edit. Fill out the following form with the desired changes. | The user should see their comment appear in the comment section with changes made. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 28. Delete a comment. | Edit comment form | From a post page scroll down to a comment owned by the user. Click on the three dots next to it and select delete. | The user should see their comment no longer appear in the comment section. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 29. Infinite scroll through comments. | Post page | From a post page scroll down to the comment section. Keep scrolling beyond 10 comments. | The user should keep seeing more comments load after that (the api's default comment pagination is 10, which means more comments are continuously being fetched). |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 30. Upvote a comment. | Comment | From a post page scroll down to the comment section. Click on the upvote symbol on the comment. | The upvotes count next to the comment should increase by one. If the user reloads the page, this comment should now appear above those without an upvote (it is now ranked as more important by the site). |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 31. Remove a comment upvote. | Comment | From a post page scroll down to the comment section. Click on the upvote symbol on the previously up-voted comment. | The upvotes count next to the comment should decrease by one. If the user reloads the page, this comment should now appear below those with an upvote (it is now ranked as less important by the site). |
 
 <details>
     <summary>Screenshots</summary>
