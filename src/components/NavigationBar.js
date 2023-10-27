@@ -27,7 +27,7 @@ const NavigationBar = () => {
 
   const filterOptions = (
     <>
-    <Row className='d-none d-md-block p-0 p-lg-2'>
+    <Row className='d-none d-md-block'>
       <div className={`${appStyles.Main} ${styles.PostTypes} d-flex align-items-center`}>
         <Container className='d-flex align-items-center justify-content-center'>
           <NavLink 
@@ -54,7 +54,7 @@ const NavigationBar = () => {
         </Container>
       </div>
     </Row>
-    <Row className='d-sm-block d-md-none p-0 p-lg-2'>
+    <Row className='d-sm-block d-md-none'>
       <div className={`${appStyles.Main} ${styles.PostTypes} d-flex align-items-center`}>
         <Container className='d-flex align-items-center justify-content-center'>
           <NavLink 
@@ -127,7 +127,7 @@ const NavigationBar = () => {
   return (
     <div>
         <Navbar expanded={expanded} className={styles.NavigationBar} expand="md" fixed="top">
-            <Container>
+            <Container className=''>
                 <NavLink className="mr-3" to="/" aria-label="Logo">
                   <i className={`fa-solid fa-screwdriver-wrench ${styles.Logo}`}></i>
                 </NavLink>

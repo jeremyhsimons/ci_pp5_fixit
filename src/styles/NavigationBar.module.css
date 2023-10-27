@@ -1,6 +1,8 @@
 .NavigationBar {
     background-color: #B0D7FF;
     border-bottom: solid 1px #c7a2d2;
+    max-width: 100%;
+    padding: 0px;
 }
 
 .NavLink {
@@ -26,7 +28,7 @@
 .PostTypes {
     background-color: #D8D5DB;
     border: 1px solid #2d3142;
-    width: 100%;
+    min-width: 100%;
 }
 
 .Buffer {
