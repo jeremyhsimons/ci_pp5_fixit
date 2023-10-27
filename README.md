@@ -416,6 +416,7 @@ User stories covered: 26, 27
 ### Feature ideas for future development
 
 * A page on the site, reachable from the navbar for logged in users, to scroll through a list of profiles that they have starred.
+* Profile pages to display a list of the user's most upvoted comments in a separate list to their posts.
 * Auto-direct users to the signup page rather than the home page so that they can sign up straight away and get full access to the site.
 * Feedback messages to users so that they can be sure that when they create a post or update, their actions have been successful.
 * More categories for posts which could include furniture-making/woodwork, gardening/yard maintanence.
@@ -574,6 +575,145 @@ This repository can be cloned using the following process:
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 10. Search for posts based on a keyword. | Searchbar | From home page, scroll to the top of the page and type a keyword into the searchbar. | User should see posts where the the keyword matches a profile name or a post title. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+### Profiles
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 11. Auto-genereated profile for new users. | sign-up page | From the sign up page, create a new user. After logging in access the user's profile either by creating a post or scrolling popular profiles. | User should access their profile and be able to click three dots to edit it. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 12. Edit profile. | Edit profile form | From profile page, click three dots under the username. Select 'edit profile'. Fill out the following form with the desired changes | Upon returning to their profile page, users should see their profile updated. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 13. See a list of popular profiles. | Popular profiles component | See test for user story 8. | See test for user story 8. | See test for user story 8. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 14. See a single profile's details. | profile page | from home page, click on a profile avatar in the popular profiles component or on a post | User should be taken to that profile's page and should be able to scroll down and see all this user's posts. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 15. Star a profle. | profile page / popular profiles | from home page, click on a star next to a profile avatar in the popular profiles component. | User should see the star icon become solid and the number of stars next to the icon increase by one. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 16. Un-star a profle. | profile page / popular profiles | from home page, click on a star next to a profile avatar in the popular profiles component. | User should see the star icon become solid and the number of stars next to the icon increase by one. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+### Posts
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 17. Create a post. | Create post form | from home page, click on the 'create a post' link in the navbar. Fill out the form with the desired content and click 'create' | User should be able to search the title of their post or their username in the home page searchbar and the post should appear in the home page feed. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 18. Infinitely scroll. | home page / filtered pages | From the home page, Scroll down beyond 10 posts. | The user should be able to keep scrolling beyond 10 posts (the default number the api sends with it's pagination). | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 19. View single post. | Post page | From the home page, click on a post. | The user should be able to see the full post and comments. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 20. Bookmark a post. | Post page / home or filter pages | From the home page, click on the bookmark symbol on a post. Then, click the bookmarks link in the navbar. | The user should see the bookmarked post appear in their bookmarks list. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 21. Upvote a post. | Post page / home or filter pages | From the home page, click on the upvote symbol on a post. | The user should see the upvotes count next to the icon increase by 1. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 22. Remove a Bookmark from a post. | Post page / home or filter pages | From the home page, click on the bookmark symbol on the previously bookmarked post. Then, click the bookmarks link in the navbar. | The user should see that the bookmarked post has disappeared from their bookmarks list. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 23. remove upvote from a post. | Post page / home or filter pages | From the home page, click on the upvote symbol on a post. | The user should see the upvotes count next to the icon increase by 1. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 24. Edit a post. | Post edit form | From a post page owned by the user, click on the three icons next to the date. Select edit from the dropdown menu. Fill out the following form with the desired changes. | When accessing this post again the user should see the desired changes. | Works as expected. |
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="" alt="">
+</details>
+
+|User story|Feature|Test|Expected Result|Actual Result|
+|---|---|---|---|---|
+| 25. Delete a post. | Post delete option in dropdown menu | From a post page owned by the user, click on the three icons next to the date. Select delete from the dropdown menu. | From the home page, if the user searches the post title, it should no longer appear in the feed. | Works as expected. |
 
 <details>
     <summary>Screenshots</summary>
