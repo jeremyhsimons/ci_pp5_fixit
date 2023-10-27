@@ -5,6 +5,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 
 import buttonStyles from '../../styles/Button.module.css'
 import formStyles from '../../styles/CreatePostForm.module.css'
+import Message from '../../components/Message';
 
 const PostEditForm = () => {
   const [errors, setErrors] = useState({});
@@ -17,6 +18,8 @@ const PostEditForm = () => {
     image: "",
   });
   const {title, content, category, image} = postData;
+
+  const [showMessage, setShowMessage] = useState(false);
 
   const {id} = useParams();
 
@@ -64,17 +67,24 @@ const PostEditForm = () => {
 
     try {
       await axiosReq.put(`/posts/${id}/`, formData);
-      history.push(`/posts/${id}`)
+      setShowMessage(true);
+      setTimeout(function () {
+        history.push(`/posts/${id}`);
+      }, 2000)
+      
     } catch (err) {
       // console.log(err)
       if (err.response?.status !== 401){
-        setErrors(err.response?.data)
+        setErrors(err.response?.data);
       }
     }
-  }
+  };
 
   return (
     <Form className={formStyles.Card} onSubmit={handleSubmit}>
+      {showMessage && (
+        <Message message={"Your post has been updated. Taking you back to your post."}/>
+      )}
       <Container className={formStyles.Fields}>
         <Form.Group controlId="title">
           <Form.Label>Title</Form.Label>
