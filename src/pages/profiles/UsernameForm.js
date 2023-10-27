@@ -58,43 +58,45 @@ const UsernameForm = () => {
   };
 
   return (
-    <Row className={styles.Card}>
+    <div>
       {showMessage && (
         <Message message="Username updated sucessfully. Taking you back to your profile..."/>
       )}
-      <Col className="py-2 mx-auto text-center" md={6}>
-        <Container>
-          <Form onSubmit={handleSubmit} className="my-2 text-center">
-            <Form.Group className={`mx-auto ${styles.Fields}`}>
-              <Form.Label className={styles.Title}>Change username</Form.Label>
-              <Form.Control
-                placeholder="username"
-                type="text"
-                value={username}
-                onChange={(event) => setUsername(event.target.value)}
-              />
-            </Form.Group>
-            {errors?.username?.map((message, idx) => (
-              <Alert key={idx} variant="warning">
-                {message}
-              </Alert>
-            ))}
-            <Button
-              className={buttonStyles.Button}
-              onClick={() => history.goBack()}
-            >
-              cancel
-            </Button>
-            <Button
-              className={buttonStyles.Button}
-              type="submit"
-            >
-              save
-            </Button>
-          </Form>
-        </Container>
-      </Col>
-    </Row>
+      <Row className={styles.Card}>
+        <Col className="py-2 mx-auto text-center" md={6}>
+          <Container>
+            <Form onSubmit={handleSubmit} className="my-2 text-center">
+              <Form.Group className={`mx-auto ${styles.Fields}`}>
+                <Form.Label className={styles.Title}>Change username</Form.Label>
+                <Form.Control
+                  placeholder="username"
+                  type="text"
+                  value={username}
+                  onChange={(event) => setUsername(event.target.value)}
+                />
+              </Form.Group>
+              {errors?.username?.map((message, idx) => (
+                <Alert key={idx} variant="warning">
+                  {message}
+                </Alert>
+              ))}
+              <Button
+                className={buttonStyles.Button}
+                onClick={() => history.goBack()}
+              >
+                cancel
+              </Button>
+              <Button
+                className={buttonStyles.Button}
+                type="submit"
+              >
+                save
+              </Button>
+            </Form>
+          </Container>
+        </Col>
+      </Row>
+    </div>
   );
 };
 

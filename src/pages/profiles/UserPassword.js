@@ -59,59 +59,61 @@ const UserPasswordForm = () => {
   };
 
   return (
-    <Row className={styles.Card}>
+    <div>
       {showMessage && (
         <Message message="Password updated successfully! Taking you back to your profile..."/>
       )}
-      <Col className="py-2 mx-auto text-center" md={6}>
-        <Container className="">
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className={`mx-auto ${styles.Fields}`}>
-              <Form.Label className={styles.Title}>New password</Form.Label>
-              <Form.Control
-                placeholder="new password"
-                type="password"
-                value={new_password1}
-                onChange={handleChange}
-                name="new_password1"
-              />
-            </Form.Group>
-            {errors?.new_password1?.map((message, idx) => (
-              <Alert key={idx} variant="warning">
-                {message}
-              </Alert>
-            ))}
-            <Form.Group className={`mx-auto ${styles.Fields}`}>
-              <Form.Label className={styles.Title}>Confirm password</Form.Label>
-              <Form.Control
-                placeholder="confirm new password"
-                type="password"
-                value={new_password2}
-                onChange={handleChange}
-                name="new_password2"
-              />
-            </Form.Group>
-            {errors?.new_password2?.map((message, idx) => (
-              <Alert key={idx} variant="warning">
-                {message}
-              </Alert>
-            ))}
-            <Button
-              className={buttonStyles.Button}
-              onClick={() => history.goBack()}
-            >
-              cancel
-            </Button>
-            <Button
-              type="submit"
-              className={buttonStyles.Button}
-            >
-              save
-            </Button>
-          </Form>
-        </Container>
-      </Col>
-    </Row>
+      <Row className={styles.Card}>
+        <Col className="py-2 mx-auto text-center" md={6}>
+          <Container className="">
+            <Form onSubmit={handleSubmit}>
+              <Form.Group className={`mx-auto ${styles.Fields}`}>
+                <Form.Label className={styles.Title}>New password</Form.Label>
+                <Form.Control
+                  placeholder="new password"
+                  type="password"
+                  value={new_password1}
+                  onChange={handleChange}
+                  name="new_password1"
+                />
+              </Form.Group>
+              {errors?.new_password1?.map((message, idx) => (
+                <Alert key={idx} variant="warning">
+                  {message}
+                </Alert>
+              ))}
+              <Form.Group className={`mx-auto ${styles.Fields}`}>
+                <Form.Label className={styles.Title}>Confirm password</Form.Label>
+                <Form.Control
+                  placeholder="confirm new password"
+                  type="password"
+                  value={new_password2}
+                  onChange={handleChange}
+                  name="new_password2"
+                />
+              </Form.Group>
+              {errors?.new_password2?.map((message, idx) => (
+                <Alert key={idx} variant="warning">
+                  {message}
+                </Alert>
+              ))}
+              <Button
+                className={buttonStyles.Button}
+                onClick={() => history.goBack()}
+              >
+                cancel
+              </Button>
+              <Button
+                type="submit"
+                className={buttonStyles.Button}
+              >
+                save
+              </Button>
+            </Form>
+          </Container>
+        </Col>
+      </Row>
+    </div>
   );
 };
 
