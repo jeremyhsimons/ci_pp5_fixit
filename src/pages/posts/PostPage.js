@@ -27,7 +27,7 @@ const PostPage = () => {
       try{
         const [{data: post}, {data: comments}] = await Promise.all([
           axiosReq.get(`/posts/${id}/`),
-          axiosReq.get(`/comments/?post=${id}`)
+          axiosReq.get(`/comments/?post=${id}&ordering=-upvotes_count`)
         ])
         setPost({results: [post]})
         setComments(comments)
