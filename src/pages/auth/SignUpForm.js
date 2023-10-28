@@ -4,9 +4,9 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
 import { useRedirect } from '../../hooks/useRedirect';
 
-import buttonStyles from '../../styles/Button.module.css'
-import formStyles from '../../styles/SignUpSignIn.module.css'
-import tools from '../../assets/signup.webp'
+import buttonStyles from '../../styles/Button.module.css';
+import formStyles from '../../styles/SignUpSignIn.module.css';
+import tools from '../../assets/signup.webp';
 
 const SignUpForm = () => {
   useRedirect('loggedIn');
@@ -34,13 +34,13 @@ const SignUpForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-        await axios.post('/dj-rest-auth/registration/', signUpData)
-        history.push('/signin');
+      await axios.post('/dj-rest-auth/registration/', signUpData)
+      history.push('/signin');
     } catch(err) {
-        setErrors(err.response?.data);
+      setErrors(err.response?.data);
 
     }
-  }
+  };
 
   return (
     <div>
@@ -52,41 +52,41 @@ const SignUpForm = () => {
         <Form onSubmit={handleSubmit}>
           <Container className={formStyles.Fields}>
             <Form.Group controlId="username">
-                <Form.Control 
-                    type="text" 
-                    aria-label="username"
-                    placeholder="username"
-                    name="username"
-                    value={username}
-                    onChange={handleChange}
-                />
+              <Form.Control 
+                  type="text" 
+                  aria-label="username"
+                  placeholder="username"
+                  name="username"
+                  value={username}
+                  onChange={handleChange}
+              />
             </Form.Group>
             {errors.username?.map((message, idx) =>
               <Alert variant="warning" key={idx}>{message}</Alert>
             )}
             <Form.Group controlId="password1">
-                <Form.Control 
-                    type="password"
-                    aria-label="password"
-                    placeholder="Password" 
-                    name="password1" 
-                    value={password1}
-                    onChange={handleChange}
+              <Form.Control 
+                  type="password"
+                  aria-label="password"
+                  placeholder="Password" 
+                  name="password1" 
+                  value={password1}
+                  onChange={handleChange}
 
-                />
+              />
             </Form.Group>
             {errors.password1?.map((message, idx) =>
               <Alert variant="warning" key={idx}>{message}</Alert>
             )}
             <Form.Group controlId="password2">
-                <Form.Control 
-                    type="password"
-                    aria-label="confirm password"
-                    placeholder="Re-enter your Password" 
-                    name="password2"
-                    value={password2}
-                    onChange={handleChange}
-                />
+              <Form.Control 
+                  type="password"
+                  aria-label="confirm password"
+                  placeholder="Re-enter your Password" 
+                  name="password2"
+                  value={password2}
+                  onChange={handleChange}
+              />
             </Form.Group>
             {errors.password2?.map((message, idx) =>
               <Alert variant="warning" key={idx}>{message}</Alert>
@@ -104,4 +104,4 @@ const SignUpForm = () => {
   )
 }
 
-export default SignUpForm
+export default SignUpForm;
