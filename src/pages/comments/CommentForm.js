@@ -52,6 +52,7 @@ function CommentForm(props) {
           </Link>
           <Form.Control
             className={styles.Text}
+            title="comment form"
             placeholder="my comment..."
             as="textarea"
             value={content}
