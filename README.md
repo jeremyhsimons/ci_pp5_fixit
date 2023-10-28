@@ -661,7 +661,8 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us17-1.png" alt="create post">
+    <img src="docs/testing/us17-2.png" alt="new post">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -670,7 +671,8 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us18-1.png" alt="top of page">
+    <img src="docs/testing/us18-2.png" alt="scrolled to post 12">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -679,7 +681,9 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us19-1.png" alt="home page / post list">
+    <img src="docs/testing/us19-2.png" alt="post page">
+    <img src="docs/testing/us19-3.png" alt="comments at bottom of post page.">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -688,7 +692,9 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us20-1.png" alt="post un-bookmarked">
+    <img src="docs/testing/us20-2.png" alt="post bookmarked">
+    <img src="docs/testing/us20-3.png" alt="bookmarks page">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -697,7 +703,8 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us21-1.png" alt="un-upvoted post">
+    <img src="docs/testing/us21-1.png" alt="upvoted post">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -706,7 +713,9 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us20-2.png" alt="post bookmarked">
+    <img src="docs/testing/us20-1.png" alt="post un-bookmarked">
+    <img src="docs/testing/us22-1.png" alt="empty bookmark page.">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -715,7 +724,8 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us21-1.png" alt="upvoted post">
+    <img src="docs/testing/us21-1.png" alt="un-upvoted post">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -724,7 +734,10 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us24-1.png" alt="post page">
+    <img src="docs/testing/us24-2.png" alt="edit dropdown">
+    <img src="docs/testing/us24-3.png" alt="edit post page">
+    <img src="docs/testing/us24-4.png" alt="updated post">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -733,7 +746,9 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us25-1.png" alt="post page.">
+    <img src="docs/testing/us25-1.png" alt="delete dropdown.">
+    <img src="docs/testing/us25-3.png" alt="deleted post not appearing in search.">
 </details>
 
 ### Comments
