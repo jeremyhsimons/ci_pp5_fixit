@@ -71,4 +71,4 @@ export function ProfileEditDropdown({ id }) {
       </Dropdown.Menu>
     </Dropdown>
   );
-}
+};

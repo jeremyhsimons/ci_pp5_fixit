@@ -1,12 +1,12 @@
-import React from 'react'
-import { Navbar, Nav, Container, Row  } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
-import styles from '../styles/NavigationBar.module.css'
-import appStyles from '../App.module.css'
-import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext'
-import axios from 'axios'
-import useClickOutsideToggle from '../hooks/useClickOutsideToggle'
-import { removeTokenTimestamp } from '../utils/utils'
+import React from 'react';
+import { Navbar, Nav, Container, Row  } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
+import styles from '../styles/NavigationBar.module.css';
+import appStyles from '../App.module.css';
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
+import axios from 'axios';
+import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
+import { removeTokenTimestamp } from '../utils/utils';
 
 const NavigationBar = () => {
 
@@ -23,7 +23,7 @@ const NavigationBar = () => {
     } catch(err){
         // console.log(err);
     }
-  }
+  };
 
   const filterOptions = (
     <>
@@ -115,10 +115,10 @@ const NavigationBar = () => {
   const loggedOutIcons = (
     <>
       <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signup">
-          Sign Up
+        Sign Up
       </NavLink>
       <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signin">
-          Sign In
+        Sign In
       </NavLink>
     </>
   )
@@ -126,25 +126,25 @@ const NavigationBar = () => {
 
   return (
     <div>
-        <Navbar expanded={expanded} className={styles.NavigationBar} expand="md" fixed="top">
-            <Container className=''>
-                <NavLink className="mr-3" to="/" aria-label="Logo">
-                  <i className={`fa-solid fa-screwdriver-wrench ${styles.Logo}`}></i>
-                </NavLink>
-                <Navbar.Toggle ref={ref} onClick={() => setExpanded(!expanded)} aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mr-auto">
-                        <NavLink exact className={styles.NavLink} activeClassName={styles.Active} to="/">
-                            Home
-                        </NavLink>
-                        
-                        {currentUser ? loggedInIcons : loggedOutIcons}
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-        <div className={styles.Buffer}></div>
-        {currentUser ? filterOptions : <></>}
+      <Navbar expanded={expanded} className={styles.NavigationBar} expand="md" fixed="top">
+        <Container className=''>
+          <NavLink className="mr-3" to="/" aria-label="Logo">
+            <i className={`fa-solid fa-screwdriver-wrench ${styles.Logo}`}></i>
+          </NavLink>
+          <Navbar.Toggle ref={ref} onClick={() => setExpanded(!expanded)} aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <NavLink exact className={styles.NavLink} activeClassName={styles.Active} to="/">
+                Home
+              </NavLink>
+              
+              {currentUser ? loggedInIcons : loggedOutIcons}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <div className={styles.Buffer}></div>
+      {currentUser ? filterOptions : <></>}
     </div>
   )
 }

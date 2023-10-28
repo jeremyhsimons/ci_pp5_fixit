@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { Alert } from 'react-bootstrap'
-import styles from '../styles/Message.module.css'
+import React, { useState } from 'react';
+import { Alert } from 'react-bootstrap';
+import styles from '../styles/Message.module.css';
 
 const Message = ({message}) => {
 
@@ -15,7 +15,7 @@ const Message = ({message}) => {
     <div className={!show && styles.Hide}>
       <Alert variant='warning' onClick={handeClose}>{message}</Alert>
     </div>
-  )
-}
+  );
+};
 
 export default Message

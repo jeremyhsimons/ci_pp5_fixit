@@ -1,10 +1,10 @@
-import React from 'react'
-import { Container, Image, } from 'react-bootstrap'
-import noResults from '../assets/404.webp'
+import React from 'react';
+import { Container, Image, } from 'react-bootstrap';
+import noResults from '../assets/404.webp';
 
-import styles from '../styles/NotFound.module.css'
-import { Link } from 'react-router-dom/cjs/react-router-dom.min'
-import buttonStyles from '../styles/Button.module.css'
+import styles from '../styles/NotFound.module.css';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import buttonStyles from '../styles/Button.module.css';
 
 const NotFound = () => {
   return (
@@ -18,7 +18,7 @@ const NotFound = () => {
         HOME
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default NotFound
+export default NotFound;
