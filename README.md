@@ -495,7 +495,10 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us1-1.png" alt="signup page">
+    <img src="docs/testing/us1-2.png" alt="signin page">
+    <img src="docs/testing/us1-3.png" alt="home page">
+
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -504,17 +507,14 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us2-1.png" alt="signin page">
+    <img src="docs/testing/us2-2.png" alt="home page">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 3. Not to be logged out on closing the browser. | JWT in the background | From homepage (logged in) close the browser window. The url is then opened again after 5 minutes. | User is directed to home page with the logged-in options in the navbar visible. | Works as expected. |
 
-<details>
-    <summary>Screenshots</summary>
-    <img src="" alt="">
-</details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
@@ -522,7 +522,8 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us4-1.png" alt="signout">
+    <img src="docs/testing/us4-2.png" alt="home page (logged out)">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -531,7 +532,10 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us5-1.png" alt="profile">
+    <img src="docs/testing/us5-2.png" alt="dropdown menu">
+    <img src="docs/testing/us5-3.png" alt="username edit form">
+    <img src="docs/testing/us5-4.png" alt="updated profile">
 </details>
 
 ### Navigation
@@ -542,7 +546,9 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/features/unauth1.png" alt="home page (logged out)">
+    <img src="docs/features/unauth2.png" alt="unauthorised url">
+    <img src="docs/features/unauth1.png" alt="home page (logged out)">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -551,7 +557,9 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us7-1.png" alt="home page">
+    <img src="docs/testing/us7-2.png" alt="create post page">
+    <img src="docs/testing/us7-3.png" alt="bookmarks page">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -560,7 +568,8 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us8-1.png" alt="home page">
+    <img src="docs/testing/us8-1.png" alt="popular profiles component.">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
