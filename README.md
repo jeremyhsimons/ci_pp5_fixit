@@ -413,6 +413,23 @@ User stories covered: 26, 27
     <img src="docs/features/commentlist.png" alt="Comments.">
 </details>
 
+### Messages
+* This is a component that appears in order to notify/feedback to the user that their actions in updating or deleting data from the API has been successful. They appear when:
+* updating a post
+* deleting a post
+* updating profile
+* updating username
+* updating password
+
+<details>
+    <summary>Screenshots</summary>
+    <img src="docs/features/message1.png" alt="post edit">
+    <img src="docs/features/message2.png" alt="post delete">
+    <img src="docs/features/message3.png" alt="profile edit">
+    <img src="docs/features/message4.png" alt="username edit">
+    <img src="docs/features/message5.png" alt="password edit">
+</details>
+
 ### Feature ideas for future development
 
 * A page on the site, reachable from the navbar for logged in users, to scroll through a list of profiles that they have starred.
