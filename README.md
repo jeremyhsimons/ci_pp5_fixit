@@ -578,7 +578,8 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us9-1.png" alt="home page, click on filter">
+    <img src="docs/testing/us9-2.png" alt="filtered posts">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -587,7 +588,7 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us10-1.png" alt="home page, searchbar with keyword and matching post.">
 </details>
 
 ### Profiles
@@ -598,7 +599,11 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us1-1.png" alt="signup page">
+    <img src="docs/testing/us1-2.png" alt="signin page">
+    <img src="docs/testing/us1-3.png" alt="home page">
+    <img src="docs/testing/us11-1.png" alt="home page">
+    <img src="docs/testing/us11-2.png" alt="home page">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -607,17 +612,16 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us12-1.png" alt="profile page">
+    <img src="docs/testing/us12-2.png" alt="profile dropdown">
+    <img src="docs/testing/us12-3.png" alt="profile edit page">
+    <img src="docs/testing/us12-4.png" alt="updated profile">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
 | 13. See a list of popular profiles. | Popular profiles component | See test for user story 8. | See test for user story 8. | See test for user story 8. |
 
-<details>
-    <summary>Screenshots</summary>
-    <img src="" alt="">
-</details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
@@ -625,25 +629,28 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us14-1.png" alt="home page, click a profile">
+    <img src="docs/testing/us14-2.png" alt="home page, click a profile">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
-| 15. Star a profle. | profile page / popular profiles | from home page, click on a star next to a profile avatar in the popular profiles component. | User should see the star icon become solid and the number of stars next to the icon increase by one. | Works as expected. |
+| 15. Star a profle. | profile page / popular profiles | from a profile page, click the star button on the user's profile card. | User should see the star icon become solid and the number of stars next to the icon increase by one. | Works as expected. |
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us15-1.png" alt="profile page unstarred">
+    <img src="docs/testing/us15-2.png" alt="profile page starred">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
 |---|---|---|---|---|
-| 16. Un-star a profle. | profile page / popular profiles | from home page, click on a star next to a profile avatar in the popular profiles component. | User should see the star icon become solid and the number of stars next to the icon increase by one. | Works as expected. |
+| 16. Un-star a profle. | profile page / popular profiles | from a starred profile, click on the unstar button on the profile card. | User should see the star icon become solid and the number of stars next to the icon increase by one. | Works as expected. |
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us15-2.png" alt="profile page starred">
+    <img src="docs/testing/us15-1.png" alt="profile page unstarred">
 </details>
 
 ### Posts
