@@ -47,6 +47,8 @@ This first iteration of the site has a separate front end and back end design. U
 * To be able to scroll and search posts so that I can content from users who might have had the same issue as me.
 * To upvote and star users/posts/comments that were helpful to me as a means of saying thank you.
 
+Most importantly, all user content whether post, comment, or profile should be 'democratic' in how it appears on the site. This means that the posts and comments with the highest number of upvotes will be the first things that are seen on users' feeds (because they have helped the most people). Similarly, the most starred profiles will be displayed first due to their relative helpfulness in their respective field.
+
 ### Existing users
 * To comment on other users' posts so that I can help them and earn upvotes and stars.
 * To see a list of popular profiles and see how close I am to being one of the top contributors.
