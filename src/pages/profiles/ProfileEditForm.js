@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { Col, Form, Row, Image, Container, Button, Alert } from 'react-bootstrap'
+import React, { useState, useEffect, useRef } from 'react';
+import { Col, Form, Row, Image, Container, Button, Alert } from 'react-bootstrap';
 import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 
-import formStyles from '../../styles/ProfileEditForm.module.css'
-import buttonStyles from '../../styles/Button.module.css'
+import formStyles from '../../styles/ProfileEditForm.module.css';
+import buttonStyles from '../../styles/Button.module.css';
 import Message from '../../components/Message';
 
 const ProfileEditForm = () => {
@@ -74,7 +74,7 @@ const ProfileEditForm = () => {
       setShowMessage(true);
       setTimeout(function () {
         history.goBack();
-      }, 3000)
+      }, 3000);
     } catch (err) {
       // console.log(err);
       setErrors(err.response?.data);
@@ -131,26 +131,26 @@ const ProfileEditForm = () => {
                 </figure>
               )}
               <div>
-                  <Form.Label
-                    className={`btn my-auto`}
-                    htmlFor="image-upload"
-                  >
-                    Change the image
-                  </Form.Label>
-                </div>
-                <Form.File
-                  id="image-upload"
-                  ref={imageFile}
-                  accept="image/*"
-                  onChange={(e) => {
-                    if (e.target.files.length) {
-                      setProfileData({
-                        ...profileData,
-                        image: URL.createObjectURL(e.target.files[0]),
-                      });
-                    }
-                  }}
-                />
+                <Form.Label
+                  className={`btn my-auto`}
+                  htmlFor="image-upload"
+                >
+                  Change the image
+                </Form.Label>
+              </div>
+              <Form.File
+                id="image-upload"
+                ref={imageFile}
+                accept="image/*"
+                onChange={(e) => {
+                  if (e.target.files.length) {
+                    setProfileData({
+                      ...profileData,
+                      image: URL.createObjectURL(e.target.files[0]),
+                    });
+                  }
+                }}
+              />
             </Form.Group>
             {errors?.image?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
@@ -179,7 +179,7 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
     </Form>
-  )
-}
+  );
+};
 
-export default ProfileEditForm
+export default ProfileEditForm;

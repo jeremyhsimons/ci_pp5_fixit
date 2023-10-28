@@ -14,8 +14,8 @@ import {
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
 
-import styles from '../../styles/SignUpSignIn.module.css'
-import buttonStyles from '../../styles/Button.module.css'
+import styles from '../../styles/SignUpSignIn.module.css';
+import buttonStyles from '../../styles/Button.module.css';
 import Message from "../../components/Message";
 
 const UsernameForm = () => {

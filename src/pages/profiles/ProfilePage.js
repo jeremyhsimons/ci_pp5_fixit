@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { Col, Row, Container, Image, Button } from 'react-bootstrap'
-import PopularProfiles from './PopularProfiles'
+import React, { useEffect, useState } from 'react';
+import { Col, Row, Container, Image, Button } from 'react-bootstrap';
+import PopularProfiles from './PopularProfiles';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
@@ -10,14 +10,14 @@ import Post from '../posts/Post';
 import { fetchMoreData } from '../../utils/utils';
 import { ProfileEditDropdown } from '../../components/MoreDropdown';
 
-import styles from '../../styles/ProfilePage.module.css'
-import spinner from '../../assets/spinner_updated.gif'
-import buttonStyles from '../../styles/Button.module.css'
+import styles from '../../styles/ProfilePage.module.css';
+import spinner from '../../assets/spinner_updated.gif';
+import buttonStyles from '../../styles/Button.module.css';
 
 const ProfilePage = () => {
 
   const [hasLoaded, setHasLoaded] = useState(false);
-  const [profilePosts, setProfilePosts] = useState({results: []})
+  const [profilePosts, setProfilePosts] = useState({results: []});
   const currentUser = useCurrentUser();
   const {id} = useParams();
   const {setProfileData, handleStar, handleUnStar} = useSetProfileData();
@@ -31,7 +31,7 @@ const ProfilePage = () => {
         const [{data: pageProfile}, {data: profilePosts}] = await Promise.all([
           axiosReq.get(`/profiles/${id}/`),
           axiosReq.get(`/posts/?author__profile=${id}`),
-        ])
+        ]);
         setProfileData(prevState => ({
           ...prevState,
           pageProfile: {results: [pageProfile]}
@@ -74,7 +74,7 @@ const ProfilePage = () => {
         )}
       </div>
     </div>
-  )
+  );
 
   const mainProfilePosts = (
     <div>
@@ -99,7 +99,7 @@ const ProfilePage = () => {
         <h4>This user hasn&rsquo;t posted yet</h4>
       )}
     </div>
-  )
+  );
 
   return (
     <Row>
@@ -116,12 +116,12 @@ const ProfilePage = () => {
               {mainProfilePosts}
             </>
           ) : (
-            <h3>Loading...</h3>
+            <Image src={spinner}/>
           )}
         </Container>
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default ProfilePage
+export default ProfilePage;

@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { useSetProfileData } from '../../contexts/ProfileDataContext';
 
-import buttonStyles from '../../styles/Button.module.css'
-import styles from '../../styles/Profile.module.css'
+import buttonStyles from '../../styles/Button.module.css';
+import styles from '../../styles/Profile.module.css';
 import Avatar from '../../components/Avatar';
 
 const Profile = (props) => {
@@ -85,7 +85,7 @@ const Profile = (props) => {
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

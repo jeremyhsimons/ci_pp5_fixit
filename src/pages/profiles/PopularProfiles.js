@@ -1,10 +1,10 @@
-import React from 'react'
-import { Container, Image } from 'react-bootstrap'
+import React from 'react';
+import { Container, Image } from 'react-bootstrap';
 import Profile from './Profile';
 import { useProfileData } from '../../contexts/ProfileDataContext';
 
-import profileListStyles from '../../styles/PopularProfiles.module.css'
-import spinner from '../../assets/spinner_updated.gif'
+import profileListStyles from '../../styles/PopularProfiles.module.css';
+import spinner from '../../assets/spinner_updated.gif';
 
 const PopularProfiles = ({mobile}) => {
 
@@ -35,7 +35,7 @@ const PopularProfiles = ({mobile}) => {
         
       )}
     </Container>
-  )
-}
+  );
+};
 
-export default PopularProfiles
+export default PopularProfiles;
