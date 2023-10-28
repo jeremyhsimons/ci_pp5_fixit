@@ -998,6 +998,7 @@ The application was tested using the [Lighthouse](https://developer.chrome.com/d
 | bookmarking a post results in a 405 error returned from the API | I had typed the wrong endpoint into my axiosRes instance. I had entered /bookmark/ instead of /bookmarks/. |
 | Upvoting a comment worked, but the state didn’t update when the user upvoted, and the page had to refresh in order for the upvote to appear. | This was fixed by making sure that the return statement for the handleupvote function checked if the comment.id passed to the map was equal to the id supplied from the parent component |
 | The post title is a link and this has changed the text color/styles. | I forgot to wrap the post title and content in a separate card body component *outside* the link component that wraps the post image. |
+| White space appeared to the right of the page of the application and a sidescroll bar appeared ruining the responsiveness of the site. | This was fixed by adding width: 100%; to the html and body elements of the page in App.module.css |
 
 ## Credits
 
@@ -1027,6 +1028,7 @@ Images used for the site were taken from [Unsplash](https://unsplash.com/). Deta
 ### Tutorials used
 
 * The [Gitpod documentation](https://www.gitpod.io/docs/introduction/languages/javascript) helped me troubleshoot issues with node versions and helped me set my workspace up.
+* This [Stack Overflow post](https://stackoverflow.com/questions/4617872/white-space-showing-up-on-right-side-of-page-when-background-image-should-extend) reminded me that whitespace at the edge of the page can often be fixed by adding width rules to html and body elements.
 
 ### Other 3rd party libraries and online tools used
 
