@@ -1,7 +1,7 @@
 import React from 'react'
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import { Button } from 'react-bootstrap';
+import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { useSetProfileData } from '../../contexts/ProfileDataContext';
 
 import buttonStyles from '../../styles/Button.module.css'
@@ -48,14 +48,30 @@ const Profile = (props) => {
             </div>
           </div>
         ) : (
-          <div className='d-none d-lg-block'>
-            <div>
-              <i className="fa-regular fa-star "></i>
+          currentUser ? (
+            <div className='d-none d-lg-block'>
+              <div>
+                <i className="fa-regular fa-star "></i>
+              </div>
+              <div className='ml-3'>
+                {stars_count}
+              </div>
             </div>
-            <div className='ml-3'>
-              {stars_count}
-            </div>
-          </div>
+          ) : (
+            <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Log in to star a profile</Tooltip>}
+            >
+              <div className='d-none d-lg-block'>
+                <div>
+                  <i className="fa-regular fa-star "></i>
+                </div>
+                <div className='ml-3'>
+                  {stars_count}
+                </div>
+              </div>
+            </OverlayTrigger>
+          )
         )}
       </div>
       <div>
