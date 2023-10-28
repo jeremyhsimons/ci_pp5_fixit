@@ -240,7 +240,7 @@ Must-have features were all implemented, however upon starting the profiles spri
 
 This does not mean that the site will never have this feature, and this user story has, in fact, been moved to the 'feature ideas for future development' section of this document.
 
-## Features
+## Features and components
 
 ### Authentication
 
@@ -295,7 +295,7 @@ This does not mean that the site will never have this feature, and this user sto
 </details>
 
 #### Navbar
-* Always appears at the top of the page.
+* A component that is reused at the top of every page.
 * Contains links to all the most important parts of the site.
 * Is fully responsive and adjusts to hamburger menu/icons on smaller screens.
 * User stories covered: 7, 9
@@ -305,7 +305,7 @@ This does not mean that the site will never have this feature, and this user sto
 </details>
 
 #### Searchbar
-* Appears at the top of every post feed in the site.
+* A part of the postspage component that always appears at the top of every post feed in the site.
 * Allows users to search for keyowrds in post titles and usernames.
 * User stories covered: 10
 
@@ -330,6 +330,8 @@ This does not mean that the site will never have this feature, and this user sto
 </details>
 
 #### Popular profiles
+* A component that is reused on every post list, post page, and profile page, to give these top user prominence in the site's community.
+* It is made up of smaller profile sub-components that allow the list to dynamically update as users receive or lose stars.
 * A list of the 5 most-starred profiles in the community. From here users can star or unstar other users.
 * User stories covered: 13, 15, 16
 
@@ -360,6 +362,7 @@ This does not mean that the site will never have this feature, and this user sto
 
 #### Feed
 * An infinitely scrolling list of posts that are saved on the site's database.
+* Reuses the post component to display posts based on the most recent and most upvoted posts.
 * From here users can access single posts, bookmark posts, upvote posts, and click on the author's profile picture to access their profile.
 * User stories covered: 18, 20, 21, 22, 23
 
@@ -406,6 +409,7 @@ User stories covered: 26, 27
 
 #### Comment list
 * An infinite list of comments that the user can read, and upvote the ones that are most helpful.
+* The comment component is reused here to enable data from the API to keep being fetched and populating the feed.
 * User stories covered: 29, 30, 31
 
 <details>
