@@ -16,15 +16,15 @@ export const CurrentUserProvider = ({children}) => {
 
   const handleMount = async () => {
     try{
-      const {data} = await axiosRes.get('dj-rest-auth/user/')
-      setCurrentUser(data)
+      const {data} = await axiosRes.get('dj-rest-auth/user/');
+      setCurrentUser(data);
     } catch(err){
-      // console.log(err)
+      // console.log(err);
     }
   };
 
   useEffect(() => {
-    handleMount()
+    handleMount();
   }, []);
 
   useMemo(() => {
@@ -59,10 +59,10 @@ export const CurrentUserProvider = ({children}) => {
                 await axios.post('dj-rest-auth/token/refresh/');
               } catch(err){
                 setCurrentUser(prevCurrentUser => {
-                    if (prevCurrentUser){
-                        history.push('/signin')
-                    }
-                    return null
+                  if (prevCurrentUser){
+                    history.push('/signin');
+                  }
+                  return null;
                 });
                 removeTokenTimestamp();
               }
@@ -79,5 +79,5 @@ export const CurrentUserProvider = ({children}) => {
             {children}
         </SetCurrentUserContext.Provider>
     </CurrentUserContext.Provider>
-  )
-}
+  );
+};

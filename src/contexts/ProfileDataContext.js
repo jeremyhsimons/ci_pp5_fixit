@@ -18,7 +18,7 @@ export const ProfileDataProvider = ({children}) => {
 
   const handleStar = async (clickedProfile) => {
     try {
-      const {data} = await axiosRes.post('/stars/', {profile: clickedProfile.id})
+      const {data} = await axiosRes.post('/stars/', {profile: clickedProfile.id});
       setProfileData((prevState) => ({
         ...prevState,
         pageProfile: {
@@ -36,9 +36,9 @@ export const ProfileDataProvider = ({children}) => {
             : profile;
           })
         }
-      }))
+      }));
     } catch(err) {
-      // console.log(err)
+      // console.log(err);
     }
   }
 
@@ -62,11 +62,11 @@ export const ProfileDataProvider = ({children}) => {
             : profile;
           })
         }
-      }))
+      }));
     } catch(err) {
-      // console.log(err)
+      // console.log(err);
     }
-  }
+  };
 
   useEffect(() => {
     const handleMount = async () => {
