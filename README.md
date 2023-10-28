@@ -759,7 +759,8 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us26-1.png" alt="Comment form">
+    <img src="docs/testing/us26-2.png" alt="Comment appears in list">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -768,7 +769,10 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us27-1.png" alt="Comment three dots edit">
+    <img src="docs/testing/us27-2.png" alt="edit dropdown">
+    <img src="docs/testing/us27-3.png" alt="edit form">
+    <img src="docs/testing/us27-4.png" alt="updated comment">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -777,7 +781,8 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us28-1.png" alt="Comment delete dropdown menu">
+    <img src="docs/testing/us28-2.png" alt="Comment disappears from list">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -786,7 +791,8 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us29-1.png" alt="Top comment">
+    <img src="docs/testing/us29-2.png" alt="11th comment">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -795,7 +801,9 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us30-1.png" alt="un-upvoted comment">
+    <img src="docs/testing/us30-2.png" alt="upvoted comment">
+    <img src="docs/testing/us30-3.png" alt="upvoted comment appears at higher rank">
 </details>
 
 |User story|Feature|Test|Expected Result|Actual Result|
@@ -804,7 +812,8 @@ This repository can be cloned using the following process:
 
 <details>
     <summary>Screenshots</summary>
-    <img src="" alt="">
+    <img src="docs/testing/us30-2.png" alt="upvoted comment">
+    <img src="docs/testing/us30-1.png" alt="un-upvoted comment">
 </details>
 
 ## Validation
