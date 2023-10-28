@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import { useCurrentUser } from '../../contexts/CurrentUserContext'
+import React, { useState } from 'react';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosRes } from '../../api/axiosDefaults';
 import { MoreDropdown } from '../../components/MoreDropdown';
 
-import avatarStyles from '../../styles/Avatar.module.css'
-import postStyles from '../../styles/Post.module.css'
+import avatarStyles from '../../styles/Avatar.module.css';
+import postStyles from '../../styles/Post.module.css';
 import Avatar from '../../components/Avatar';
 import Message from '../../components/Message';
 
@@ -26,16 +26,16 @@ const Post = (props) => {
     upvotes_count,
     postPage,
     setPosts,
-  } = props
+  } = props;
 
   const [showMessage, setShowMessage] = useState(false);
 
   const currentUser = useCurrentUser();
-  const is_owner = currentUser?.username === author
+  const is_owner = currentUser?.username === author;
   const history = useHistory();
 
   const handleEdit = () => {
-    history.push(`/posts/${id}/edit`)
+    history.push(`/posts/${id}/edit`);
   }
 
   const handleDelete = async () => {
@@ -47,13 +47,13 @@ const Post = (props) => {
       }, 3000);
     
     } catch(err) {
-      // console.log(err)
+      // console.log(err);
     }
-  }
+  };
 
   const handleUpvote = async () => {
     try {
-      const {data} = await axiosRes.post('/post-upvotes/', {post:id})
+      const {data} = await axiosRes.post('/post-upvotes/', {post:id});
       setPosts((prevPost) => ({
         ...prevPost,
         results: prevPost.results.map((post) => {
@@ -61,15 +61,15 @@ const Post = (props) => {
           ? {...post, upvotes_count: post.upvotes_count + 1, upvote_id: data.id}
           : post;
         })
-      }))
+      }));
     } catch(err) {
-      // console.log(err)
+      // console.log(err);
     }
-  }
+  };
 
   const handleBookmark = async () => {
     try {
-      const {data} = await axiosRes.post('/bookmarks/', {post:id})
+      const {data} = await axiosRes.post('/bookmarks/', {post:id});
       setPosts((prevPost) => ({
         ...prevPost,
         results: prevPost.results.map((post) => {
@@ -77,15 +77,15 @@ const Post = (props) => {
           ? {...post, bookmark_id: data.id}
           : post;
         })
-      }))
+      }));
     } catch(err) {
-      // console.log(err)
+      // console.log(err);
     }
-  }
+  };
 
   const handleRemoveUpvote = async () => {
     try {
-      await axiosRes.delete(`/post-upvotes/${upvote_id}/`)
+      await axiosRes.delete(`/post-upvotes/${upvote_id}/`);
       setPosts((prevPost) => ({
         ...prevPost,
         results: prevPost.results.map((post) => {
@@ -93,15 +93,15 @@ const Post = (props) => {
           ? {...post, upvotes_count: post.upvotes_count - 1, upvote_id: null}
           : post;
         })
-      }))
+      }));
     } catch(err) {
-      // console.log(err)
+      // console.log(err);
     }
-  }
+  };
 
   const handleRemoveBookmark = async () => {
     try {
-      await axiosRes.delete(`/bookmarks/${bookmark_id}/`)
+      await axiosRes.delete(`/bookmarks/${bookmark_id}/`);
       setPosts((prevPost) => ({
         ...prevPost,
         results: prevPost.results.map((post) => {
@@ -109,11 +109,11 @@ const Post = (props) => {
           ? {...post, bookmark_id: null}
           : post;
         })
-      }))
+      }));
     } catch(err) {
-      // console.log(err)
+      // console.log(err);
     }
-  }
+  };
 
   return (
     <div>
@@ -206,7 +206,7 @@ const Post = (props) => {
         </Card.Body>
       </Card>
     </div>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect }from 'react'
+import React, { useState, useEffect }from 'react';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 import Post from './Post';
@@ -12,7 +12,7 @@ import { fetchMoreData } from '../../utils/utils';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import PopularProfiles from '../profiles/PopularProfiles';
 
-import spinner from '../../assets/spinner_updated.gif'
+import spinner from '../../assets/spinner_updated.gif';
 
 const PostPage = () => {
   const {id} = useParams();
@@ -29,12 +29,12 @@ const PostPage = () => {
           axiosReq.get(`/posts/${id}/`),
           axiosReq.get(`/comments/?post=${id}&ordering=-upvotes_count`)
         ])
-        setPost({results: [post]})
-        setComments(comments)
+        setPost({results: [post]});
+        setComments(comments);
       } catch(err) {
         // console.log(err);
       }
-    }
+    };
 
     handleMount();
   }, [id]);
@@ -49,41 +49,41 @@ const PostPage = () => {
           <PopularProfiles mobile/>
           <Post {...post.results[0]} setPost={setPost} postPage />
           <Container className="">
-              {currentUser ? (
-                <CommentForm
-                  profile_id={currentUser.profile_id}
-                  profileImage={profile_image}
-                  post={id}
-                  setPost={setPost}
-                  setComments={setComments}
-                />
-              ) : comments.results.length ? (
-                "Comments"
-              ) : null}
-              {comments.results.length ? (
-                <InfiniteScroll
-                  children={
-                      comments.results.map(comment => (
-                          <Comment key={comment.id} {...comment} setPost={setPost} setComments={setComments} />
-                      ))
-                  }
-                  dataLength={comments.results.length}
-                  loader={<p>Loading...</p>}
-                  hasMore={!!comments.next}
-                  next={() => fetchMoreData(comments, setComments)}
-                />
-              ) : currentUser ? (
-                <span>It&rsquo;s pretty quiet here... Why not add a comment?</span>
-              ) : (
-                <Container className='d-flex justify-content-center'>
-                  <Image src={spinner}/>
-                </Container>
-              )}
-            </Container>
-          </Col>
-        </Row>
+            {currentUser ? (
+              <CommentForm
+                profile_id={currentUser.profile_id}
+                profileImage={profile_image}
+                post={id}
+                setPost={setPost}
+                setComments={setComments}
+              />
+            ) : comments.results.length ? (
+              "Comments"
+            ) : null}
+            {comments.results.length ? (
+              <InfiniteScroll
+                children={
+                    comments.results.map(comment => (
+                        <Comment key={comment.id} {...comment} setPost={setPost} setComments={setComments} />
+                    ))
+                }
+                dataLength={comments.results.length}
+                loader={<p>Loading...</p>}
+                hasMore={!!comments.next}
+                next={() => fetchMoreData(comments, setComments)}
+              />
+            ) : currentUser ? (
+              <span>It&rsquo;s pretty quiet here... Why not add a comment?</span>
+            ) : (
+              <Container className='d-flex justify-content-center'>
+                <Image src={spinner}/>
+              </Container>
+            )}
+          </Container>
+        </Col>
+      </Row>
     </div>
-  )
-}
+  );
+};
 
-export default PostPage
+export default PostPage;

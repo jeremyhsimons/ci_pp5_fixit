@@ -14,8 +14,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
-import searchStyles from '../../styles/Searchbar.module.css'
-import spinner from '../../assets/spinner_updated.gif'
+import searchStyles from '../../styles/Searchbar.module.css';
+import spinner from '../../assets/spinner_updated.gif';
 import { Image } from "react-bootstrap";
 
 function PostsPage({ message, filter="" }) {
@@ -40,11 +40,11 @@ function PostsPage({ message, filter="" }) {
     setHasLoaded(false);
     const timer = setTimeout(() => {
       fetchPosts();
-    }, 1000)
+    }, 1000);
     return () => {
-      clearTimeout(timer)
+      clearTimeout(timer);
     }
-  }, [filter, query, pathname, currentUser])
+  }, [filter, query, pathname, currentUser]);
 
   return (
     <Row className="h-100">
@@ -96,6 +96,6 @@ function PostsPage({ message, filter="" }) {
       </Col>
     </Row>
   );
-}
+};
 
 export default PostsPage;

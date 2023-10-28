@@ -1,14 +1,14 @@
-import React, {useState} from 'react'
-import { Media } from 'react-bootstrap'
-import { Link } from 'react-router-dom/cjs/react-router-dom.min'
-import { OverlayTrigger, Tooltip } from 'react-bootstrap'
-import { useCurrentUser } from '../../contexts/CurrentUserContext'
-import { MoreDropdown } from '../../components/MoreDropdown'
-import { axiosRes } from '../../api/axiosDefaults'
-import CommentEditForm from './CommentEditForm'
+import React, {useState} from 'react';
+import { Media } from 'react-bootstrap';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import { MoreDropdown } from '../../components/MoreDropdown';
+import { axiosRes } from '../../api/axiosDefaults';
+import CommentEditForm from './CommentEditForm';
 
-import styles from '../../styles/Comment.module.css'
-import Avatar from '../../components/Avatar'
+import styles from '../../styles/Comment.module.css';
+import Avatar from '../../components/Avatar';
 
 const Comment = ({
   profile_id, 
@@ -47,7 +47,7 @@ const Comment = ({
 
   const handleUpvote = async () => {
     try {
-      const {data} = await axiosRes.post('/comment-upvotes/', {comment:id})
+      const {data} = await axiosRes.post('/comment-upvotes/', {comment:id});
       setComments((prevComments) => ({
         ...prevComments,
         results: prevComments.results.map((comment) => {
@@ -57,13 +57,13 @@ const Comment = ({
         })
       }))
     } catch(err) {
-      // console.log(err)
+      // console.log(err);
     }
-  }
+  };
 
   const handleRemoveUpvote = async () => {
     try {
-      await axiosRes.delete(`/comment-upvotes/${upvote_id}/`)
+      await axiosRes.delete(`/comment-upvotes/${upvote_id}/`);
       setComments((prevComments) => ({
         ...prevComments,
         results: prevComments.results.map((comment) => {
@@ -73,9 +73,9 @@ const Comment = ({
         })
       }))
     } catch(err) {
-      // console.log(err)
+      // console.log(err);
     }
-  }
+  };
 
   return (
     <div>
@@ -138,7 +138,7 @@ const Comment = ({
         </Media>
       </>
     </div>
-  )
-}
+  );
+};
 
-export default Comment
+export default Comment;

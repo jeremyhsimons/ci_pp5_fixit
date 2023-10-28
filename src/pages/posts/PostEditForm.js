@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 import { Button, Container, Form, Image, Alert } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 
-import buttonStyles from '../../styles/Button.module.css'
-import formStyles from '../../styles/CreatePostForm.module.css'
+import buttonStyles from '../../styles/Button.module.css';
+import formStyles from '../../styles/CreatePostForm.module.css';
 import Message from '../../components/Message';
 
 const PostEditForm = () => {
@@ -29,7 +29,7 @@ const PostEditForm = () => {
         const {data} = await axiosReq.get(`/posts/${id}/`);
         const {title, content, category, image, is_owner} = data;
 
-        is_owner ? setPostData({title, content, category, image}) : history.push('/')
+        is_owner ? setPostData({title, content, category, image}) : history.push('/');
       } catch(err) {
         // console.log(err);
       }
@@ -41,7 +41,7 @@ const PostEditForm = () => {
     setPostData({
       ...postData,
       [event.target.name]: event.target.value
-    })
+    });
   };
 
   const handleChangeImage = (event) => {
@@ -58,9 +58,9 @@ const PostEditForm = () => {
     event.preventDefault();
     const formData = new FormData();
 
-    formData.append('title', title)
-    formData.append('content', content)
-    formData.append('category', category)
+    formData.append('title', title);
+    formData.append('content', content);
+    formData.append('category', category);
     if (inputImage?.current?.files[0]){
       formData.append('image', inputImage.current.files[0]);
     }
@@ -70,7 +70,7 @@ const PostEditForm = () => {
       setShowMessage(true);
       setTimeout(function () {
         history.push(`/posts/${id}`);
-      }, 3000)
+      }, 3000);
       
     } catch (err) {
       // console.log(err)
@@ -135,6 +135,6 @@ const PostEditForm = () => {
       </Container>
     </Form>
   );
-}
+};
 
-export default PostEditForm
+export default PostEditForm;

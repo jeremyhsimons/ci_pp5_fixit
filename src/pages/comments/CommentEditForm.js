@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import { Form } from 'react-bootstrap';
 import { axiosRes } from '../../api/axiosDefaults';
 
-import buttonStyles from '../../styles/Button.module.css'
+import buttonStyles from '../../styles/Button.module.css';
 
 const CommentEditForm = (props) => {
 

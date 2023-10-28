@@ -6,8 +6,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 
 import { axiosRes } from "../../api/axiosDefaults";
 
-import styles from '../../styles/CommentForm.module.css'
-import buttonStyles from '../../styles/Button.module.css'
+import styles from '../../styles/CommentForm.module.css';
+import buttonStyles from '../../styles/Button.module.css';
 import Avatar from "../../components/Avatar";
 
 function CommentForm(props) {
@@ -71,6 +71,6 @@ function CommentForm(props) {
       </button>
     </Form>
   );
-}
+};
 
 export default CommentForm;
