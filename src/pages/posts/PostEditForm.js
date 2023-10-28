@@ -70,7 +70,7 @@ const PostEditForm = () => {
       setShowMessage(true);
       setTimeout(function () {
         history.push(`/posts/${id}`);
-      }, 2000)
+      }, 3000)
       
     } catch (err) {
       // console.log(err)
