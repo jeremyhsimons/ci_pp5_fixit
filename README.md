@@ -144,6 +144,8 @@ The following React Libraries were also used:
 
 ### Wireframes
 
+Wire frames to sketch out the layout of the site were created using [figma](https://www.figma.com/). Designs for different screen sizes can be viewed below.
+
 #### Phone screens
 <details>
     <summary>Authentication</summary>
@@ -213,7 +215,7 @@ The following React Libraries were also used:
 
 ### Introduction
 
-A Github projects kanban board was used to manage the tasks in the project. User stories were organised into epics and this guided how features in the backlog were organised for any given sprint.
+A [Github projects](https://github.com/) kanban board was used to manage the tasks in the project. User stories were organised into epics and this guided how features in the backlog were organised for any given sprint.
 
 Sprint 1: Navigation and Authentication
 
@@ -1067,7 +1069,7 @@ The application was tested using the [Lighthouse](https://developer.chrome.com/d
 
 ### 3rd party code used
 
-This project drew extensively on the [Code Institute]() 'Moments' walkthrough project and ideas from here were implemented to maximise user experience in Fixit. This includes:
+This project drew extensively on the [Code Institute](https://codeinstitute.net/) 'Moments' walkthrough project and ideas from here were implemented to maximise user experience in Fixit. This includes:
 1. Custom user context and profile data context.
 1. custom click toggle and redirect hooks.
 1. organisation of components.
@@ -1095,19 +1097,31 @@ Images used for the site were taken from [Unsplash](https://unsplash.com/). Deta
 
 ### Other 3rd party libraries and online tools used
 
+* [Axios](https://www.npmjs.com/package/axios) for handling http requests for the front end of this project.
+* [Figma](https://www.figma.com/) for generating wireframes.
+* [Coolors](https://coolors.co/104f55-32746d-f4d8cd-01200f-011502) for automatically generating the colour palate of the site.
+* [Unsplash](https://unsplash.com/) for sourcing free images to use on the site.
+* [Font Awesome](https://fontawesome.com/) for icons across the whole site.
+* [Google Fonts](https://fonts.google.com/) for providing the fonts for this site via CDN.
+* [GitHib Projects](https://github.com/) for agile project management.
 * [Convertio](https://convertio.co/) for converting images to webp format.
 * [Cloud Convert](https://cloudconvert.com/jpg-to-webp) for converting images to webp format.
 * [Loading.io](https://loading.io/) for generating the loading gif used on home page and popular profiles.
-
-* [W3C Validation service](https://validator.w3.org/)
-* [W3C Jigsaw](https://jigsaw.w3.org/css-validator/#validate_by_input+with_options)
-* [ESLint](https://eslint.org/)
-* [WAVE validator](https://wave.webaim.org/)
-* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+* The following validation services were used to test code:
+    * [W3C Validation service](https://validator.w3.org/)
+    * [W3C Jigsaw](https://jigsaw.w3.org/css-validator/#validate_by_input+with_options)
+    * [ESLint](https://eslint.org/)
+    * [WAVE validator](https://wave.webaim.org/)
+    * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 
 ### Hosting platforms used.
 
 * [Heroku](https://id.heroku.com/login) for hosting code
 * [Cloudinary](https://cloudinary.com/) for image hosting
+* [GitHub](https://github.com/) for repository hosting
 
 ### Acknowledgements
+* Many thanks to the Code Institute London community for their support and encouragement during this final project.
+* Many thanks to my friends Sam and Adam who helped with user acceptance testing for this project, offering vital feedback.
+* Many thanks especially to my Mentor Mo Shami who has provided invaluable support, encouragement and guidance throughout this project and throughout the course. Thanks for pushing me to go the extra mile!
+* Thanks to my church family in West London for looking out for me and offering meals when I was snowed under with full-time work and CI project deadlines.
