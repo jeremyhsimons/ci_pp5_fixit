@@ -512,6 +512,17 @@ This repository can be cloned using the following process:
 
 ## Testing
 
+### Compatibility testing
+
+This project's responsiveness was tested using the following devices
+* Samsung Galaxy S20 FE
+* Lenovo Ideapad 520S
+
+This project's responsiveness was tested on the following browsers:
+* Google Chrome
+* Mozilla Firefox
+* Microsoft Edge
+
 ### Authentication
 
 |User story|Feature|Test|Expected Result|Actual Result|
