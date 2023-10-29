@@ -96,6 +96,6 @@ function PostsPage({ message, filter="" }) {
       </Col>
     </Row>
   );
-};
+}
 
 export default PostsPage;

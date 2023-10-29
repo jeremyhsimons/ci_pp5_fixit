@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
 import Post from './Post';
 
-import { Col, Container, Row, Image } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 import CommentForm from '../comments/CommentForm';
 import Comment from '../comments/Comment';
@@ -11,8 +11,6 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { fetchMoreData } from '../../utils/utils';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import PopularProfiles from '../profiles/PopularProfiles';
-
-import spinner from '../../assets/spinner_updated.gif';
 
 const PostPage = () => {
   const {id} = useParams();
@@ -76,7 +74,7 @@ const PostPage = () => {
               <span>It&rsquo;s pretty quiet here... Why not add a comment?</span>
             ) : (
               <Container className='d-flex justify-content-center'>
-                <Image src={spinner}/>
+                <h4>Please log in to post a comment</h4>
               </Container>
             )}
           </Container>

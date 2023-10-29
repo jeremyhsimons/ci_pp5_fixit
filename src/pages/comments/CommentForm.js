@@ -71,6 +71,6 @@ function CommentForm(props) {
       </button>
     </Form>
   );
-};
+}
 
 export default CommentForm;
