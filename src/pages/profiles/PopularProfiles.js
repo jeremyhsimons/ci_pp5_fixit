@@ -17,7 +17,7 @@ const PopularProfiles = ({mobile}) => {
           <h3 className={profileListStyles.Title}>Trending contributors:</h3>
           <hr/>
           {mobile ? (
-            <div className="d-flex justify-content-around">
+            <div className={`d-flex justify-content-around`}>
               {popularProfiles.results.slice(0, 4).map(profile => (
                 <Profile key={profile.id} profile={profile} mobile />
               ))}

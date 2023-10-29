@@ -16,7 +16,7 @@ const Profile = (props) => {
   const {handleStar, handleUnStar} = useSetProfileData();
 
   return (
-    <div className={`d-flex align-items-center pr-5 ${mobile && "flex-column"} ${styles.Profile}`}>
+    <div className={`d-flex align-items-center pr-2 ${mobile && "flex-column"} ${styles.Profile}`}>
       <div className={`${!mobile && "ml-auto"}`}>
         {!mobile && currentUser && !is_owner && (
           star_id ? (
