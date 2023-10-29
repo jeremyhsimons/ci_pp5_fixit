@@ -72,49 +72,49 @@ Most importantly, all user content whether post, comment, or profile should be '
 
 #### Authentication
 
-(1) As a new user I want to sign up so that I can use the site
-(2) As an existing user I want to be able to sign in to the site to resume using the features
-(3) As an existing user I want to be able to close and reopen the site without being logged out after a short period of time.
-(4) As an existing user I want to be able to sign out from the app to protect my account.
-(5) As an existing user I want to update my username and password so that I can keep my security details up to date.
+* (1) As a new user I want to sign up so that I can use the site
+* (2) As an existing user I want to be able to sign in to the site to resume using the features
+* (3) As an existing user I want to be able to close and reopen the site without being logged out after a short period of time.
+* (4) As an existing user I want to be able to sign out from the app to protect my account.
+* (5) As an existing user I want to update my username and password so that I can keep my security details up to date.
 
 #### Navigation
 
-(6) As a new user I want to be directed to the home page if I try to access any feature that is not permitted for unauthenticated, so that the site can remain secure.
-(7) As an existing user I want to access all the features of the site through one simple navbar at the top of the page.
-(8) As an existing user I want to access a list of the most popular profiles on the site on a sidebar/sidenav, so that I can easily see who is most influential.
-(9) As an existing user I want to switch between different kinds of DIY post so that I can see content that is relevant to me.
-(10) As an existing user I want to be able to search for posts using a search bar so that I can quickly look up posts that are relevant to me.
+* (6) As a new user I want to be directed to the home page if I try to access any feature that is not permitted for unauthenticated, so that the site can remain secure.
+* (7) As an existing user I want to access all the features of the site through one simple navbar at the top of the page.
+* (8) As an existing user I want to access a list of the most popular profiles on the site on a sidebar/sidenav, so that I can easily see who is most influential.
+* (9) As an existing user I want to switch between different kinds of DIY post so that I can see content that is relevant to me.
+* (10) As an existing user I want to be able to search for posts using a search bar so that I can quickly look up posts that are relevant to me.
 
 #### Profiles
 
-(11) As a new user I want to have a profile automatically generated for me when I log in so other users can interact with me.
-(12) As an existing user I want to be able to edit my profile so that I can keep my public details up-to-date.
-(13) As an existing user I want to scroll a list of the most popular profiles (that have received the most stars) that I can access their posts.
-(14) As an existing user I want to be able to access a single profile to view its details and the posts associated with it.
-(15) As an existing user I want to ‘star’ a profile of someone I like/have found helpful so that I can see more of their content in future.
-(16) As an existing user I want to ‘un-star’ a profile when I no longer wish to see content from this user.
+* (11) As a new user I want to have a profile automatically generated for me when I log in so other users can interact with me.
+* (12) As an existing user I want to be able to edit my profile so that I can keep my public details up-to-date.
+* (13) As an existing user I want to scroll a list of the most popular profiles (that have received the most stars) that I can access their posts.
+* (14) As an existing user I want to be able to access a single profile to view its details and the posts associated with it.
+* (15) As an existing user I want to ‘star’ a profile of someone I like/have found helpful so that I can see more of their content in future.
+* (16) As an existing user I want to ‘un-star’ a profile when I no longer wish to see content from this user.
 
 #### Posts
 
-(17) As a new user I want to be able to create a post, so that I can ask my question/share my DIY problem with the community.
-(18) As a new user I want to ‘infinitely’ scroll down a list of posts so that I can keep viewing content on the site.
-(19) As a new user I want to be able to access a single post so that I can read it in full and read all the comments associated with it.
-(20) As a new user I want to be able to bookmark a post I found helpful so that I can return to it later and re-read it.
-(21) As a new user I want to upvote a post that is very timely or relevant, or if I’m sharing the same problem, so that I can support other members of the community and shape what is important on the site.
-(22) As an existing user I want to remove a bookmark from a post so that I no longer have it saved.
-(23) As an existing user I want to remove a post upvote from a post so that I no longer lend my support to that post.
-(24) As an existing user I want to be able to edit my post so that I can correct any mistakes/keep my question up-to-date.
-(25) As an existing user I want to be able to delete my post so that I can get rid of any unwanted or irrelevant data on the site.
+* (17) As a new user I want to be able to create a post, so that I can ask my question/share my DIY problem with the community.
+* (18) As a new user I want to ‘infinitely’ scroll down a list of posts so that I can keep viewing content on the site.
+* (19) As a new user I want to be able to access a single post so that I can read it in full and read all the comments associated with it.
+* (20) As a new user I want to be able to bookmark a post I found helpful so that I can return to it later and re-read it.
+* (21) As a new user I want to upvote a post that is very timely or relevant, or if I’m sharing the same problem, so that I can support other members of the community and shape what is important on the site.
+* (22) As an existing user I want to remove a bookmark from a post so that I no longer have it saved.
+* (23) As an existing user I want to remove a post upvote from a post so that I no longer lend my support to that post.
+* (24) As an existing user I want to be able to edit my post so that I can correct any mistakes/keep my question up-to-date.
+* (25) As an existing user I want to be able to delete my post so that I can get rid of any unwanted or irrelevant data on the site.
 
 #### Comments
 
-(26) As a new user I want to be able to write a comment on a post so that I can interact with the person who created the post.
-(27) As an existing user I want to be able to edit my comment so that I can fix any mistakes I made initially.
-(28) As an existing user I want to be able to delete my comment so that I can withdraw what I posted initially.
-(29) As an existing user I want to infinitely scroll through all the comments associated with a post (ordered by most upvoted) so that I can follow threads of answers and suggestions to other users’ problems.
-(30) As an existing user I want to be able to upvote a comment so that I can lend my support to a contribution that helped me significantly.
-(31) As an existing user I want to be able to withdraw my comment upvote so that I can withdraw my support for the commenter’s response
+* (26) As a new user I want to be able to write a comment on a post so that I can interact with the person who created the post.
+* (27) As an existing user I want to be able to edit my comment so that I can fix any mistakes I made initially.
+* (28) As an existing user I want to be able to delete my comment so that I can withdraw what I posted initially.
+* (29) As an existing user I want to infinitely scroll through all the comments associated with a post (ordered by most upvoted) so that I can follow threads of answers and suggestions to other users’ problems.
+* (30) As an existing user I want to be able to upvote a comment so that I can lend my support to a contribution that helped me significantly.
+* (31) As an existing user I want to be able to withdraw my comment upvote so that I can withdraw my support for the commenter’s response.
 
 ## Design
 
